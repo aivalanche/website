@@ -4,8 +4,7 @@ import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import NewsLetter from '@/components/shared/NewsLetter'
 import PageHero from '@/components/shared/PageHero'
-import getMarkDownContent from '@/utils/getMarkDownContent'
-import getMarkDownData from '@/utils/getMarkDownData'
+
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import IndustryList from '@/data/industryData'
@@ -24,7 +23,7 @@ export async function generateStaticParams() {
 
 const BlogDetails = (props) => {
   const { IndustryData } = IndustryList
-  console.log("IndustryData", IndustryData)
+  // console.log("IndustryData", IndustryData)
 
   const dataFolder = 'content/blogs/'
   const slug = props.params.slug
