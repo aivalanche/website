@@ -1,0 +1,256 @@
+{
+    "IndustryData": [
+        {
+            "id": 1,
+            "slug": "automotive-aerospace",
+            "title": "Automotive &amp; Aerospace",
+            "iconLight": "/images/industry/automotive-aerospace.png",
+            "iconDark": "/images/services/investment-dark.svg",
+            "featureImage": "/images/blog/blog1.png",
+            "detailImage1": "/images/blog/blog2.png",
+            "detailImage2": "/images/blog/blog3.png",
+            "detailImage3": "/images/blog/blog4.png",
+            "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+            "firstParagraph": {
+                "title": "Model Calibration/Optimization",
+                "content": "Ensuring the accuracy of simulations in aerodynamics (CFD) and crash testing (FEA). Adjusting parameters like material properties, boundary conditions, and forces to match real-world performance. Accurate extraction of material properties such as Young’s modulus, fatigue limits, and stress-strain behavior for structural simulations.",
+                "firstParagraphList": [
+                    {
+                        "item": "Customer Experience"
+                    },
+                    {
+                        "item": "Operational Efficiency"
+                    },
+                    {
+                        "item": "Growth and Innovation"
+                    }
+                ]
+            },
+            "secondParagraph": {
+                "title": "Inverse Design",
+                "content": "Aerodynamic shape optimization, where the desired performance (e.g., minimum drag or lift coefficient) is specified, and design variables are adjusted to meet these goals.",
+                "secondParagraphList": [
+                    {
+                        "item": "Customer Service Chatbots"
+                    },
+                    {
+                        "item": "Fraud Detection Algorithms"
+                    },
+                    {
+                        "item": "Risk Management Tools"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "slug": "photonics-optics",
+            "title": "Photonics &amp; Optics",
+            "iconLight": "/images/industry/optics-and-photonics.png",
+            "iconDark": "/images/services/investment-dark.svg",
+            "featureImage": "/images/blog/blog1.png",
+            "detailImage1": "/images/blog/blog2.png",
+            "detailImage2": "/images/blog/blog3.png",
+            "detailImage3": "/images/blog/blog4.png",
+            "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+            "firstParagraph": {
+                "title": "Model Calibration/Optimization",
+                "content": "Ensuring that PICs and other photonic devices perform as expected. Adjustments in parameters like layer thickness, waveguide geometries, or coupling efficiencies.",
+                "firstParagraphList": [
+                    {
+                        "item": "Customer Experience"
+                    },
+                    {
+                        "item": "Operational Efficiency"
+                    },
+                    {
+                        "item": "Growth and Innovation"
+                    }
+                ]
+            },
+            "secondParagraph": {
+                "title": "Inverse Design",
+                "content": "Designing complex components like metamaterials and nano-photonic devices. Specifying a desired optical response (e.g., a specific wavelength filtering), and the simulation automatically adjusts parameters like geometry and material properties to achieve that result.",
+                "secondParagraphList": [
+                    {
+                        "item": "Customer Service Chatbots"
+                    },
+                    {
+                        "item": "Fraud Detection Algorithms"
+                    },
+                    {
+                        "item": "Risk Management Tools"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "slug": "manufacturing-engineering",
+            "title": "Manufacturing &amp; Engineering",
+            "iconLight": "/images/industry/manufacturing-engineering.png",
+            "iconDark": "/images/services/investment-dark.svg",
+            "featureImage": "/images/blog/blog1.png",
+            "detailImage1": "/images/blog/blog2.png",
+            "detailImage2": "/images/blog/blog3.png",
+            "detailImage3": "/images/blog/blog4.png",
+            "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+            "firstParagraph": {
+                "title": "Model Calibration/Optimization",
+                "content": "Optimization for higher efficiency and quality by fine tuning parameters like tool speed, material hardness, and temperature simulating processes like CNC machining or additive manufacturing.",
+                "firstParagraphList": [
+                    {
+                        "item": "Customer Experience"
+                    },
+                    {
+                        "item": "Operational Efficiency"
+                    },
+                    {
+                        "item": "Growth and Innovation"
+                    }
+                ]
+            },
+            "secondParagraph": {
+                "title": "Inverse Design",
+                "content": "Working with additive manufacturing, where the desired material properties or part geometry are defined, determining the optimal manufacturing parameters (e.g., print speed, layer height) to achieve the target output.",
+                "secondParagraphList": [
+                    {
+                        "item": "Customer Service Chatbots"
+                    },
+                    {
+                        "item": "Fraud Detection Algorithms"
+                    },
+                    {
+                        "item": "Risk Management Tools"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "slug": "autonomous-energy-systems",
+            "title": "Energy Systems &amp; Sustainability",
+            "iconLight": "/images/industry/autonomous-systems.png",
+            "iconDark": "/images/services/investment-dark.svg",
+            "featureImage": "/images/blog/blog1.png",
+            "detailImage1": "/images/blog/blog2.png",
+            "detailImage2": "/images/blog/blog3.png",
+            "detailImage3": "/images/blog/blog4.png",
+            "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+            "firstParagraph": {
+                "title": "Model Calibration/Optimization",
+                "content": "Calibrating parameters such as energy output, weather conditions, and efficiency to match real-world performance when simulating power systems and renewable energy sources like wind or solar farms.",
+                "firstParagraphList": [
+                    {
+                        "item": "Customer Experience"
+                    },
+                    {
+                        "item": "Operational Efficiency"
+                    },
+                    {
+                        "item": "Growth and Innovation"
+                    }
+                ]
+            },
+            "secondParagraph": {
+                "title": "Inverse Design",
+                "content": "Optimizing renewable energy systems, where the goal (e.g.,maximizing energy output or minimizing energy loss) drives the design of turbine placements, grid connections, or panel orientations.",
+                "secondParagraphList": [
+                    {
+                        "item": "Customer Service Chatbots"
+                    },
+                    {
+                        "item": "Fraud Detection Algorithms"
+                    },
+                    {
+                        "item": "Risk Management Tools"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "slug": "robotics-autonomous-systems",
+            "title": "Robotics &amp; Autonomous Systems",
+            "iconLight": "/images/industry/robotics.png",
+            "iconDark": "/images/services/investment-dark.svg",
+            "featureImage": "/images/blog/blog1.png",
+            "detailImage1": "/images/blog/blog2.png",
+            "detailImage2": "/images/blog/blog3.png",
+            "detailImage3": "/images/blog/blog4.png",
+            "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+            "firstParagraph": {
+                "title": "Model Calibration/Optimization",
+                "content": "Tuning of parameters of a robotic simulation model like joint stiffness, motor torques, and friction to ensure the robot behaves as expected in real-world applications.",
+                "firstParagraphList": [
+                    {
+                        "item": "Customer Experience"
+                    },
+                    {
+                        "item": "Operational Efficiency"
+                    },
+                    {
+                        "item": "Growth and Innovation"
+                    }
+                ]
+            },
+            "secondParagraph": {
+                "title": "Inverse Design",
+                "content": "Robot path planning or gripper design, where the desired movement path or object handling is specified, determining determines the optimal joint angles, speeds, or gripping force to achieve the objective.",
+                "secondParagraphList": [
+                    {
+                        "item": "Customer Service Chatbots"
+                    },
+                    {
+                        "item": "Fraud Detection Algorithms"
+                    },
+                    {
+                        "item": "Risk Management Tools"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "slug": "biomedicine-pharmaceuticals",
+            "title": "Robotics &amp; Autonomous Systems",
+            "iconLight": "/images/industry/pharma-biomedicine.webp",
+            "iconDark": "/images/services/investment-dark.svg",
+            "featureImage": "/images/blog/blog1.png",
+            "detailImage1": "/images/blog/blog2.png",
+            "detailImage2": "/images/blog/blog3.png",
+            "detailImage3": "/images/blog/blog4.png",
+            "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+            "firstParagraph": {
+                "title": "Model Calibration/Optimization",
+                "content": "Ensuring that simulations accurately predict how drugs behave in different patient populations. Comparing model predictions with clinical data optimizing dose response or therapeutic windows. Optimization routines help adjust dosing regimens or drug formulations to maximize efficacy while ",
+                "firstParagraphList": [
+                    {
+                        "item": "Customer Experience"
+                    },
+                    {
+                        "item": "Operational Efficiency"
+                    },
+                    {
+                        "item": "Growth and Innovation"
+                    }
+                ]
+            },
+            "secondParagraph": {
+                "title": "Inverse Design",
+                "content": "Tailoring drug properties and delivery methods to achieve a specific pharmacological response. Targeting a drug to release at a particular rate or location in the body (e.g., in the digestive tract or bloodstream) where desired release profiles dictate the formulation parameters (e.g., polymer coatings, dissolution rates).",
+                "secondParagraphList": [
+                    {
+                        "item": "Customer Service Chatbots"
+                    },
+                    {
+                        "item": "Fraud Detection Algorithms"
+                    },
+                    {
+                        "item": "Risk Management Tools"
+                    }
+                ]
+            }
+        }
+    ]
+}

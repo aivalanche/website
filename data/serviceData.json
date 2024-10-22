@@ -1,0 +1,180 @@
+{
+  "ServiceData": [
+    {
+      "id": 1,
+      "slug": "on-site-deployment",
+      "title": "On-site deployment",
+      "excerpt": "We integrate our AI solution seamlessly into your current systems so there's no need to learn new platforms.",
+      "iconLight": "/images/services/investment.svg",
+      "iconDark": "/images/solution/investment-dark.svg",
+      "featureImage": "/images/solution/on-site-deployment.svg",
+      "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+      "serviceDetails": "In the world of engineering, manufacturing, and research, the accuracy of physical models is paramount. But the process of model calibration and tuning can be complex, time-consuming, and prone to error. That's where we come in.",
+      "serviceExpectation": "Our AI algorithms are built specifically for your models. We examine your unique parameters and characteristics to create a tailored solution that fits your exact needs. This means faster, more accurate calibration for your specific use case. We integrate our AI solution seamlessly into your current systems. There's no need to overhaul your existing infrastructure or learn new platforms. Our technology works within your familiar environment, minimizing disruption to your workflow. Our AI takes over the repetitive tasks of calibration and tuning. This drastically reduces the need for manual adjustments, freeing up your team's time and eliminating human errors. You get consistent, precise results without the tedium.Our AI processes and analyzes massive datasets quickly. It uncovers hidden patterns and relationships in your data that humans might miss. This leads to deeper insights and more informed decision-making for your model optimization.",
+      "serviceExpectationList": [
+        {
+          "item": "Accelerated development"
+        },
+        {
+          "item": "Improved model accuracy"
+        },
+        {
+          "item": "Reduced costs"
+        },
+        {
+          "item": "Enhanced innovation"
+        },
+        {
+          "item": "Scalable solutions"
+        },
+        {
+          "item": "Competitive advantage"
+        }
+      ],
+      "serviceQualifications": "Morbi lorem proin morbi tempor risus. Nisl lobortis diam id faucibus pretium vitae suspendisse sed accumsan. Sodales morbi tristique elit cursus gravida. Ullamcorper commodo eget pulvinar pretium. Condimentum rhoncus commodo amet nec auctor nibh vel mi blandit. Neque ultrices nunc condimentum morbi risus tincidunt. Vel arcu lacus non ornare. Porttitor in rhoncus magna augue adipiscing.",
+      "serviceQualificationsList": [
+        {
+          "item": "It’s scalable and secure"
+        },
+        {
+          "item": "Artificial Intelligence Feature"
+        },
+        {
+          "item": "Offline version available"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "cloud-web-app",
+      "title": "Cloud web app",
+      "excerpt": "Our web application brings the power of AI-driven model calibration right to your browser.",
+      "iconLight": "/images/services/sales.svg",
+      "iconDark": "/images/services/sales-dark.svg",
+      "featureImage": "/images/services/service-single1.png",
+      "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+      "serviceDetails": "Access our cutting-edge AI-driven model calibration tools through an intuitive, user-friendly web interface. Streamline your workflow and boost productivity with our powerful web application.",
+      "serviceExpectation": "Our web application brings the power of AI-driven model calibration right to your browser. With an intuitive interface and powerful features, you can manage your calibration projects more efficiently than ever before. Upload your data, configure your models, and initiate calibration processes with just a few clicks. Our web app handles the complex computations in the cloud, allowing you to focus on interpreting results and making informed decisions.Collaborate with team members in real-time, share results, and track the progress of your calibration projects. Our web app is designed to enhance productivity and streamline communication within your organization. With built-in visualization tools and customizable dashboards, you can gain insights from your calibration results quickly and easily. Export your data and charts for use in reports or presentations with a single click.",
+      "serviceExpectationList": [
+        {
+          "item": "Intuitive Interface"
+        },
+        {
+          "item": "Cloud-Powered Computation"
+        },
+        {
+          "item": "Real-Time Collaboration"
+        },
+        {
+          "item": "Advanced Visualization"
+        },
+        {
+          "item": "Customizable Dashboards"
+        },
+        {
+          "item": "Seamless Integration"
+        }
+      ],
+      "serviceQualifications": "Morbi lorem proin morbi tempor risus. Nisl lobortis diam id faucibus pretium vitae suspendisse sed accumsan. Sodales morbi tristique elit cursus gravida. Ullamcorper commodo eget pulvinar pretium. Condimentum rhoncus commodo amet nec auctor nibh vel mi blandit. Neque ultrices nunc condimentum morbi risus tincidunt. Vel arcu lacus non ornare. Porttitor in rhoncus magna augue adipiscing.",
+      "serviceQualificationsList": [
+        {
+          "item": "It’s scalable and secure"
+        },
+        {
+          "item": "Artificial Intelligence Feature"
+        },
+        {
+          "item": "Offline version available"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "outsource-calibration",
+      "title": "Outsource your model calibration to us",
+      "excerpt": "Outsourcing your model calibration to our team of experts allows you to focus on your core business.",
+      "iconLight": "/images/services/loan.svg",
+      "iconDark": "/images/services/loan-dark.svg",
+      "featureImage": "/images/services/service-single1.png",
+      "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+      "serviceDetails": "Leverage our expertise and advanced AI technology to optimize your physical models without the overhead. Fast, accurate, and cost-effective calibration solutions tailored to your needs.",
+      "serviceExpectation": "Outsourcing your model calibration to our team of experts allows you to focus on your core business while we handle the complex task of optimizing your physical models. Our state-of-the-art AI-driven approach ensures accuracy, speed, and cost-effectiveness.By leveraging our expertise, you gain access to cutting-edge calibration techniques without the need for significant investment in hardware, software, or specialized personnel. This means faster time-to-market and reduced operational costs for your organization. Our team has extensive experience across various industries, allowing us to understand the unique challenges of your specific domain. We work closely with you to ensure that our calibration solutions align perfectly with your business objectives and quality standards. With our outsourcing service, you benefit from continuous improvement and updates to our calibration methodologies, ensuring that your models always perform at their best, giving you a competitive edge in your market.",
+      "serviceExpectationList": [
+        {
+          "item": "Cost-Effective"
+        },
+        {
+          "item": "Time-Saving"
+        },
+        {
+          "item": "Expertise On-Demand"
+        },
+        {
+          "item": "Scalable Solutions"
+        },
+        {
+          "item": "Advanced Technology"
+        },
+        {
+          "item": "Improved Accuracy"
+        }
+      ],
+      "serviceQualifications": "Morbi lorem proin morbi tempor risus. Nisl lobortis diam id faucibus pretium vitae suspendisse sed accumsan. Sodales morbi tristique elit cursus gravida. Ullamcorper commodo eget pulvinar pretium. Condimentum rhoncus commodo amet nec auctor nibh vel mi blandit. Neque ultrices nunc condimentum morbi risus tincidunt. Vel arcu lacus non ornare. Porttitor in rhoncus magna augue adipiscing.",
+      "serviceQualificationsList": [
+        {
+          "item": "It’s scalable and secure"
+        },
+        {
+          "item": "Artificial Intelligence Feature"
+        },
+        {
+          "item": "Offline version available"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "inverse-design",
+      "title": "Inverse Design",
+      "excerpt": "By integrating inverse design into your business, you can dramatically reduce development time, improve performance, and lower costs.",
+      "iconLight": "/images/services/finance.svg",
+      "iconDark": "/images/services/finance-dark.svg",
+      "featureImage": "/images/services/service-single1.png",
+      "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
+      "serviceDetails": "Transform the way you approach design and engineering with our AI-powered inverse design solutions. By specifying your desired outcomes, our technology generates optimal designs that meet your exact specifications, accelerating innovation and efficiency.",
+      "serviceExpectation": "Inverse design flips the traditional design process on its head. Instead of iteratively tweaking designs to meet your requirements, you start with the desired outcomes, and our AI algorithms generate the optimal design parameters to achieve them. This revolutionary approach drastically reduces development time and resources.\n\nOur AI-driven inverse design tool analyzes your specified performance criteria and explores the design space to find the most efficient and effective solutions. Whether you're developing new materials, components, or systems, our technology ensures that you achieve the best possible designs without the trial-and-error typically involved in the process.\n\nWe integrate seamlessly with your existing workflows, providing intuitive interfaces and compatibility with standard engineering tools. Our platform enables you to visualize potential designs, compare alternatives, and refine specifications, all within a user-friendly environment.\n\nBy adopting inverse design, you can accelerate innovation, reduce costs, and bring superior products to market faster than ever before.",
+      "serviceExpectationList": [
+        {
+          "item": "Rapid Prototyping"
+        },
+        {
+          "item": "Optimal Performance"
+        },
+        {
+          "item": "Reduced Development Time"
+        },
+        {
+          "item": "Cost Efficiency"
+        },
+        {
+          "item": "Innovative Solutions"
+        },
+        {
+          "item": "Enhanced Competitive Edge"
+        }
+      ],
+      "serviceQualifications": "Our team brings years of experience in AI, engineering, and design optimization. We are committed to providing scalable, secure, and innovative solutions tailored to your needs. Our technology leverages cutting-edge AI algorithms and is designed to integrate smoothly into your existing processes.",
+      "serviceQualificationsList": [
+        {
+          "item": "Experienced Team"
+        },
+        {
+          "item": "Customized Solutions"
+        },
+        {
+          "item": "Secure and Scalable Technology"
+        }
+      ]
+    }
+  ]
+}

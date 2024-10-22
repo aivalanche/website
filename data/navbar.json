@@ -1,0 +1,100 @@
+{
+  "menuData": {
+    "logoLight": "/images/logo_svg_black.svg",
+    "logoDark": "/images/logo_svg_white.svg",
+    "btnLlink": "/request-demo",
+    "menuContent": [
+      {
+        "id": 1,
+        "title": "Home",
+        "path": "/",
+        "newTab": false
+      },
+      {
+        "id": 3,
+        "title": "Solutions",
+        "path:": "/services",
+        "submenu": [
+          {
+            "id": 3.1,
+            "title": "On-site Deployment",
+            "path": "/services/on-site-deployment",
+            "newTab": false
+          },
+          {
+            "id": 3.2,
+            "title": "Cloud web app",
+            "path": "/services/cloud-web-app",
+            "newTab": false
+          },
+          {
+            "id": 3.3,
+            "title": "Outsource your model calibration to us",
+            "path": "/services/outsource-calibration",
+            "newTab": false
+          },
+          {
+            "id": 3.4,
+            "title": "Inverse Design",
+            "path": "/services/inverse-design",
+            "newTab": false
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Industry",
+        "submenu": [
+          {
+            "id": 5.1,
+            "title": "Automotive & Aerospace",
+            "path": "/industry/automotive-aerospace",
+            "newTab": false
+          },
+          {
+            "id": 5.3,
+            "title": "Photonics & Optics",
+            "path": "/industry/photonics-optics",
+            "newTab": false
+          },
+          {
+            "id": 5.4,
+            "title": "Manufacturing & Engineering",
+            "path": "/industry/manufacturing-engineering",
+            "newTab": false
+          },
+          {
+            "id": 5.5,
+            "title": "Energy Systems & Autonomous Systems",
+            "path": "/industry/autonomous-energy-systems",
+            "newTab": false
+          },
+          {
+            "id": 5.6,
+            "title": "Robotics & Optics",
+            "path": "/industry/robotics-autonomous-systems",
+            "newTab": false
+          },
+          {
+            "id": 5.7,
+            "title": "Biomedicine & Pharmaceutics",
+            "path": "/industry/biomedicine-pharmaceuticals",
+            "newTab": false
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "About",
+        "path": "/about",
+        "newTab": false
+      },
+      {
+        "id": 6,
+        "title": "Contact Us",
+        "path": "/contact",
+        "newTab": false
+      }
+    ]
+  }
+}
