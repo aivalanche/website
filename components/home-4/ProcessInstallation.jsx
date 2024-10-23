@@ -12,6 +12,7 @@ import account from '@/public/images/home-4-img/account.png'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useRef } from 'react'
+import Link from 'next/link'
 
 const ProcessInstallation = () => {
   const ref = useRef(null)
@@ -110,7 +111,12 @@ const ProcessInstallation = () => {
           </div>
         ))}
       </motion.div>
-      <button className="btn-outline mx-auto mt-15 flex">Request Demo</button>
+      <div className="flex justify-center mt-5">
+        <Link href="/contact">
+          <button className="btn-outline mx-auto mt-15 flex">Request Demo</button>
+        </Link>
+      </div>
+
     </section>
   )
 }

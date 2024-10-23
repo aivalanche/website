@@ -1,5 +1,7 @@
 import { HeroDarkShapeSVG, HeroLightShapeSVG } from '@/data/svgImages'
 import FadeUpAnimation from '../animations/FadeUpAnimation'
+import Link from 'next/link'
+
 
 const Hero = () => {
   return (
@@ -26,7 +28,9 @@ const Hero = () => {
           </p>
 
           <div className="mx-auto flex flex-col items-center justify-center gap-4 md:flex-row">
-            <button className="btn">Contact Us</button>
+            <Link href="/contact">
+              <button className="btn">Contact Us</button>
+            </Link>
             {/* <button className="btn-outline px-1">Get a Demo</button> */}
           </div>
         </div>
