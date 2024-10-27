@@ -68,9 +68,8 @@ const BlogSidebar = ({ blogSidebarData, setActive, search, setSearch }) => {
               {uniqueCategories.map((category) => (
                 <Link
                   href={`/categories/${category.data.categories}`}
-                  className={`group relative flex items-center justify-between py-5 font-jakarta_sans text-lg font-medium before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform  before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white ${
-                    setActive == category.data.categories ? 'blogActive' : ''
-                  } `}
+                  className={`group relative flex items-center justify-between py-5 font-jakarta_sans text-lg font-medium before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform  before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white ${setActive == category.data.categories ? 'blogActive' : ''
+                    } `}
                   key={category}>
                   {category.data.categories}
                   <FontAwesomeIcon icon={faAngleRight} className="hidden group-[.blogActive]:block" />

@@ -19,7 +19,7 @@ const Approach = () => {
           <div className="relative">
             <p className="section-tagline">Get in contact with us</p>
 
-            <h2 className="mb-8">We provide the following solutions.</h2>
+            <h2 className="mb-8">AI-based validation, calibration, optimization or inverse design</h2>
             {/* <p className="mb-11">
               Monitor chatbot performance with detailed analytics and reports. Provide live chat support to your
               customers.
@@ -32,7 +32,7 @@ const Approach = () => {
                     className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-primary"
                   />
                 </span>
-                <span className="font-jakarta_sans font-semibold">On-site Deployment </span>
+                <span className="font-jakarta_sans font-semibold">On-site deployment </span>
               </li>
               <li className="flex items-center gap-x-2 rounded border border-dashed border-gray-100 p-2.5 dark:border-borderColor-dark">
                 <span className=" shadow-icon relative h-10 w-10 gap-6 rounded-full bg-[#F3F8E8]  dark:bg-dark-200">
@@ -41,7 +41,7 @@ const Approach = () => {
                     className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-primary"
                   />
                 </span>
-                <span className="font-jakarta_sans font-semibold"> Cloud web app</span>
+                <span className="font-jakarta_sans font-semibold"> Cloud web based app</span>
               </li>
               <li className="flex items-center gap-x-2 rounded border border-dashed border-gray-100 p-2.5 dark:border-borderColor-dark">
                 <span className=" shadow-icon relative h-10 w-10 gap-6 rounded-full bg-[#F3F8E8]  dark:bg-dark-200">
@@ -50,9 +50,9 @@ const Approach = () => {
                     className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-primary"
                   />
                 </span>
-                <span className="font-jakarta_sans font-semibold"> Outsource your model calibration to us </span>
+                <span className="font-jakarta_sans font-semibold"> Outsourced service </span>
               </li>
-              <li className="flex items-center gap-x-2 rounded border border-dashed border-gray-100 p-2.5 dark:border-borderColor-dark">
+              {/* <li className="flex items-center gap-x-2 rounded border border-dashed border-gray-100 p-2.5 dark:border-borderColor-dark">
                 <span className=" shadow-icon relative h-10 w-10 gap-6 rounded-full bg-[#F3F8E8]  dark:bg-dark-200">
                   <FontAwesomeIcon
                     icon={faCheck}
@@ -60,7 +60,7 @@ const Approach = () => {
                   />
                 </span>
                 <span className="font-jakarta_sans font-semibold"> Inverse Design </span>
-              </li>
+              </li> */}
             </ul>
             <Link href="/services" className="btn">
               Read More

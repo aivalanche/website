@@ -38,7 +38,7 @@ const HomePage4 = () => {
         <TopIntegration /> */}
 
         {/* <FinancialBlog className="pb-150 pt-150 dark:bg-dark-300" /> */}
-        <CallToAction title="Deliver Simulation Models On Time. Stay Ahead Of Competition" />
+        {/* <CallToAction title="Deliver Simulation Models On Time. Stay Ahead Of Competition" /> */}
       </main>
       <Footer />
     </>

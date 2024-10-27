@@ -21,10 +21,10 @@ const Hero = () => {
         <div className="relative z-10 text-center ">
           {/* <p className="mb-8 font-medium uppercase max-lg:mb-4">50K+ TRUSTED BUSINESSES</p> */}
           <h1 className="mb-12 max-md:mb-8">
-            Create and Deliver Simulation <br /> Models on Time.
+            Optimize and design your simulation <br /> models with aivalanche
           </h1>
           <p className="mx-auto mb-12 max-w-[590px] max-md:mb-8">
-            aivalanche - 10x faster than other model fitting solutions
+            20% shorter time to market by 50% shorter design time
           </p>
 
           <div className="mx-auto flex flex-col items-center justify-center gap-4 md:flex-row">

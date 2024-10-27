@@ -4,7 +4,7 @@ import React from 'react'
 export const RobustFeaturesData = [
   {
     id: 1,
-    title: 'Automatic model calibration with AI',
+    title: 'Automatic model validation, calibration & optimization with AI',
     iconLight: '/images/home-8-img/ai-feature-4.svg',
     iconDark: '/images/home-8-img/ai-feature-4-dark.svg',
 
@@ -12,21 +12,21 @@ export const RobustFeaturesData = [
   },
   {
     id: 2,
-    title: 'Easy data management and versioning',
+    title: 'User-friendly AI tool for everyone. No need for an AI expert.',
     iconLight: '/images/home-8-img/ai-feature-2.svg',
     iconDark: '/images/home-8-img/ai-feature-2-dark.svg',
     desc: 'The prevailing view asumed lorem ipsum was born as nonsense text.',
   },
   {
     id: 3,
-    title: 'Automatic model validation and documentation',
+    title: 'AI-based inverse design tool',
     iconLight: '/images/home-8-img/ai-feature-3.svg',
     iconDark: '/images/home-8-img/ai-feature-3-dark.svg',
     desc: 'The prevailing view asumed lorem ipsum was born as nonsense text.',
   },
   {
     id: 4,
-    title: 'Standard model templates',
+    title: 'Compatible with your existing simulators and know-how',
     iconLight: '/images/home-8-img/ai-feature-1.svg',
     iconDark: '/images/home-8-img/ai-feature-1-dark.svg',
     desc: 'The prevailing view asumed lorem ipsum was born as nonsense text.',

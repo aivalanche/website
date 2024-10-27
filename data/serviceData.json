@@ -6,29 +6,33 @@
       "title": "On-site deployment",
       "excerpt": "We integrate our AI solution seamlessly into your current systems so there's no need to learn new platforms.",
       "iconLight": "/images/services/investment.svg",
-      "iconDark": "/images/solution/investment-dark.svg",
-      "featureImage": "/images/solution/on-site-deployment.svg",
+      "iconDark": "/images/services/investment-dark.svg",
+      "featureImage": "/images/services/service-single1.png",
       "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
-      "serviceDetails": "In the world of engineering, manufacturing, and research, the accuracy of physical models is paramount. But the process of model calibration and tuning can be complex, time-consuming, and prone to error. That's where we come in.",
-      "serviceExpectation": "Our AI algorithms are built specifically for your models. We examine your unique parameters and characteristics to create a tailored solution that fits your exact needs. This means faster, more accurate calibration for your specific use case. We integrate our AI solution seamlessly into your current systems. There's no need to overhaul your existing infrastructure or learn new platforms. Our technology works within your familiar environment, minimizing disruption to your workflow. Our AI takes over the repetitive tasks of calibration and tuning. This drastically reduces the need for manual adjustments, freeing up your team's time and eliminating human errors. You get consistent, precise results without the tedium.Our AI processes and analyzes massive datasets quickly. It uncovers hidden patterns and relationships in your data that humans might miss. This leads to deeper insights and more informed decision-making for your model optimization.",
+      "serviceDetails": "You are worried about your data management, IP security and you want to keep everything within your company’s closed doors \n . Make aivalanche your own tool. Exploit it to its full potential alongside every optimization challenge in your company. Whether you are doing calibration or validation of a simulation model,  or maybe doing some parameter identification, extraction and fine tuning for an inverse design process, aivalanche will be there to make it 10 times more efficient",
+      "serviceExpectation": "We will be there to support and make aivalanche an integrated part of your team, which works seamlessly in harmony with your current infrastructure. We ensure full compatibility with your simulator, your existing models, and then leave you to explore the full potential of the tool via the user-friendly GUI that does not need any AI expertise. You think about the problem and aivalanche will think about the solution.",
+      "serviceExpectation2": "Bringing aivalanche to your design/optimization team means being faster and more accurate while freeing some time from your best employees to make use of their creativity. Whether you are looking for the single best solution, or maybe for a set of solutions which satisfy your minimum requirements, aivalanche will do the boring and tiring iterative process of parameter identification, until it finds the solution/s you are looking for. ",
       "serviceExpectationList": [
         {
-          "item": "Accelerated development"
+          "item": "Full digitalization of design/optimization process"
         },
         {
-          "item": "Improved model accuracy"
+          "item": "Efficient calibration/design process"
         },
         {
-          "item": "Reduced costs"
+          "item": "Organized data/model management"
         },
         {
-          "item": "Enhanced innovation"
+          "item": "Compatibility with your existing infrastructure"
         },
         {
-          "item": "Scalable solutions"
+          "item": "Flexible and multipurpose tool"
         },
         {
-          "item": "Competitive advantage"
+          "item": "User-friendly interface"
+        },
+        {
+          "item": "Within 24h technical support"
         }
       ],
       "serviceQualifications": "Morbi lorem proin morbi tempor risus. Nisl lobortis diam id faucibus pretium vitae suspendisse sed accumsan. Sodales morbi tristique elit cursus gravida. Ullamcorper commodo eget pulvinar pretium. Condimentum rhoncus commodo amet nec auctor nibh vel mi blandit. Neque ultrices nunc condimentum morbi risus tincidunt. Vel arcu lacus non ornare. Porttitor in rhoncus magna augue adipiscing.",
@@ -53,26 +57,32 @@
       "iconDark": "/images/services/sales-dark.svg",
       "featureImage": "/images/services/service-single1.png",
       "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
-      "serviceDetails": "Access our cutting-edge AI-driven model calibration tools through an intuitive, user-friendly web interface. Streamline your workflow and boost productivity with our powerful web application.",
-      "serviceExpectation": "Our web application brings the power of AI-driven model calibration right to your browser. With an intuitive interface and powerful features, you can manage your calibration projects more efficiently than ever before. Upload your data, configure your models, and initiate calibration processes with just a few clicks. Our web app handles the complex computations in the cloud, allowing you to focus on interpreting results and making informed decisions.Collaborate with team members in real-time, share results, and track the progress of your calibration projects. Our web app is designed to enhance productivity and streamline communication within your organization. With built-in visualization tools and customizable dashboards, you can gain insights from your calibration results quickly and easily. Export your data and charts for use in reports or presentations with a single click.",
+      "serviceDetails": "Embrace full digitalization by accessing our cutting edge AI drive model optimization tool through an intuitive and powerful web interface. Streamline your design workflow and reduce your time to market with our cloud base aivalanche.",
+      "serviceExpectation": "Full aivalanche functionalities right on your browser. From parameter identification and extraction, to model validation, calibration and optimization, as well as inverse design process with just a few clicks. Our web app handles the complex computations in the cloud, allowing you to focus on interpreting results and making informed decisions. Collaborate with team members in real-time, share results, and track the progress of your optimization projects. The web app is designed to enhance productivity and streamline communication within your organization. With built-in visualization tools and customizable dashboards, you can gain insights from your calibration results quickly and easily. Export your data and charts for use in reports or presentations with a single click.",
       "serviceExpectationList": [
         {
-          "item": "Intuitive Interface"
+          "item": "Full digitalization of design/optimization process"
         },
         {
-          "item": "Cloud-Powered Computation"
+          "item": "Efficient calibration/design process"
         },
         {
-          "item": "Real-Time Collaboration"
+          "item": "Multi-user access in a collaborative/shared environment"
         },
         {
-          "item": "Advanced Visualization"
+          "item": "Organized data/model management"
         },
         {
-          "item": "Customizable Dashboards"
+          "item": "Compatibility with your existing infrastructure"
         },
         {
-          "item": "Seamless Integration"
+          "item": "Flexible and multipurpose tool"
+        },
+        {
+          "item": "Customizable dashboards "
+        },
+        {
+          "item": "Within 24h technical support"
         }
       ],
       "serviceQualifications": "Morbi lorem proin morbi tempor risus. Nisl lobortis diam id faucibus pretium vitae suspendisse sed accumsan. Sodales morbi tristique elit cursus gravida. Ullamcorper commodo eget pulvinar pretium. Condimentum rhoncus commodo amet nec auctor nibh vel mi blandit. Neque ultrices nunc condimentum morbi risus tincidunt. Vel arcu lacus non ornare. Porttitor in rhoncus magna augue adipiscing.",
@@ -129,50 +139,6 @@
         },
         {
           "item": "Offline version available"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "slug": "inverse-design",
-      "title": "Inverse Design",
-      "excerpt": "By integrating inverse design into your business, you can dramatically reduce development time, improve performance, and lower costs.",
-      "iconLight": "/images/services/finance.svg",
-      "iconDark": "/images/services/finance-dark.svg",
-      "featureImage": "/images/services/service-single1.png",
-      "videoLink": "https://www.youtube.com/embed/YE7VzlLtp-4?si=XvNRN6ztByvZQzqh",
-      "serviceDetails": "Transform the way you approach design and engineering with our AI-powered inverse design solutions. By specifying your desired outcomes, our technology generates optimal designs that meet your exact specifications, accelerating innovation and efficiency.",
-      "serviceExpectation": "Inverse design flips the traditional design process on its head. Instead of iteratively tweaking designs to meet your requirements, you start with the desired outcomes, and our AI algorithms generate the optimal design parameters to achieve them. This revolutionary approach drastically reduces development time and resources.\n\nOur AI-driven inverse design tool analyzes your specified performance criteria and explores the design space to find the most efficient and effective solutions. Whether you're developing new materials, components, or systems, our technology ensures that you achieve the best possible designs without the trial-and-error typically involved in the process.\n\nWe integrate seamlessly with your existing workflows, providing intuitive interfaces and compatibility with standard engineering tools. Our platform enables you to visualize potential designs, compare alternatives, and refine specifications, all within a user-friendly environment.\n\nBy adopting inverse design, you can accelerate innovation, reduce costs, and bring superior products to market faster than ever before.",
-      "serviceExpectationList": [
-        {
-          "item": "Rapid Prototyping"
-        },
-        {
-          "item": "Optimal Performance"
-        },
-        {
-          "item": "Reduced Development Time"
-        },
-        {
-          "item": "Cost Efficiency"
-        },
-        {
-          "item": "Innovative Solutions"
-        },
-        {
-          "item": "Enhanced Competitive Edge"
-        }
-      ],
-      "serviceQualifications": "Our team brings years of experience in AI, engineering, and design optimization. We are committed to providing scalable, secure, and innovative solutions tailored to your needs. Our technology leverages cutting-edge AI algorithms and is designed to integrate smoothly into your existing processes.",
-      "serviceQualificationsList": [
-        {
-          "item": "Experienced Team"
-        },
-        {
-          "item": "Customized Solutions"
-        },
-        {
-          "item": "Secure and Scalable Technology"
         }
       ]
     }

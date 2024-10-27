@@ -32,12 +32,6 @@
             "title": "Outsource your model calibration to us",
             "path": "/services/outsource-calibration",
             "newTab": false
-          },
-          {
-            "id": 3.4,
-            "title": "Inverse Design",
-            "path": "/services/inverse-design",
-            "newTab": false
           }
         ]
       },

@@ -31,7 +31,7 @@ const ProcessInstallation = () => {
       id: 2,
       lightImg: accountProcess,
       darkImg: accountProcessDark,
-      title: 'Set Up Ranges',
+      title: 'Designate your goal',
       arrow: rightArrow,
       darkArrow: rightArrowDark,
     },
@@ -39,7 +39,7 @@ const ProcessInstallation = () => {
       id: 3,
       lightImg: accountSolutions,
       darkImg: accountSolutionsDark,
-      title: 'Final Model',
+      title: 'Fetch your model',
     },
   ]
 

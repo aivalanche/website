@@ -42,7 +42,7 @@ const ServiceContent = ({ data }) => {
           <div className="grid auto-rows-max grid-cols-12 gap-y-15 md:gap-8 lg:gap-16">
             <div className="self-start rounded-medium bg-white p-2.5 shadow-nav dark:bg-dark-200 max-md:static max-md:col-span-full max-md:hidden md:sticky md:top-20 md:col-span-6 lg:col-span-4">
               <div className="rounded border border-dashed border-gray-100 px-10 pb-7 pt-9 dark:border-borderColor-dark ">
-                <h3 className="mb-3">Categories</h3>
+                <h3 className="mb-3">Solutions</h3>
                 <ul className="[&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed  [&>*:not(:last-child)]:border-gray-100  dark:[&>*:not(:last-child)]:border-borderColor-dark">
                   {ServiceData?.map((services) => (
                     <li className={`group ${services.slug === data.slug ? 'tabActive' : ''}`} key={services.id}>
@@ -73,8 +73,9 @@ const ServiceContent = ({ data }) => {
                   />
                 </div>
 
-                <h3>What to Expect</h3>
+                <h3>{data.title}</h3>
                 <p>{data.serviceExpectation}</p>
+                <p>{data.serviceExpectation2}</p>
                 <ul>
                   {data.serviceExpectationList &&
                     data.serviceExpectationList.map((items, index) => <li key={index}> {items.item} </li>)}
