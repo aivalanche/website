@@ -1,6 +1,6 @@
-import ServiceBoxes from './ServiceBoxes'
+import IndustryBoxes from './IndustryBoxes'
 
-const Services = ({ sectionDetails = true }) => {
+const Industry = ({ sectionDetails = true }) => {
   return (
     <section className="relative bg-white pb-150 dark:bg-dark-300 sm:overflow-hidden">
       {/* <div className="absolute left-0 right-0 top-25 h-full w-full bg-[url('/images/service-bg.png')] bg-cover bg-center bg-no-repeat opacity-70 invisible"></div> */}
@@ -11,11 +11,11 @@ const Services = ({ sectionDetails = true }) => {
             <div className="rounded-full bg-primary-200/25 blur-[145px] lg:-ml-[170px] lg:h-[330px] lg:w-[330px] xl:h-[442px] xl:w-[442px]"></div>
             <div className="lg-ml-[170px] rounded-full bg-primary-200/20 blur-[145px] lg:h-[330px] lg:w-[330px] xl:h-[442px] xl:w-[442px]"></div>
           </div>
-          <ServiceBoxes />
+          <IndustryBoxes />
         </div>
       </div>
     </section>
   )
 }
 
-export default Services
+export default Industry

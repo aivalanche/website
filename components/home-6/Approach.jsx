@@ -62,7 +62,7 @@ const Approach = () => {
                 <span className="font-jakarta_sans font-semibold"> Inverse Design </span>
               </li> */}
             </ul>
-            <Link href="/services" className="btn">
+            <Link href="/solutions" className="btn">
               Read More
             </Link>
           </div>

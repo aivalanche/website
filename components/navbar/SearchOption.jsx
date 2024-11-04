@@ -78,12 +78,12 @@ const SearchOption = ({ onClose }) => {
                   </Link>
                 </li>
                 <li className="group">
-                  <Link href="/services" className="  flex items-center justify-between py-5 font-medium">
+                  <Link href="/solutions" className="  flex items-center justify-between py-5 font-medium">
                     Financial Analysis <FontAwesomeIcon icon={faAngleRight} />
                   </Link>
                 </li>
                 <li className="group">
-                  <Link href="/services" className="flex items-center justify-between py-5 font-medium">
+                  <Link href="/solutions" className="flex items-center justify-between py-5 font-medium">
                     Sales & Trading <FontAwesomeIcon icon={faAngleRight} />
                   </Link>
                 </li>

@@ -13,24 +13,24 @@
       {
         "id": 3,
         "title": "Solutions",
-        "path:": "/services",
+        "secondaryPath": "/solutions",
         "submenu": [
           {
             "id": 3.1,
             "title": "On-site Deployment",
-            "path": "/services/on-site-deployment",
+            "path": "/solutions/on-site-deployment",
             "newTab": false
           },
           {
             "id": 3.2,
             "title": "Cloud web app",
-            "path": "/services/cloud-web-app",
+            "path": "/solutions/cloud-web-app",
             "newTab": false
           },
           {
             "id": 3.3,
             "title": "Outsource your model calibration to us",
-            "path": "/services/outsource-calibration",
+            "path": "/solutions/outsource-calibration",
             "newTab": false
           }
         ]
@@ -38,6 +38,7 @@
       {
         "id": 5,
         "title": "Industry",
+        "secondaryPath": "/industry",
         "submenu": [
           {
             "id": 5.1,
@@ -76,12 +77,6 @@
             "newTab": false
           }
         ]
-      },
-      {
-        "id": 2,
-        "title": "About",
-        "path": "/about",
-        "newTab": false
       },
       {
         "id": 6,

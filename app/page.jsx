@@ -11,13 +11,13 @@ import Approach from '@/components/home-6/Approach'
 
 
 export const metadata = {
-  title: 'Analytics',
+  title: 'aivalanche',
 }
 
 const HomePage4 = () => {
   return (
     <>
-      <SecondaryNavbar hideTopBar />
+      <SecondaryNavbar />
       <main>
         <Hero />
         <DataIntegration />
@@ -26,7 +26,7 @@ const HomePage4 = () => {
         <RobustFeatures />
 
         <ProcessInstallation />
-        <MembersCounter />
+        {/* <MembersCounter /> */}
         <Approach />
 
         {/* <Feature /> */}

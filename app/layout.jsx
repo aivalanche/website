@@ -29,8 +29,8 @@ const playfair = Playfair_Display({
 
 export const metadata = {
   title: {
-    default: 'Aplio - Aplio Sass Landing Page',
-    template: '%s - Aplio Sass Landing Page',
+    default: 'aivalanche',
+    template: '%s - aivalanche',
   },
   description:
     'Aplio is an exceptional Next js template tailored for SaaS landing websites. Embodying the essence of modern SaaS platforms.',

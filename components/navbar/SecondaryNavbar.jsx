@@ -27,10 +27,15 @@ const SecondaryNavbar = ({ hideTopBar = false }) => {
   useEffect(() => {
     window.addEventListener('scroll', handleStickyNavbar)
 
+    const hideTimer = setTimeout(() => {
+      setSticky(true)
+    }, 1500)
+
     return () => {
       window.removeEventListener('scroll', handleStickyNavbar)
+      clearTimeout(hideTimer)
     }
-  }, [])
+  }, [sticky])
 
   return (
     <header>
@@ -68,54 +73,10 @@ const SecondaryNavbar = ({ hideTopBar = false }) => {
                     )}>
                     {menuItem.title}
                   </Link>
-                ) : menuItem.megaMenu ? (
-                  <>
-                    <Link
-                      href="#"
-                      className={cn(
-                        'hover:border-borderColour dark:hover:border-borderColour/10 group flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium leading-8 text-paragraph transition-colors duration-500 hover:bg-white hover:duration-500 dark:text-white dark:hover:bg-dark-200 lg:px-4 xl:px-5',
-                        menuItem.title === 'page' ? 'active' : '',
-                      )}>
-                      {menuItem.title}
-                      <FontAwesomeIcon
-                        icon={faAngleDown}
-                        className="ml-1 mt-1 text-paragraph duration-500 group-hover:rotate-180 dark:text-white"
-                      />
-                    </Link>
-                    <div className="absolute left-0 top-12 z-10 grid w-full origin-top scale-y-0 items-center gap-15  rounded-medium bg-white p-2.5 text-gray-900 opacity-0 shadow-lg duration-500  group-hover:scale-y-100 group-hover:opacity-100 dark:bg-dark-200 dark:text-white md:grid-cols-12">
-                      <ul className="col-span-8 columns-3 gap-10 px-15">
-                        {menuItem.submenu.map((submenuItem) => (
-                          <li
-                            className="relative overflow-hidden py-2.5 text-base capitalize text-paragraph before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform  before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
-                            key={submenuItem.id}>
-                            <Link href={submenuItem.path} className="flex">
-                              {submenuItem.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="relative col-span-4 h-full">
-                        <Image
-                          src={menuItem.imageLight}
-                          width={350}
-                          height={350}
-                          alt="navbar"
-                          className=" !w-full rounded-2xl dark:hidden"
-                        />
-                        <Image
-                          src={menuItem.imageDark}
-                          width={350}
-                          height={350}
-                          alt="navbar"
-                          className="hidden !w-full rounded-2xl  dark:block"
-                        />
-                      </div>
-                    </div>
-                  </>
                 ) : (
                   <>
                     <Link
-                      href="#"
+                      href={menuItem.secondaryPath}
                       className={cn(
                         'flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium capitalize leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5',
                         menuItem.title === 'home' ? 'active' : '',
@@ -144,22 +105,6 @@ const SecondaryNavbar = ({ hideTopBar = false }) => {
           </ul>
 
           <ul className="ml-auto flex items-center  [&>*:not(:last-child)]:me-2.5">
-            {/* <li className="">
-              <button
-                onClick={() => setShowSearch(!showSearch)}
-                className="rounded-full bg-white p-2.5 dark:bg-dark-200 "
-                id="open-btn">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M9.11278 0C14.1369 0 18.2245 4.08758 18.2245 9.11278C18.2245 11.2861 17.4592 13.5472 16.1845 14.8512L20 18.6667L18.6667 20L14.8512 16.1856C13.5667 17.4603 11.2861 18.2245 9.11278 18.2245C4.08758 18.2245 0 14.1369 0 9.11278C0 4.08758 4.08758 0 9.11278 0ZM9.11278 16.3395C13.0974 16.3395 16.3395 13.0974 16.3395 9.11278C16.3395 5.12818 13.0974 1.88608 9.11278 1.88608C5.12709 1.88608 1.88499 5.12818 1.88499 9.11278C1.88499 13.0974 5.12709 16.3395 9.11278 16.3395Z"
-                    fill=""
-                    className="fill-paragraph dark:fill-white"
-                  />
-                </svg>
-              </button>
-            </li> */}
             <li className="max-lg:hidden">
               <Link href="/request-demo" className="btn btn-navbar btn-sm">
                 Request Demo

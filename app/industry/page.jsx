@@ -1,13 +1,13 @@
-import FeatureBlog from '@/components/blogs/FeatureBlog'
-import RecentNews from '@/components/blogs/RecentNews'
+
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import NewsLetter from '@/components/shared/NewsLetter'
 import PageHero from '@/components/shared/PageHero'
 import getMarkDownData from '@/utils/getMarkDownData'
+import Industry from '@/components/shared/Industry'
 
 export const metadata = {
-  title: 'Blog',
+  title: 'Industry',
 }
 
 const Blog = () => {
@@ -16,9 +16,8 @@ const Blog = () => {
     <>
       <SecondaryNavbar />
       <main>
-        <PageHero subtitle="BLOG GRID" title="Recent blogs created <br/> by aplio" />
-        <FeatureBlog featureBlog={blogs} />
-        <RecentNews blogItemData={blogs} />
+        <PageHero subtitle="Industry applications" title="Integrated process design & optimization" />
+        <Industry sectionDetails={false} />
         <NewsLetter />
       </main>
       <Footer />

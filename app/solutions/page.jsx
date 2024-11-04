@@ -7,7 +7,7 @@ import Pricing from '@/components/shared/Pricing'
 import Services from '@/components/shared/Services'
 
 export const metadata = {
-  title: 'Services',
+  title: 'Solutions',
 }
 export default function ServicePage() {
   return (

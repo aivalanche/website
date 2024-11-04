@@ -5,7 +5,7 @@ export const FooterData = {
   footerText: 'Turpis tortor nunc sed amet et faucibus vitae morbi congue sed id mauris.',
   copyright: `${new Date().getFullYear()} aivalanche. All Rights Reserved`,
   email: 'support@aivalanche.de',
-  phone: '+3 230 705 5448',
+  phone: '+49 173 5338322',
   expolre: [
     {
       id: 1,
@@ -15,7 +15,7 @@ export const FooterData = {
     {
       id: 2,
       name: 'Solutions',
-      link: '/services',
+      link: '/solutions',
     },
     {
       id: 3,

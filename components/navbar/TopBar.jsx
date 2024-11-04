@@ -8,7 +8,7 @@ const TopBar = ({ sticky }) => {
         sticky ? ' scale-y-0' : 'scale-y-100',
       )}>
       <p className="font-medium text-paragraph dark:text-paragraph max-lg:text-sm">
-        Until recently, the prevailing view assumed
+        aivalanche
       </p>
     </div>
   )

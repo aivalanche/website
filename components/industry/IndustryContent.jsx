@@ -1,5 +1,5 @@
 'use client'
-import ServiceList from '@/data/serviceData'
+import IndustryList from '@/data/industryData'
 import { faAngleRight, faX } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
@@ -7,13 +7,13 @@ import Link from 'next/link'
 import { useState } from 'react'
 import ReactPlayer from 'react-player'
 
-const ServiceContent = ({ data }) => {
+const IndustryContent = ({ data }) => {
   const [modal, setModal] = useState(false)
   const openModal = (e) => {
     e.preventDefault()
     setModal(!modal)
   }
-  const { ServiceData } = ServiceList
+  const { IndustryData } = IndustryList
   return (
     <>
       {modal ? (
@@ -44,12 +44,12 @@ const ServiceContent = ({ data }) => {
               <div className="rounded border border-dashed border-gray-100 px-10 pb-7 pt-9 dark:border-borderColor-dark ">
                 <h3 className="mb-3">Solutions</h3>
                 <ul className="[&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed  [&>*:not(:last-child)]:border-gray-100  dark:[&>*:not(:last-child)]:border-borderColor-dark">
-                  {ServiceData?.map((services) => (
-                    <li className={`group ${services.slug === data.slug ? 'tabActive' : ''}`} key={services.id}>
+                  {IndustryData?.map((industry) => (
+                    <li className={`group ${industry.slug === data.slug ? 'tabActive' : ''}`} key={industry.id}>
                       <Link
                         className="relative flex items-center justify-between py-5 font-medium before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform  before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
-                        href={`/solutions/${services.slug}`}>
-                        {services.title}
+                        href={`/industry/${industry.slug}`}>
+                        {industry.title}
                         <FontAwesomeIcon icon={faAngleRight} className="hidden group-[.tabActive]:block" />
                       </Link>
                     </li>
@@ -73,36 +73,33 @@ const ServiceContent = ({ data }) => {
                   />
                 </div>
 
-                <h3>{data.title}</h3>
-                <p>{data.serviceExpectation}</p>
-                <p>{data.serviceExpectation2}</p>
-                <ul>
-                  {data.serviceExpectationList &&
-                    data.serviceExpectationList.map((items, index) => <li key={index}> {items.item} </li>)}
-                </ul>
-                {/* 
-                <div className="relative rounded-medium bg-white p-2.5 shadow-nav dark:bg-dark-200">
-                  <Image
-                    src="/images/services/video-bg.png"
-                    alt="service images"
-                    className="aspect-video w-full rounded"
-                    width={810}
-                    height={405}
-                  />
-                  <Link
-                    href=""
-                    onClick={openModal}
-                    className="absolute left-1/2 top-1/2 aspect-square w-[90px] -translate-x-1/2 -translate-y-1/2 max-md:w-15">
-                    <Image src="/images/services/play.svg" alt="play" className="rounded-full" fill={true} />
-                  </Link>
-                </div> */}
+                {/* <h3>{data.title}</h3> */}
+                <div className="blog-details">
+                  <h3>{data.firstParagraph.title}</h3>
+                  <div className="mb-12 flex items-center gap-x-2 ">
+                    <p>{data.firstParagraph.content}</p>
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 5 6" fill="none">
+                        <circle cx="2.5" cy="3" r="2.5" fill="" className="fill-[#D8DBD0] dark:fill-[#3B3C39]" />
+                      </svg>
+                    </span>
+                    <p>{data.date}</p>
+                  </div>
+                </div>
+                <div className="blog-details">
 
-                {/* <h3>Qualifications & Requirements</h3>
-                <p>{data.serviceQualifications}</p>
-                <ul>
-                  {data.serviceQualificationsList &&
-                    data.serviceQualificationsList.map((items, index) => <li key={index}> {items.item} </li>)}
-                </ul> */}
+
+                  <h3>{data.secondParagraph.title}</h3>
+                  <div className="mb-12 flex items-center gap-x-2 ">
+                    <p>{data.secondParagraph.content}</p>
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 5 6" fill="none">
+                        <circle cx="2.5" cy="3" r="2.5" fill="" className="fill-[#D8DBD0] dark:fill-[#3B3C39]" />
+                      </svg>
+                    </span>
+                    <p>{data.date}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -112,4 +109,4 @@ const ServiceContent = ({ data }) => {
   )
 }
 
-export default ServiceContent
+export default IndustryContent

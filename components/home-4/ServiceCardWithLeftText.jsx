@@ -70,7 +70,7 @@ export default function ServiceCardWithLeftText() {
               Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It&apos;s not Latin,
               though it looks like it
             </p>
-            <Link href="/services" className="btn">
+            <Link href="/solutions" className="btn">
               Get More Services
             </Link>
           </div>
@@ -93,11 +93,11 @@ export default function ServiceCardWithLeftText() {
                     <Image src={service.svg} alt="service logo" className="mb-6 inline-block dark:hidden" />
                     <Image src={service.darkSvg} alt="service logo" className="mb-6 hidden dark:inline-block" />
 
-                    <Link href={`/services/${service.slug}`} className="block">
+                    <Link href={`/solutions/${service.slug}`} className="block">
                       <h3 className="mb-2.5">{service.title}</h3>
                     </Link>
                     <p className="mb-6">{service.description}</p>
-                    <Link href={`/services/${service.slug}`} className="btn-outline btn-sm">
+                    <Link href={`/solutions/${service.slug}`} className="btn-outline btn-sm">
                       {service.button}
                     </Link>
                   </div>

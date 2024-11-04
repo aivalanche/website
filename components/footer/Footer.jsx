@@ -18,7 +18,7 @@ const Footer = () => {
               width={70}
               height={29}
             />
-            <p className="max-w-[350px] max-lg:mx-auto">{FooterData.footerText}</p>
+            {/* <p className="max-w-[350px] max-lg:mx-auto">{FooterData.footerText}</p> */}
           </div>
 
           <div className="hidden lg:col-span-2 lg:col-start-9 lg:block">

@@ -47,7 +47,7 @@ const RubustFeature = () => {
                 <p className="mb-8">
                   Our powerful solution streamlines the entire workflow, eliminating manual steps and ensuring your models are robust, well-documented, and ready to drive real-world impact in record time.
                 </p>
-                {/* <Link href="/services" className="btn btn-sm">
+                {/* <Link href="/solutions" className="btn btn-sm">
                   Read More
                 </Link> */}
               </div>
