@@ -29,7 +29,7 @@ const ContactInfo = () => {
                   />
                 </svg>
                 <h3 className="mb-2.5">Our Address</h3>
-                <p>2464 Royal Ln. Mesa, New Jersey 45463</p>
+                <p>Lortzingstraße 10, 81241, München</p>
               </div>
             </FadeUpAnimation>
             <FadeUpAnimation className="rounded-medium bg-white p-2.5 shadow-box dark:bg-dark-200">
@@ -48,7 +48,7 @@ const ContactInfo = () => {
                   />
                 </svg>
                 <h3 className="mb-2.5">Email Us</h3>
-                <Link href="mailto:hallo@aplio.com"> hallo@aplio.com </Link>
+                <Link href="mailto:hallo@aplio.com"> support@aivalanche.de </Link>
               </div>
             </FadeUpAnimation>
             <FadeUpAnimation className="rounded-medium bg-white p-2.5 shadow-box dark:bg-dark-200">
@@ -78,7 +78,7 @@ const ContactInfo = () => {
                   />
                 </svg>
                 <h3 className="mb-2.5">Call Us</h3>
-                <Link href="tel:+391(0)355684593">+391 (0)35 2568 4593</Link>
+                <Link href="tel:+391(0)355684593">+49 173 5338322</Link>
               </div>
             </FadeUpAnimation>
           </div>
