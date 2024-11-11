@@ -68,7 +68,7 @@ const ServiceContent = ({ data }) => {
                     className="w-full rounded"
                     width={788}
                     height={450}
-                    objectFit='cover'
+                    objectFit='contain'
 
                   />
                 </div>
