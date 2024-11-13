@@ -1,13 +1,55 @@
+'use client'
 import FadeUpAnimation from '@/components/animations/FadeUpAnimation'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import NewsLetter from '@/components/shared/NewsLetter'
-
-export const metadata = {
-  title: 'Request Demo Page',
-}
+import { useState } from 'react'
 
 const RequestDemo = () => {
+  const [status, setStatus] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('sending')
+
+    try {
+      const formData = {
+        name: e.target.username.value,
+        companyName: e.target.companyname.value,
+        contactNumber: e.target.contactno.value,
+        email: e.target.email.value,
+        message: e.target.message.value
+      }
+
+      const response = await fetch('/api/request-demo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        setStatus('error')
+        console.error('Send failed:', data.details)
+        return
+      }
+
+      if (data.details?.failed?.length > 0) {
+        setStatus('partial')
+        console.log('Partial send:', data.details)
+      } else {
+        setStatus('success')
+        e.target.reset()
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      setStatus('error')
+    }
+  }
+
   return (
     <>
       <SecondaryNavbar />
@@ -17,7 +59,6 @@ const RequestDemo = () => {
           <FadeUpAnimation className="container relative">
             <div className="mx-auto mb-12 max-w-[475px] text-center">
               <p className="section-tagline">Contact</p>
-
               <h2>Request A Demo</h2>
             </div>
             <div className="relative z-10 mx-auto max-w-[850px]">
@@ -26,9 +67,9 @@ const RequestDemo = () => {
                 <div className="-ml-[170px] h-[442px] w-[442px] rounded-full bg-primary-200/25 blur-[145px]"></div>
                 <div className="-ml-[170px] h-[442px] w-[442px] rounded-full bg-primary-200/20 blur-[145px]"></div>
               </div>
-              <div className=" rounded-medium bg-white p-2.5 shadow-nav  dark:bg-dark-200">
-                <div className=" rounded border border-dashed border-gray-100 bg-white p-12 dark:border-borderColor-dark dark:bg-dark-200 max-md:p-5  ">
-                  <form>
+              <div className="rounded-medium bg-white p-2.5 shadow-nav dark:bg-dark-200">
+                <div className="rounded border border-dashed border-gray-100 bg-white p-12 dark:border-borderColor-dark dark:bg-dark-200 max-md:p-5">
+                  <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-12 max-md:gap-y-10 md:gap-8 md:gap-x-12">
                       <div className="max-md:col-span-full md:col-span-6">
                         <label
@@ -38,8 +79,9 @@ const RequestDemo = () => {
                         </label>
                         <input
                           type="text"
-                          name="first-name"
+                          name="username"
                           id="username"
+                          required
                           placeholder="Name"
                           className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary"
                         />
@@ -48,12 +90,13 @@ const RequestDemo = () => {
                         <label
                           htmlFor="companyname"
                           className="mb-2 block font-jakarta_sans text-sm font-medium text-paragraph dark:text-white">
-                          Comapny name
+                          Company name
                         </label>
                         <input
                           type="text"
-                          name="company-name"
+                          name="companyname"
                           id="companyname"
+                          required
                           placeholder="Company Name"
                           className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary"
                         />
@@ -65,9 +108,10 @@ const RequestDemo = () => {
                           Contact No.
                         </label>
                         <input
-                          type="text"
-                          name="contact-number"
+                          type="tel"
+                          name="contactno"
                           id="contactno"
+                          required
                           placeholder="Contact Number"
                           className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary"
                         />
@@ -80,10 +124,11 @@ const RequestDemo = () => {
                         </label>
                         <input
                           type="email"
-                          name="first-name"
+                          name="email"
                           id="email"
+                          required
                           placeholder="Email"
-                          className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light   outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:focus:border-primary"
+                          className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:focus:border-primary"
                         />
                       </div>
                       <div className="col-span-full">
@@ -93,13 +138,29 @@ const RequestDemo = () => {
                           Message
                         </label>
                         <textarea
-                          name="first-name"
+                          name="message"
                           id="message"
+                          required
                           rows="10"
-                          className="block w-full resize-none rounded border border-borderColor bg-white px-5 py-2.5   text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:focus:border-primary"></textarea>
+                          className="block w-full resize-none rounded border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:focus:border-primary">
+                        </textarea>
                       </div>
                       <div className="col-span-full mx-auto text-center">
-                        <button className="btn">Request Now</button>
+                        <button
+                          type="submit"
+                          className="btn"
+                          disabled={status === 'sending'}>
+                          {status === 'sending' ? 'Sending...' : 'Request Now'}
+                        </button>
+                        {status === 'success' && (
+                          <p className="mt-4 text-green-600">Demo request sent successfully!</p>
+                        )}
+                        {status === 'partial' && (
+                          <p className="mt-4 text-yellow-600">Request sent with some delivery issues. We'll get back to you soon.</p>
+                        )}
+                        {status === 'error' && (
+                          <p className="mt-4 text-red-600">Failed to send request. Please try again.</p>
+                        )}
                       </div>
                     </div>
                   </form>

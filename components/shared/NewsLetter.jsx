@@ -4,19 +4,42 @@ import React, { useState } from 'react';
 
 const NewsLetter = () => {
   const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle, loading, success, error
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    setStatus('loading');
 
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
+
+      setStatus('success');
       setEmail('');
-      // You would typically make an actual API call here
-    } finally {
-      setIsLoading(false);
+
+      // Reset success message after 3 seconds
+      setTimeout(() => {
+        setStatus('idle');
+      }, 3000);
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      setStatus('error');
+
+      // Reset error message after 3 seconds
+      setTimeout(() => {
+        setStatus('idle');
+      }, 3000);
     }
   };
 
@@ -51,13 +74,13 @@ const NewsLetter = () => {
                   />
                   <button
                     type="submit"
-                    disabled={isLoading}
-                    className={`btn relative max-lg:col-span-full lg:col-span-4 ${isLoading ? 'opacity-70' : ''}`}
+                    disabled={status === 'loading'}
+                    className={`btn relative max-lg:col-span-full lg:col-span-4 ${status === 'loading' ? 'opacity-70' : ''}`}
                   >
-                    <span className={`transition-opacity ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+                    <span className={`transition-opacity ${status === 'loading' ? 'opacity-0' : 'opacity-100'}`}>
                       Get Started
                     </span>
-                    {isLoading && (
+                    {status === 'loading' && (
                       <span className="absolute inset-0 flex items-center justify-center">
                         <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
                           <circle
@@ -79,6 +102,12 @@ const NewsLetter = () => {
                     )}
                   </button>
                 </div>
+                {status === 'success' && (
+                  <p className="mt-2 text-green-600 text-sm">Successfully subscribed to newsletter!</p>
+                )}
+                {status === 'error' && (
+                  <p className="mt-2 text-red-600 text-sm">Failed to subscribe. Please try again.</p>
+                )}
               </form>
               <ul className="mt-6 flex items-center max-lg:justify-between max-lg:gap-y-2.5 max-md:flex-col lg:gap-5">
                 <li className="flex items-center">

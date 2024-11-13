@@ -78,7 +78,7 @@ const ContactInfo = () => {
                   />
                 </svg>
                 <h3 className="mb-2.5">Call Us</h3>
-                <Link href="tel:+391(0)355684593">+49 173 5338322</Link>
+                <Link href="tel:+49 173 5338322">+49 173 5338322</Link>
               </div>
             </FadeUpAnimation>
           </div>
