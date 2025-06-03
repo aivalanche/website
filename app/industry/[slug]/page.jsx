@@ -1,44 +1,46 @@
-import Head from 'next/head'
-
-import Footer from '@/components/footer/Footer'
+import ProcessInstallation from '@/components/home-4/ProcessInstallation'
+import DataIntegration from '@/components/home-4/DataIntegration'
+import Hero from '@/components/home-4/Hero'
+import CallToAction from '@/components/shared/CallToAction'
+import MembersCounter from '@/components/shared/MembersCounter'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
-import NewsLetter from '@/components/shared/NewsLetter'
-import IndustryContent from '@/components/industry/IndustryContent'
+import Footer from '@/components/footer/Footer'
+import RobustFeatures from '@/components/home-8/RubustFeature'
+import Approach from '@/components/home-6/Approach'
 
-import IndustryList from '@/data/industryData'
-
-
-
-export async function generateStaticParams() {
-  const { IndustryData } = IndustryList
-
-  return IndustryData.map((item) => ({
-    slug: item.slug,
-  }))
+export const metadata = {
+  title: 'aivalanche',
 }
 
-
-
-const IndustryDetails = (props) => {
-  const { IndustryData } = IndustryList
-  // console.log("IndustryData", IndustryData)
-
-  const dataFolder = 'content/blogs/'
-  const slug = props.params.slug
-  const data = IndustryData.find((post) => post.slug === slug)
-  // const postParams = blog.data
+const HomePage4 = () => {
   return (
     <>
       <SecondaryNavbar />
       <main>
-        <IndustryContent data={data} />
-        {/* <MembersCounter />
-        <Pricing className={'pt-150 max-md:pt-20'} /> */}
-        <NewsLetter />
+        <Hero />
+        <DataIntegration />
+        {/* <ShareClientMarquee /> */}
+
+        <RobustFeatures />
+
+        <ProcessInstallation />
+        {/* <MembersCounter /> */}
+        <Approach />
+
+        {/* <Feature /> */}
+        {/* <TeamMembers />
+
+        <ServiceCardWithLeftText /> */}
+
+        {/* <FAQWithLeftText />
+        <TopIntegration /> */}
+
+        {/* <FinancialBlog className="pb-150 pt-150 dark:bg-dark-300" /> */}
+        {/* <CallToAction title="Deliver Simulation Models On Time. Stay Ahead Of Competition" /> */}
       </main>
       <Footer />
     </>
   )
 }
 
-export default IndustryDetails
+export default HomePage4

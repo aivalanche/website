@@ -1,7 +1,6 @@
 'use client'
-import NavbarItem from '@/data/navbar'
 import { cn } from '@/utils/cn'
-import { faAngleDown, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,14 +8,29 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import SearchOption from './SearchOption'
-import TopBar from './TopBar'
+import NavbarItem from '@/data/navbar'
+
+const { menuData } = NavbarItem
+// Simplified navigation data
+const simplifiedMenu = {
+  logoLight: menuData.logoLight, // Update with your actual logo path
+  logoDark: menuData.logoDark,   // Update with your actual logo path
+  menuItems: [
+    { id: 1, title: 'Home', path: '/' },
+    { id: 2, title: 'LabFlow', path: '/#instrumentation-agent' },
+    { id: 3, title: 'OpticFlow', path: '/#inverse-optical-design' },
+    { id: 4, title: 'Sfera', path: '/#bsim4-optimizer' },
+    { id: 6, title: 'Contact Us', path: '/contact' },
+  ]
+};
 
 const SecondaryNavbar = ({ hideTopBar = false }) => {
-  const { menuData } = NavbarItem
+
   const pathname = usePathname()
   const [showSearch, setShowSearch] = useState(false)
   const [innerMobileMenu, setInnerMobileMenu] = useState(false)
   const [sticky, setSticky] = useState(false)
+
   const handleStickyNavbar = () => {
     if (window.scrollY >= 20) {
       setSticky(true)
@@ -24,6 +38,7 @@ const SecondaryNavbar = ({ hideTopBar = false }) => {
       setSticky(false)
     }
   }
+
   useEffect(() => {
     window.addEventListener('scroll', handleStickyNavbar)
 
@@ -39,19 +54,17 @@ const SecondaryNavbar = ({ hideTopBar = false }) => {
 
   return (
     <header>
-      {!hideTopBar && <TopBar sticky={sticky} />}
       <div
         className={cn(
-          'fixed left-0  z-50 w-full bg-transparent transition-all duration-500 max-md:z-[500]',
-          sticky ? 'nav-sticky ' : '',
-          !hideTopBar ? 'top-16' : 'top-8',
+          'fixed left-0 z-50 w-full bg-transparent transition-all duration-500 max-md:z-[500] nav-sticky',
         )}>
         <nav className="container relative flex items-center">
+          {/* Logo */}
           <div className="nav-logo">
             <Link href="/">
               <Image src={menuData.logoLight} alt="logo" className="dark:hidden" width={70} height={29} />
               <Image
-                src={menuData.logoDark}
+                src={simplifiedMenu.logoDark}
                 alt="logo dark version"
                 className="hidden dark:inline-block"
                 width={70}
@@ -59,58 +72,34 @@ const SecondaryNavbar = ({ hideTopBar = false }) => {
               />
             </Link>
           </div>
+
+          {/* Main Navigation - Desktop */}
           <ul className="nav-list hidden lg:ml-7 lg:flex xl:ml-15 [&>*:not(:last-child)]:me-1">
-            {menuData.menuContent.map((menuItem) => (
-              <li
-                className={`${menuItem.megaMenu ? 'group' : !menuItem.path ? 'group relative' : ''}`}
-                key={menuItem.id}>
-                {menuItem.path ? (
-                  <Link
-                    href={menuItem.path}
-                    className={cn(
-                      'flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium capitalize leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5',
-                      pathname === menuItem.path ? 'active' : '',
-                    )}>
-                    {menuItem.title}
-                  </Link>
-                ) : (
-                  <>
-                    <Link
-                      href={menuItem.secondaryPath}
-                      className={cn(
-                        'flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium capitalize leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5',
-                        menuItem.title === 'home' ? 'active' : '',
-                      )}>
-                      {menuItem.title}
-                      <FontAwesomeIcon
-                        icon={faAngleDown}
-                        className="ml-1 mt-1 text-paragraph duration-500 group-hover:rotate-180 dark:text-white"
-                      />
-                    </Link>
-                    <ul className="absolute left-0 top-12 z-10 min-w-[250px] origin-top scale-y-0 rounded-md bg-white p-5 opacity-0 duration-500  group-hover:scale-y-100 group-hover:opacity-100 dark:bg-dark-200 [&>*:not(:first-child)]:mt-2.5 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-borderColor dark:[&>*:not(:last-child)]:border-borderColor-dark">
-                      {menuItem.submenu.map((submenuItem) => (
-                        <li
-                          className="relative overflow-hidden pb-2.5 text-base capitalize text-paragraph duration-500 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0  before:bg-paragraph before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
-                          key={submenuItem.id}>
-                          <Link href={submenuItem.path} className="flex">
-                            {submenuItem.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
+            {simplifiedMenu.menuItems.map((menuItem) => (
+              <li key={menuItem.id}>
+                <Link
+                  href={menuItem.path}
+                  className={cn(
+                    'flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium capitalize leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5',
+                    pathname === menuItem.path ? 'active' : '',
+                  )}>
+                  {menuItem.title}
+                </Link>
               </li>
             ))}
           </ul>
 
-          <ul className="ml-auto flex items-center  [&>*:not(:last-child)]:me-2.5">
-            <li className="max-lg:hidden">
-              <Link href="/request-demo" className="btn btn-navbar btn-sm">
-                Request Demo
-              </Link>
-            </li>
-            <li className="max-lg:inline-block lg:hidden ">
+          {/* Combined Contact/Demo Button */}
+          <div className="ml-auto flex items-center">
+            <Link
+              href="/request-demo"
+              className="btn btn-navbar btn-sm text-white bg-primary hover:bg-primary-200 transition-colors duration-300"
+            >
+              Request Demo
+            </Link>
+
+            {/* Mobile Menu Toggle */}
+            <div className="ml-4 max-lg:inline-block lg:hidden">
               <button
                 className="mobile-menu-button relative h-10 w-10 rounded-full bg-white outline-none dark:bg-dark-200"
                 onClick={() => setInnerMobileMenu(!innerMobileMenu)}>
@@ -138,105 +127,38 @@ const SecondaryNavbar = ({ hideTopBar = false }) => {
                   />
                 </svg>
               </button>
-            </li>
-          </ul>
+            </div>
+          </div>
 
+          {/* Mobile Menu */}
           <div className={`mobile-menu max-lg:overflow-y-auto ${innerMobileMenu ? 'open' : ''}`}>
             <button
-              className=" navbar-toggle-close absolute right-6 top-5 h-10 w-10 rounded-full bg-white outline-none dark:bg-dark-200"
+              className="navbar-toggle-close absolute right-6 top-5 h-10 w-10 rounded-full bg-white outline-none dark:bg-dark-200"
               onClick={() => setInnerMobileMenu(!innerMobileMenu)}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
             <ul className="nav-list flex w-full max-w-[500px] flex-col gap-5 landscape:h-full">
-              {menuData.menuContent.map((menuItem) => (
-                <li className={`${menuItem.path ? '' : 'group relative'}`} key={menuItem.id}>
-                  {menuItem.path ? (
-                    <Link
-                      href={menuItem.path}
-                      className={cn(
-                        'flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5',
-                        pathname === menuItem.path ? 'active' : '',
-                      )}
-                      onClick={() => setInnerMobileMenu(!innerMobileMenu)}>
-                      {menuItem.title}
-                    </Link>
-                  ) : menuItem.megaMenu ? (
-                    <>
-                      <Link
-                        href="#"
-                        className="hover:border-borderColour dark:hover:border-borderColour/10 group flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium leading-8 text-paragraph transition-colors duration-500 hover:bg-white hover:duration-500 dark:text-white dark:hover:bg-dark-200 lg:px-4 xl:px-5">
-                        {menuItem.title}
-                        <FontAwesomeIcon
-                          icon={faAngleDown}
-                          className="ml-auto mt-1 text-paragraph duration-500 group-hover:rotate-180 dark:text-white"
-                        />
-                      </Link>
-                      <div className="absolute left-0 top-12 z-10 w-full origin-top scale-y-0  items-center rounded-medium bg-white p-5 text-gray-900 opacity-0 shadow-lg  duration-500 group-hover:scale-y-100 group-hover:opacity-100 dark:bg-dark-200 dark:text-white">
-                        <ul className="mb-15 columns-2 gap-10">
-                          {menuItem.submenu.map((submenuItem) => (
-                            <li
-                              className="relative overflow-hidden py-2.5 text-base capitalize text-paragraph before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform  before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
-                              key={submenuItem.id}>
-                              <Link
-                                href={submenuItem.path}
-                                className="flex"
-                                onClick={() => setInnerMobileMenu(!innerMobileMenu)}>
-                                {submenuItem.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                        <div className="max-w-full">
-                          <Image
-                            src={menuItem.imageLight}
-                            width={350}
-                            height={350}
-                            alt="navbar"
-                            className=" !w-full rounded-2xl dark:hidden"
-                          />
-                          <Image
-                            src={menuItem.imageDark}
-                            width={350}
-                            height={350}
-                            alt="navbar"
-                            className="hidden !w-full rounded-2xl  dark:block"
-                          />
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <Link
-                        href="#"
-                        className="flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5">
-                        {menuItem.title}
-                        <FontAwesomeIcon
-                          icon={faAngleDown}
-                          className="ml-auto mt-1 text-paragraph duration-500 group-hover:rotate-180 dark:text-white"
-                        />
-                      </Link>
-                      <ul className="absolute left-0 top-12 z-10 min-w-[250px] origin-top scale-y-0 rounded-md bg-white p-5 opacity-0 duration-500  group-hover:scale-y-100 group-hover:opacity-100 dark:bg-dark-200 [&>*:not(:first-child)]:mt-2.5 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-borderColor dark:[&>*:not(:last-child)]:border-borderColor-dark">
-                        {menuItem.submenu.map((submenuItem) => (
-                          <li
-                            className="relative overflow-hidden pb-2.5 text-base capitalize text-paragraph duration-500 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph  before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
-                            key={submenuItem.id}>
-                            <Link
-                              href={submenuItem.path}
-                              className="flex"
-                              onClick={() => setInnerMobileMenu(!innerMobileMenu)}>
-                              {submenuItem.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
+              {simplifiedMenu.menuItems.map((menuItem) => (
+                <li key={menuItem.id}>
+                  <Link
+                    href={menuItem.path}
+                    className={cn(
+                      'flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5',
+                      pathname === menuItem.path ? 'active' : '',
+                    )}
+                    onClick={() => setInnerMobileMenu(!innerMobileMenu)}>
+                    {menuItem.title}
+                  </Link>
                 </li>
               ))}
-
               <li>
-                <Link href="/request-demo" className="btn btn-navbar btn-sm">
+                <Link href="/request-demo" className="btn btn-navbar btn-sm text-white bg-primary hover:bg-primary-200 transition-colors duration-300">
                   Request Demo
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="btn btn-outline btn-sm">
+                  Contact Us
                 </Link>
               </li>
             </ul>

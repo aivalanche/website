@@ -1,4 +1,3 @@
-// app/api/request-demo/route.js
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
@@ -6,39 +5,41 @@ export async function POST(request) {
     try {
         const { name, companyName, contactNumber, email, message } = await request.json()
 
-        // Array of recipients
         const recipients = [
             'edonderguti@aivalanche.de',
             'bano.andon@gmail.com',
             'gazmendalia@gmail.com'
         ]
 
+        // Updated transporter configuration
         const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
+            host: process.env.SMTP_HOST,  // e.g., 'smtp.gmail.com' for Gmail
             port: 465,
             secure: true,
             auth: {
                 user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS,
             },
-            tls: {
-                rejectUnauthorized: false,
-            }
+            // Remove the tls configuration unless specifically needed
         })
+
+        // Verify the connection before sending
+        await transporter.verify().catch(error => {
+            console.error('SMTP Connection Error:', error);
+            throw new Error('Failed to establish SMTP connection');
+        });
 
         console.log('Attempting to send demo request emails...')
 
-        // Track successful and failed sends
         const results = {
             successful: [],
             failed: []
         }
 
-        // Send emails individually
         await Promise.all(recipients.map(async (recipient) => {
             try {
                 const info = await transporter.sendMail({
-                    from: `"Demo Request Form" <edonderguti@gmail.com>`,
+                    from: process.env.SMTP_USER, // Fixed: Use a valid email address without the display name format
                     to: recipient,
                     subject: `aivalanche: New Demo Request from ${name} at ${companyName}`,
                     text: `
@@ -75,13 +76,6 @@ Message: ${message}
             }
         }))
 
-        // Log overall results
-        console.log('Send results:', {
-            successful: results.successful,
-            failed: results.failed
-        })
-
-        // Determine response based on results
         if (results.successful.length === 0) {
             return NextResponse.json(
                 {

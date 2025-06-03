@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Video Player - Hide Fullscreen Button */
+.custom-video-player::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+
+.custom-video-player::-webkit-media-controls {
+    overflow: hidden !important;
+}
+
+/* Firefox */
+.custom-video-player::-moz-full-screen-button {
+    display: none !important;
+}
+
+/* Hide fullscreen button in Safari and other browsers */
+.custom-video-player::-webkit-media-controls-enclosure,
+.custom-video-player::-webkit-media-controls-panel {
+    overflow: hidden !important;
+}

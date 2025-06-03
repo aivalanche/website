@@ -1,0 +1,19 @@
+/* TEAM */
+Company: AIvalanche
+Site: https://aivalanche.com
+Email: info@aivalanche.com
+Location: United States
+
+/* SITE */
+Last update: 2023
+Standards: HTML5, CSS3, JavaScript
+Components: Next.js, React, Tailwind CSS
+Software: Visual Studio Code, Adobe XD
+
+/* PRODUCTS */
+LabFlow: AI-Assisted Lab Engineer for laboratory workflow automation
+OpticFlow: Accelerated Optical System Design platform
+Sfera: Parametric Models Optimizer for BSIM4 optimization
+
+/* THANK YOU */
+Thanks for viewing our source. We're dedicated to creating tools that accelerate R&D cycles with specialized AI for engineering excellence. 

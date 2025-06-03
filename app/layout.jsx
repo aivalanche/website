@@ -1,5 +1,6 @@
 import ThemeSwitcher from '@/components/theme/ThemeSwitcher'
 import '@/scss/theme.scss'
+// We'll add animations in a different way
 import Providers from '@/utils/providers'
 import PropTypes from 'prop-types'
 import { cn } from '@/utils/cn'
@@ -33,24 +34,30 @@ export const metadata = {
     template: '%s - aivalanche',
   },
   description:
-    'Aplio is an exceptional Next js template tailored for SaaS landing websites. Embodying the essence of modern SaaS platforms.',
+    'aivalanche is an advanced platform with AI-driven engineering tools to accelerate discovery and innovation for engineering teams.',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="theme-color" content="#87cb50" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </head>
       <body
         className={cn(
-          'relative overflow-x-hidden bg-white text-base antialiased dark:bg-dark-300',
+          'relative overflow-x-hidden bg-white text-base antialiased dark:bg-dark-300 transition-colors duration-300',
           inter.variable,
           jakarta_sans.variable,
           playfair.variable,
         )}>
         <Providers attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <ThemeSwitcher />
-          {/* <Navbar /> */}
-          {children}
-          {/* <Footer /> */}
+          {/* Simple structure without client-side animations */}
+          <main className="flex-grow">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
