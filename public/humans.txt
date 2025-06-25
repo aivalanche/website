@@ -1,6 +1,6 @@
 /* TEAM */
 Company: AIvalanche
-Site: https://aivalanche.com
+Site: https://aivalanche.de
 Email: info@aivalanche.com
 Location: United States
 
