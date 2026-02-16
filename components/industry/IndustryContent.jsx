@@ -60,7 +60,7 @@ const IndustryContent = ({ data }) => {
             <div className="relative max-md:col-span-full md:col-span-6 lg:col-span-8">
               <div className="singlePage relative  max-md:mt-20">
                 <h2>{data.title}</h2>
-                <p>{data.serviceDetails}</p>
+                <p>{data.serviceDetails || data.excerpt}</p>
                 <div className="rounded-medium bg-white p-2.5 shadow-nav dark:bg-dark-200">
                   <Image
                     src={data.featureImage}
@@ -76,28 +76,16 @@ const IndustryContent = ({ data }) => {
                 {/* <h3>{data.title}</h3> */}
                 <div className="blog-details">
                   <h3>{data.firstParagraph.title}</h3>
-                  <div className="mb-12 flex items-center gap-x-2 ">
+                  <div className="mb-12">
                     <p>{data.firstParagraph.content}</p>
-                    <span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 5 6" fill="none">
-                        <circle cx="2.5" cy="3" r="2.5" fill="" className="fill-[#D8DBD0] dark:fill-[#3B3C39]" />
-                      </svg>
-                    </span>
-                    <p>{data.date}</p>
                   </div>
                 </div>
                 <div className="blog-details">
 
 
                   <h3>{data.secondParagraph.title}</h3>
-                  <div className="mb-12 flex items-center gap-x-2 ">
+                  <div className="mb-12">
                     <p>{data.secondParagraph.content}</p>
-                    <span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 5 6" fill="none">
-                        <circle cx="2.5" cy="3" r="2.5" fill="" className="fill-[#D8DBD0] dark:fill-[#3B3C39]" />
-                      </svg>
-                    </span>
-                    <p>{data.date}</p>
                   </div>
                 </div>
               </div>

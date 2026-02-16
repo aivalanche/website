@@ -11,7 +11,19 @@ import TestimonialSlider from '@/components/shared/TestimonialSlider'
 import AboutFeature from '@/data/aboutFeaturesData'
 
 export const metadata = {
-  title: 'About',
+  title: 'About AIvalanche',
+  description:
+    'Learn about AIvalanche and our mission to build enterprise AI agents that execute real workflows across your business tools.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About AIvalanche',
+    description:
+      'Meet the team behind AIvalanche and our vision for practical enterprise AI automation.',
+    url: 'https://aivalanche.com/about',
+    type: 'website',
+  },
 }
 const About = () => {
   const { AboutFeaturesData } = AboutFeature

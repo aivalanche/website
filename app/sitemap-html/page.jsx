@@ -13,17 +13,23 @@ export const metadata = {
 
 export default function SitemapPage() {
     const sitePages = [
-        { title: 'Home', url: '/', description: 'AIvalanche Home Page - Overview of our Enterprise AI Tools' },
-        { title: 'LabFlow', url: '/#instrumentation-agent', description: 'LabFlow - AI-Assisted Lab Engineer for laboratory workflow automation' },
-        { title: 'OpticFlow', url: '/#inverse-optical-design', description: 'OpticFlow - Accelerated Optical System Design platform' },
-        { title: 'Sfera', url: '/#bsim4-optimizer', description: 'Sfera - Parametric Models Optimizer for BSIM4 optimization' },
+        { title: 'Home', url: '/', description: 'AIvalanche homepage and product overview' },
+        { title: 'Solutions', url: '/solutions', description: 'Deployment and service options for enterprise teams' },
+        { title: 'Industry', url: '/industry', description: 'Industry use cases and optimization workflows' },
+        { title: 'Blog', url: '/blog', description: 'Articles and technical insights from AIvalanche' },
         { title: 'Contact Us', url: '/contact', description: 'Get in touch with the AIvalanche team' },
         { title: 'Request Demo', url: '/request-demo', description: 'Schedule a demonstration of our products' },
         { title: 'Privacy Policy', url: '/privacy', description: 'Learn about our privacy practices' },
-        { title: 'Terms of Service', url: '/terms', description: 'Our terms and conditions of service' },
+        { title: 'Terms and Conditions', url: '/terms', description: 'Read the AIvalanche terms and conditions' },
+        { title: 'Impressum', url: '/impressum', description: 'Legal notice and company information' },
     ];
 
-    const blogPages = [];
+    const blogPages = [
+        {
+            title: 'Accelerating Optical Design with Differentiable Ray Tracing',
+            url: '/blog/accelerating-optical-design-with-differentiable-ray-tracing',
+        },
+    ];
 
     return (
         <>
@@ -79,7 +85,7 @@ export default function SitemapPage() {
                                 <ul className="space-y-4">
                                     <li className="pb-2">
                                         <Link
-                                            href="/api/sitemap"
+                                            href="/sitemap.xml"
                                             className="text-lg font-medium text-primary hover:underline"
                                             target="_blank"
                                         >

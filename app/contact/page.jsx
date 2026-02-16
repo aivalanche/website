@@ -6,7 +6,19 @@ import NewsLetter from '@/components/shared/NewsLetter'
 import PageHero from '@/components/shared/PageHero'
 
 export const metadata = {
-  title: 'Contact',
+  title: 'Contact AIvalanche',
+  description:
+    'Talk with the AIvalanche team about enterprise AI agent deployment, tool integrations, pricing, and onboarding.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact AIvalanche',
+    description:
+      'Get in touch with AIvalanche for enterprise AI agent setup, integrations, and support.',
+    url: 'https://aivalanche.com/contact',
+    type: 'website',
+  },
 }
 
 const page = () => {

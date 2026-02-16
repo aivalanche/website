@@ -29,11 +29,6 @@ module.exports = {
           100: '#F3F8E8',
           200: '#C4F241',
         },
-        // primary: {
-        //   DEFAULT: '#3ca6da',
-        //   100: '#eaf5fb',
-        //   200: '#5ab7e2',
-        // },
         dark: {
           DEFAULT: '#131410',
           100: '#141410',

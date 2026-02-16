@@ -17,26 +17,6 @@ const blogPosts = [
         readTime: '6 min read',
         relatedProduct: 'OpticFlow',
         slug: 'accelerating-optical-design-with-differentiable-ray-tracing'
-    },
-    {
-        id: 2,
-        title: 'Optimizing BSIM4 Model Parameters: A Bayesian Approach',
-        summary: 'Discover how Bayesian optimization techniques can dramatically improve the accuracy and efficiency of BSIM4 model parameter extraction.',
-        date: 'April 15, 2023',
-        category: 'Semiconductor Design',
-        readTime: '8 min read',
-        relatedProduct: 'Sfera',
-        slug: 'optimizing-bsim4-model-parameters-bayesian-approach'
-    },
-    {
-        id: 3,
-        title: 'The Future of Laboratory Automation with AI',
-        summary: 'Explore how AI is transforming laboratory workflows, from experiment design to data analysis, enabling scientists to focus on innovation rather than repetitive tasks.',
-        date: 'March 2, 2023',
-        category: 'Laboratory Automation',
-        readTime: '5 min read',
-        relatedProduct: 'LabFlow',
-        slug: 'future-of-laboratory-automation-with-ai'
     }
 ];
 

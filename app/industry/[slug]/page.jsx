@@ -1,46 +1,71 @@
-import ProcessInstallation from '@/components/home-4/ProcessInstallation'
-import DataIntegration from '@/components/home-4/DataIntegration'
-import Hero from '@/components/home-4/Hero'
-import CallToAction from '@/components/shared/CallToAction'
-import MembersCounter from '@/components/shared/MembersCounter'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import Footer from '@/components/footer/Footer'
-import RobustFeatures from '@/components/home-8/RubustFeature'
-import Approach from '@/components/home-6/Approach'
+import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import IndustryContent from '@/components/industry/IndustryContent'
+import NewsLetter from '@/components/shared/NewsLetter'
+import IndustryList from '@/data/industryData'
+import { notFound } from 'next/navigation'
 
-export const metadata = {
-  title: 'aivalanche',
+export async function generateMetadata({ params }) {
+  const { IndustryData } = IndustryList
+  const industry = IndustryData.find((item) => item.slug === params.slug)
+
+  if (!industry) {
+    return {
+      title: 'Industry Page Not Found',
+      robots: { index: false, follow: false },
+    }
+  }
+
+  const title = `${industry.title} AI Use Case`
+  const description =
+    industry.excerpt ||
+    'Explore how AIvalanche supports industry workflows with calibration, optimization, and inverse design automation.'
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/industry/${industry.slug}`,
+    },
+    openGraph: {
+      title: `${title} | AIvalanche`,
+      description,
+      url: `https://aivalanche.com/industry/${industry.slug}`,
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | AIvalanche`,
+      description,
+    },
+  }
 }
 
-const HomePage4 = () => {
+export async function generateStaticParams() {
+  const { IndustryData } = IndustryList
+  return IndustryData.map((item) => ({
+    slug: item.slug,
+  }))
+}
+
+const IndustryDetailsPage = ({ params }) => {
+  const { IndustryData } = IndustryList
+  const data = IndustryData.find((item) => item.slug === params.slug)
+
+  if (!data) {
+    notFound()
+  }
+
   return (
     <>
       <SecondaryNavbar />
       <main>
-        <Hero />
-        <DataIntegration />
-        {/* <ShareClientMarquee /> */}
-
-        <RobustFeatures />
-
-        <ProcessInstallation />
-        {/* <MembersCounter /> */}
-        <Approach />
-
-        {/* <Feature /> */}
-        {/* <TeamMembers />
-
-        <ServiceCardWithLeftText /> */}
-
-        {/* <FAQWithLeftText />
-        <TopIntegration /> */}
-
-        {/* <FinancialBlog className="pb-150 pt-150 dark:bg-dark-300" /> */}
-        {/* <CallToAction title="Deliver Simulation Models On Time. Stay Ahead Of Competition" /> */}
+        <IndustryContent data={data} />
+        <NewsLetter />
       </main>
       <Footer />
     </>
   )
 }
 
-export default HomePage4
+export default IndustryDetailsPage

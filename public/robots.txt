@@ -1,11 +1,5 @@
-# Allow all web crawlers
 User-agent: *
 Allow: /
-Disallow: /blog/
+Disallow: /api/
 
-# Sitemap locations
-Sitemap: https://aivalanche.com/api/sitemap
-Sitemap: https://aivalanche.com/sitemap-html
-
-# Crawl delay
-Crawl-delay: 10 
+Sitemap: https://aivalanche.com/sitemap.xml

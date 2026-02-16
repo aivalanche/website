@@ -5,7 +5,16 @@ import getMarkDownData from '@/utils/getMarkDownData'
 import ReactMarkdown from 'react-markdown'
 
 export const metadata = {
-  title: 'Privacy Page',
+  title: 'Privacy Policy',
+  description:
+    'Read the AIvalanche privacy policy and data handling practices for enterprise AI workflows and integrations.',
+  alternates: {
+    canonical: '/privacy',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 const Privacy = () => {
