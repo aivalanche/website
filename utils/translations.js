@@ -9,48 +9,49 @@ export const translations = {
       joinWaitlist: 'Auf die Warteliste',
     },
     hero: {
-      badge: 'KI-Agent für Unternehmen',
-      title: 'Ihr fähigster',
-      titleHighlight: 'Kollege.',
-      subtitle: 'Ein KI-Mitarbeiter, der Aufgaben automatisiert, Code schreibt, sich mit Ihren Tools verbindet und Dinge erledigt — nicht nur Fragen beantwortet.',
+      badge: 'AI Operations Agent',
+      title: 'Vom Chat direkt',
+      titleHighlight: 'zur Ausfuehrung.',
+      subtitle:
+        'AIvalanche ist ein AI-Agent fuer Teams: Er nimmt Aufgaben in Slack, Teams oder WhatsApp entgegen, fuehrt sie ueber Ihre Tools aus und liefert klare Ergebnisse zurueck.',
       cta: 'Auf die Warteliste',
       ctaSecondary: 'Mehr erfahren',
-      trustedBy: 'Entwickelt für deutsche Unternehmen',
+      trustedBy: 'Fuer Teams mit echten Workflows',
     },
     features: {
       badge: 'WARUM AIVALANCHE',
-      title: 'Mehr als ein Chatbot.',
-      titleHighlight: 'Ein echter Kollege.',
-      subtitle: 'AIvalanche ist kein gewöhnlicher KI-Assistent. Es ist ein persistenter Agent, der in Ihrem Slack, Teams oder WhatsApp lebt und echte Arbeit erledigt.',
+      title: 'Nicht nur Antworten.',
+      titleHighlight: 'Ausführung mit System.',
+      subtitle: 'AIvalanche plant Arbeitsschritte, führt Aktionen in Ihren Tools aus und liefert nachvollziehbare Ergebnisse direkt in den Team-Chat.',
       items: [
         {
           title: 'Persistenter Agent',
-          description: 'Läuft wochenlang im Hintergrund. Verfolgt Projekte, erinnert an Deadlines und hält Ihr Team auf dem Laufenden — ohne Aufforderung.',
+          description: 'Bleibt über Tage und Wochen aktiv, priorisiert Aufgaben selbstständig und hält Teams ohne Reminder auf dem Laufenden.',
           icon: 'brain',
         },
         {
-          title: 'Proaktiv von Natur aus',
-          description: 'Wartet nicht auf Befehle. AIvalanche erkennt Probleme, schlägt Lösungen vor und handelt eigenständig — wie ein erfahrener Mitarbeiter.',
+          title: 'Proaktive Entscheidungslogik',
+          description: 'Erkennt Abweichungen früh, schlägt nächste Schritte vor und startet sichere Aktionen eigenständig.',
           icon: 'zap',
         },
         {
           title: '3.000+ Integrationen',
-          description: 'Verbindet sich mit Salesforce, HubSpot, Linear, Jira, SAP, Slack, Teams und mehr. Wenn Ihr Tool nicht dabei ist, baut AIvalanche eine Integration.',
+          description: 'Verknüpft Chat, CRM, Ticketing, Code und Datenquellen zu durchgängigen Abläufen über Ihren gesamten Stack.',
           icon: 'plug',
         },
         {
           title: 'Lebt in Ihrem Chat',
-          description: 'Kein neues Tool, keine neue App. AIvalanche arbeitet direkt in Slack, Microsoft Teams oder WhatsApp — dort, wo Ihr Team bereits kommuniziert.',
+          description: 'Startet im Chat, arbeitet im Hintergrund über Ihre Tools und liefert Ergebnisse im selben Thread zurück.',
           icon: 'messageSquare',
         },
         {
           title: 'DSGVO-Konform',
-          description: 'Isolierte Rechenumgebungen. Ihre Daten werden verschlüsselt und niemals für Training verwendet. Vollständig DSGVO-konform.',
+          description: 'Isolierte Laufumgebungen, verschlüsselte Datenwege und keine Trainingsnutzung Ihrer Inhalte.',
           icon: 'shield',
         },
         {
-          title: 'Eigener Arbeitsbereich',
-          description: 'Jeder Agent hat seinen eigenen Computer in der Cloud. Er schreibt und führt Code aus, browst im Web und erledigt echte Aufgaben.',
+          title: 'Isolierter Agent-Workspace',
+          description: 'Jeder Agent arbeitet in einer eigenen Cloud-Umgebung mit Code-, Browser- und API-Zugriff.',
           icon: 'monitor',
         },
       ],
@@ -59,6 +60,8 @@ export const translations = {
       badge: 'IN AKTION',
       title: 'So arbeitet AIvalanche',
       titleHighlight: 'in Ihrem Team.',
+      subtitle:
+        'Jede Konversation ist operativ: Anfrage empfangen, Schritte planen, in Tools ausfuehren, Ergebnis mit Kontext melden.',
       conversations: [
         {
           platform: 'Slack',
@@ -85,27 +88,27 @@ export const translations = {
     },
     useCases: {
       badge: 'ANWENDUNGSFÄLLE',
-      title: 'Was AIvalanche für',
-      titleHighlight: 'Ihr Team leisten kann.',
+      title: 'Was AIvalanche',
+      titleHighlight: 'taeglich ausfuehrt.',
       items: [
         {
           title: 'Marketing Ops',
-          description: 'Kampagnen-Tracking, Content-Erstellung, Social Media Monitoring, Wettbewerbsanalyse und automatisiertes Reporting.',
+          description: 'Steuert Kampagnen-Daten, erstellt Content-Entwuerfe, erkennt Performance-Drifts und liefert Reporting ohne manuelle Schleifen.',
           examples: ['Google Ads analysieren', 'Blog-Beiträge erstellen', 'Wettbewerber überwachen', 'Reports generieren'],
         },
         {
           title: 'Sales Ops',
-          description: 'CRM-Pflege, Lead-Scoring, Pipeline-Updates, Meeting-Vorbereitung und automatisierte Follow-ups.',
+          description: 'Aktualisiert CRM-Daten, priorisiert Leads, bereitet Meetings vor und startet Follow-ups mit einheitlichem Kontext.',
           examples: ['CRM aktualisieren', 'Leads qualifizieren', 'Angebote erstellen', 'Follow-ups senden'],
         },
         {
           title: 'Engineering',
-          description: 'Code-Reviews, Deployment-Monitoring, Ticket-Management, Dokumentation und technische Recherche.',
+          description: 'Verbindet Tickets, Repos und Deployments fuer operative Engineering-Workflows statt isolierter Chat-Antworten.',
           examples: ['Jira-Tickets erstellen', 'Deployments überwachen', 'Docs aktualisieren', 'Code analysieren'],
         },
         {
           title: 'HR & Operations',
-          description: 'Onboarding-Workflows, Urlaubsverwaltung, Policy-Fragen, Team-Koordination und Prozessautomatisierung.',
+          description: 'Fuehrt wiederkehrende interne Prozesse aus: Onboarding, Freigaben, Richtlinien-Kommunikation und Team-Koordination.',
           examples: ['Onboarding starten', 'Urlaub verwalten', 'Policies erklären', 'Meetings planen'],
         },
       ],
@@ -166,8 +169,9 @@ export const translations = {
     },
     waitlist: {
       badge: 'JETZT STARTEN',
-      title: 'Bereit, Ihren fähigsten Kollegen einzustellen?',
-      subtitle: 'Tragen Sie sich auf die Warteliste ein und gehören Sie zu den ersten Unternehmen, die AIvalanche nutzen.',
+      title: 'Bereit fuer einen Agenten, der wirklich ausfuehrt?',
+      subtitle:
+        'Tragen Sie sich ein und wir zeigen Ihnen, wie AIvalanche Aufgaben in Ihrem Stack von Anfrage bis Ergebnis automatisiert.',
       placeholder: 'Ihre Geschäfts-E-Mail',
       cta: 'Auf die Warteliste',
       success: 'Erfolgreich eingetragen!',
@@ -195,48 +199,49 @@ export const translations = {
       joinWaitlist: 'Join Waitlist',
     },
     hero: {
-      badge: 'AI Agent for Enterprise',
-      title: 'Your most capable',
-      titleHighlight: 'colleague.',
-      subtitle: 'An AI coworker that automates tasks, writes code, connects to your tools, and gets things done — not just answers questions.',
+      badge: 'AI Operations Agent',
+      title: 'From chat',
+      titleHighlight: 'to execution.',
+      subtitle:
+        'AIvalanche is an AI agent for teams: it receives requests in Slack, Teams, or WhatsApp, executes work across your tools, and returns clear outcomes.',
       cta: 'Join the Waitlist',
       ctaSecondary: 'Learn more',
-      trustedBy: 'Built for German enterprises',
+      trustedBy: 'Built for teams with real workflows',
     },
     features: {
       badge: 'WHY AIVALANCHE',
-      title: 'More than a chatbot.',
-      titleHighlight: 'A real colleague.',
-      subtitle: 'AIvalanche is not an ordinary AI assistant. It\'s a persistent agent that lives in your Slack, Teams, or WhatsApp and does real work.',
+      title: 'Not just answers.',
+      titleHighlight: 'Execution with discipline.',
+      subtitle: 'AIvalanche plans task flows, executes actions inside your tools, and reports verifiable outcomes back to team chat.',
       items: [
         {
           title: 'Persistent Agent',
-          description: 'Runs for weeks in the background. Tracks projects, reminds about deadlines, and keeps your team updated — without being prompted.',
+          description: 'Stays active across days and weeks, prioritizes tasks autonomously, and keeps teams updated without reminders.',
           icon: 'brain',
         },
         {
-          title: 'Proactive by Default',
-          description: 'Doesn\'t wait for commands. AIvalanche identifies problems, suggests solutions, and acts independently — like an experienced team member.',
+          title: 'Proactive Decision Logic',
+          description: 'Detects drift early, recommends next actions, and autonomously executes safe steps.',
           icon: 'zap',
         },
         {
           title: '3,000+ Integrations',
-          description: 'Connects to Salesforce, HubSpot, Linear, Jira, SAP, Slack, Teams, and more. If your tool isn\'t there, AIvalanche builds an integration.',
+          description: 'Connects chat, CRM, ticketing, code, and data systems into one continuous operating flow.',
           icon: 'plug',
         },
         {
           title: 'Lives in Your Chat',
-          description: 'No new tool, no new app. AIvalanche works directly in Slack, Microsoft Teams, or WhatsApp — where your team already communicates.',
+          description: 'Starts from chat, works across your stack, and posts outcomes back into the same thread.',
           icon: 'messageSquare',
         },
         {
           title: 'GDPR-Compliant',
-          description: 'Isolated compute environments. Your data is encrypted and never used for training. Fully GDPR-compliant.',
+          description: 'Isolated runtime environments, encrypted data paths, and no training on your private content.',
           icon: 'shield',
         },
         {
-          title: 'Own Workspace',
-          description: 'Each agent has its own computer in the cloud. It writes and runs code, browses the web, and completes real tasks.',
+          title: 'Isolated Agent Workspace',
+          description: 'Each agent runs in its own cloud workspace with code, browser, and API execution access.',
           icon: 'monitor',
         },
       ],
@@ -245,6 +250,8 @@ export const translations = {
       badge: 'IN ACTION',
       title: 'How AIvalanche works',
       titleHighlight: 'in your team.',
+      subtitle:
+        'Every conversation is operational: receive request, plan steps, execute in tools, and report outcomes with context.',
       conversations: [
         {
           platform: 'Slack',
@@ -271,27 +278,27 @@ export const translations = {
     },
     useCases: {
       badge: 'USE CASES',
-      title: 'What AIvalanche can do',
-      titleHighlight: 'for your team.',
+      title: 'What AIvalanche',
+      titleHighlight: 'executes every day.',
       items: [
         {
           title: 'Marketing Ops',
-          description: 'Campaign tracking, content creation, social media monitoring, competitive analysis, and automated reporting.',
+          description: 'Manages campaign data, drafts content, detects performance drift, and ships reporting without manual loops.',
           examples: ['Analyze Google Ads', 'Create blog posts', 'Monitor competitors', 'Generate reports'],
         },
         {
           title: 'Sales Ops',
-          description: 'CRM management, lead scoring, pipeline updates, meeting prep, and automated follow-ups.',
+          description: 'Updates CRM records, prioritizes leads, prepares meetings, and runs follow-ups with shared context.',
           examples: ['Update CRM', 'Qualify leads', 'Create proposals', 'Send follow-ups'],
         },
         {
           title: 'Engineering',
-          description: 'Code reviews, deployment monitoring, ticket management, documentation, and technical research.',
+          description: 'Connects tickets, repos, and deploys into operational engineering workflows rather than isolated chat replies.',
           examples: ['Create Jira tickets', 'Monitor deployments', 'Update docs', 'Analyze code'],
         },
         {
           title: 'HR & Operations',
-          description: 'Onboarding workflows, PTO management, policy questions, team coordination, and process automation.',
+          description: 'Executes recurring internal processes including onboarding, approvals, policy support, and team coordination.',
           examples: ['Start onboarding', 'Manage PTO', 'Explain policies', 'Schedule meetings'],
         },
       ],
@@ -352,8 +359,9 @@ export const translations = {
     },
     waitlist: {
       badge: 'GET STARTED',
-      title: 'Ready to hire your most capable colleague?',
-      subtitle: 'Join the waitlist and be among the first companies to use AIvalanche.',
+      title: 'Ready for an agent that actually executes?',
+      subtitle:
+        'Join the waitlist and we will show you how AIvalanche automates work in your stack from request to outcome.',
       placeholder: 'Your business email',
       cta: 'Join the Waitlist',
       success: 'Successfully signed up!',

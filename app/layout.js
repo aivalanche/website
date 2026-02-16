@@ -1,7 +1,8 @@
 import ThemeSwitcher from '@/components/theme/ThemeSwitcher'
 import { cn } from '@/utils/cn'
 import Providers from '@/utils/providers'
-import { Inter, Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import '@/scss/theme.scss'
 
@@ -12,26 +13,13 @@ const defaultDescription =
   'AIvalanche is an AI agent for enterprise teams that works in Slack, Microsoft Teams, and WhatsApp to automate operations, connect 3,000+ tools, and execute tasks end-to-end.'
 const defaultOgImage = '/images/home-8-img/ai-hero.png'
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+const googleTagId = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID || process.env.NEXT_PUBLIC_GTAG_ID || 'G-MV87J7FP0N'
 const inter = Inter({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
-})
-const jakartaSans = Plus_Jakarta_Sans({
-  weight: ['200', '300', '400', '500', '600', '700', '800'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-jakarta_sans',
-})
-const playfair = Playfair_Display({
-  weight: ['600'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-playfair',
 })
 
 export const metadata = {
@@ -197,9 +185,20 @@ export default function RootLayout({ children }) {
         className={cn(
           'relative overflow-x-hidden bg-white text-base antialiased transition-colors duration-300 dark:bg-dark-300',
           inter.variable,
-          jakartaSans.variable,
-          playfair.variable,
         )}>
+        {googleTagId && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} strategy="afterInteractive" />
+            <Script id="google-tag" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${googleTagId}');
+              `}
+            </Script>
+          </>
+        )}
         <Providers attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <ThemeSwitcher />
           <main className="flex-grow">{children}</main>

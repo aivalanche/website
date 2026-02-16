@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    experimental: {
+        optimizePackageImports: ['@phosphor-icons/react', 'lucide-react'],
+    },
     images: {
         formats: ['image/avif', 'image/webp'],
         domains: ['aivalanche.com'],
