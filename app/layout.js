@@ -1,19 +1,16 @@
-import ThemeSwitcher from '@/components/theme/ThemeSwitcher'
 import { cn } from '@/utils/cn'
 import Providers from '@/utils/providers'
 import { Inter } from 'next/font/google'
-import Script from 'next/script'
 import './globals.css'
 import '@/scss/theme.scss'
 
 const siteUrl = 'https://aivalanche.com'
 const siteName = 'AIvalanche'
-const defaultTitle = 'AIvalanche | AI Agent for Enterprise Operations'
+const defaultTitle = 'AIvalanche | KI-Agent fuer Unternehmen in Deutschland'
 const defaultDescription =
-  'AIvalanche is an AI agent for enterprise teams that works in Slack, Microsoft Teams, and WhatsApp to automate operations, connect 3,000+ tools, and execute tasks end-to-end.'
+  'AIvalanche ist ein KI-Agent fuer Unternehmen in Deutschland, Oesterreich und der Schweiz. OpenClaw-gestuetzte Workflows verbinden Slack, Microsoft Teams, WhatsApp und 3.000+ Tools fuer echte Ausfuehrung statt nur Antworten.'
 const defaultOgImage = '/images/home-8-img/ai-hero.png'
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-const googleTagId = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID || process.env.NEXT_PUBLIC_GTAG_ID || 'G-MV87J7FP0N'
 const inter = Inter({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
   style: ['normal'],
@@ -29,17 +26,22 @@ export const metadata = {
   },
   description: defaultDescription,
   keywords: [
-    'ai agent for enterprises',
+    'ki agent deutschland',
+    'ki agent unternehmen',
+    'ki workflow automatisierung',
+    'dsgvo ki agent',
+    'ai agent deutschland',
     'enterprise ai automation',
-    'ai coworker',
+    'workflow automation software',
     'slack ai agent',
     'microsoft teams ai agent',
     'whatsapp ai automation',
-    'workflow automation software',
+    'openclaw',
+    'openclaw integration',
+    'openclaw deutschland',
+    'openclaw ki agent',
     'business process automation',
     'ai operations platform',
-    'gdpr compliant ai',
-    'ki agent unternehmen',
     'ki automatisierung',
     'aivalanche',
   ],
@@ -48,7 +50,10 @@ export const metadata = {
     canonical: '/',
     languages: {
       'de-DE': '/',
+      'de-AT': '/',
+      'de-CH': '/',
       'en-US': '/?lang=en',
+      'x-default': '/',
     },
   },
   applicationName: siteName,
@@ -59,7 +64,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    alternateLocale: ['en_US'],
+    alternateLocale: ['de_AT', 'de_CH', 'en_US'],
     url: siteUrl,
     siteName,
     title: defaultTitle,
@@ -128,9 +133,15 @@ export default function RootLayout({ children }) {
             '@type': 'ContactPoint',
             contactType: 'sales',
             email: 'support@aivalanche.de',
-            availableLanguage: ['de', 'en'],
+            availableLanguage: ['de-DE', 'de-AT', 'de-CH', 'en-US'],
           },
         ],
+        areaServed: [
+          { '@type': 'Country', name: 'Germany' },
+          { '@type': 'Country', name: 'Austria' },
+          { '@type': 'Country', name: 'Switzerland' },
+        ],
+        knowsAbout: ['KI-Agenten', 'Workflow-Automatisierung', 'OpenClaw'],
       },
       {
         '@type': 'WebSite',
@@ -141,7 +152,19 @@ export default function RootLayout({ children }) {
         publisher: {
           '@id': organizationId,
         },
-        inLanguage: ['de', 'en'],
+        inLanguage: ['de-DE', 'de-AT', 'de-CH', 'en-US'],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${siteUrl}/#webpage`,
+        url: siteUrl,
+        name: defaultTitle,
+        description: defaultDescription,
+        inLanguage: 'de-DE',
+        isPartOf: {
+          '@id': `${siteUrl}/#website`,
+        },
+        about: ['KI-Agent fuer Unternehmen', 'OpenClaw', 'DSGVO-konforme Automatisierung'],
       },
       {
         '@type': 'SoftwareApplication',
@@ -153,6 +176,8 @@ export default function RootLayout({ children }) {
         provider: {
           '@id': organizationId,
         },
+        availableLanguage: ['de-DE', 'de-AT', 'de-CH', 'en-US'],
+        keywords: 'KI Agent, OpenClaw, DSGVO, Workflow Automatisierung, Deutschland',
         offers: {
           '@type': 'Offer',
           price: '0',
@@ -177,7 +202,11 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         {/* Clear leftover next-themes dark class from localStorage */}
-        <script dangerouslySetInnerHTML={{ __html: `try{localStorage.removeItem('theme');document.documentElement.classList.remove('dark');document.documentElement.classList.add('light')}catch(e){}` }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{localStorage.removeItem('theme');document.documentElement.classList.remove('dark');document.documentElement.classList.add('light')}catch(e){}`,
+          }}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <meta name="format-detection" content="telephone=no" />
         <meta property="og:site_name" content={siteName} />
@@ -185,12 +214,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content={siteName} />
       </head>
       <body
-        className={cn(
-          'relative overflow-x-hidden text-base antialiased',
-          inter.variable,
-          jakartaSans.variable,
-          playfair.variable,
-        )}
+        className={cn('relative overflow-x-hidden text-base antialiased', inter.variable)}
         style={{ backgroundColor: '#F4F0E8', color: '#121417' }}>
         <Providers>
           <main className="flex-grow">{children}</main>

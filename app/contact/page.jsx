@@ -2,13 +2,22 @@ import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 
 export const metadata = {
-  title: 'Contact AIvalanche',
+  title: 'Kontakt | AIvalanche KI-Agent fuer Unternehmen',
   description:
-    'Talk with the AIvalanche team about enterprise AI agent deployment, tool integrations, pricing, and onboarding.',
-  alternates: { canonical: '/contact' },
+    'Kontaktieren Sie AIvalanche fuer KI-Agent-Automatisierung in Deutschland, OpenClaw-Integrationen und DSGVO-konforme Einfuehrung.',
+  keywords: ['kontakt ki agent deutschland', 'openclaw integration', 'ki automatisierung beratung'],
+  alternates: {
+    canonical: '/contact',
+    languages: {
+      'de-DE': '/contact',
+      'de-AT': '/contact',
+      'de-CH': '/contact',
+      'en-US': '/contact?lang=en',
+    },
+  },
   openGraph: {
-    title: 'Contact AIvalanche',
-    description: 'Get in touch with AIvalanche for enterprise AI agent setup, integrations, and support.',
+    title: 'Kontakt | AIvalanche',
+    description: 'Sprechen Sie mit AIvalanche ueber KI-Agent-Einfuehrung, OpenClaw-Anbindung und Support im DACH-Raum.',
     url: 'https://aivalanche.com/contact',
     type: 'website',
   },
@@ -18,17 +27,19 @@ export default function ContactPage() {
   return (
     <>
       <SecondaryNavbar />
-      <main className="max-w-[800px] mx-auto px-6 py-32">
-        <p className="text-[11px] tracking-[0.15em] uppercase opacity-30 mb-3">Kontakt</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h1>
-        <p className="text-[16px] opacity-55 leading-relaxed mb-12">
-          Have questions about AIvalanche? Want a demo or need help with integration?
-          Reach out to our team.
+      <main className="mx-auto max-w-[800px] px-6 py-32">
+        <p className="mb-3 text-[11px] uppercase tracking-[0.15em] opacity-30">Kontakt</p>
+        <h1 className="mb-6 text-3xl font-bold md:text-4xl">Kontakt aufnehmen</h1>
+        <p className="mb-12 text-[16px] leading-relaxed opacity-55">
+          Sie moechten AIvalanche fuer Ihr Unternehmen evaluieren oder OpenClaw mit Slack, Teams oder WhatsApp
+          verbinden? Unser Team unterstuetzt Sie bei Setup, Sicherheit und Rollout.
         </p>
         <div className="space-y-4" style={{ borderTop: '1px solid var(--wp-line, #D8D1C5)', paddingTop: '2rem' }}>
           <div>
             <p className="text-sm font-semibold">Email</p>
-            <a href="mailto:hello@aivalanche.com" className="text-sm opacity-55 hover:opacity-100 transition-opacity">hello@aivalanche.com</a>
+            <a href="mailto:hello@aivalanche.com" className="text-sm opacity-55 transition-opacity hover:opacity-100">
+              hello@aivalanche.com
+            </a>
           </div>
         </div>
       </main>

@@ -1,7 +1,7 @@
 {
   "name": "AIvalanche",
   "short_name": "AIvalanche",
-  "description": "AI agent for enterprise teams that automates workflows across Slack, Teams, and WhatsApp.",
+  "description": "KI-Agent fuer Unternehmen im DACH-Raum mit OpenClaw-gestuetzter Workflow-Automatisierung in Slack, Teams und WhatsApp.",
   "icons": [
     {
       "src": "/images/favicons/android-icon-192x192.png",

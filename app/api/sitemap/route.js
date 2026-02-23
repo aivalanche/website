@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import sitemap from '../../sitemap'
+import { getSitemapEntries } from '@/utils/seoRoutes'
 
 function toIsoDate(value) {
   const date = value instanceof Date ? value : new Date(value)
@@ -7,7 +7,7 @@ function toIsoDate(value) {
 }
 
 export async function GET() {
-  const sitemapEntries = sitemap()
+  const sitemapEntries = getSitemapEntries()
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

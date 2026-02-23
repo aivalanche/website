@@ -3,7 +3,7 @@ import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 
 export const metadata = {
   title: 'Impressum',
-  description: 'Legal notice and company information for AIvalanche.',
+  description: 'Impressum und rechtliche Angaben zu AIvalanche.',
   alternates: { canonical: '/impressum' },
 }
 
@@ -11,17 +11,18 @@ export default function ImpressumPage() {
   return (
     <>
       <SecondaryNavbar />
-      <main className="max-w-[800px] mx-auto px-6 py-32">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Impressum</h1>
-        <div className="text-[16px] opacity-55 leading-relaxed space-y-4">
+      <main className="mx-auto max-w-[800px] px-6 py-32">
+        <h1 className="mb-6 text-3xl font-bold md:text-4xl">Impressum</h1>
+        <div className="space-y-4 text-[16px] leading-relaxed opacity-55">
           <p>
-            AIvalanche<br />
-            Enterprise AI Software<br />
+            AIvalanche
+            <br />
+            KI-Software fuer Unternehmen
+            <br />
             Contact: support@aivalanche.de
           </p>
           <p>
-            This page provides legal and contact information in line with applicable publishing and commercial
-            regulations.
+            Diese Seite stellt rechtliche Pflichtangaben und Kontaktinformationen gemaess geltenden Vorschriften bereit.
           </p>
         </div>
       </main>

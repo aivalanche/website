@@ -18,9 +18,5 @@ export default function LocaleProvider({ children }) {
     }
   }, [locale])
 
-  return (
-    <LocaleContext.Provider value={{ locale, setLocale, toggleLocale }}>
-      {children}
-    </LocaleContext.Provider>
-  )
+  return <LocaleContext.Provider value={{ locale, setLocale, toggleLocale }}>{children}</LocaleContext.Provider>
 }

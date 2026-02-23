@@ -17,35 +17,40 @@ const Footer = ({ locale = 'de' }) => {
     { label: t.footer.privacy, href: '/privacy' },
     { label: t.footer.terms, href: '/terms' },
     { label: t.footer.imprint, href: '/impressum' },
+    { label: 'Sitemap', href: '/sitemap' },
   ]
 
   return (
-    <footer className="relative bg-white dark:bg-dark-300 border-t border-borderColor dark:border-borderColor-dark pt-16 pb-8">
+    <footer className="relative border-t border-borderColor bg-white pb-8 pt-16 dark:border-borderColor-dark dark:bg-dark-300">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">
+        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-12">
           {/* Brand */}
           <div className="md:col-span-5">
-            <Link href="/" className="inline-block mb-5">
+            <Link href="/" className="mb-5 inline-block">
               <Image
                 src={FooterData.logo}
                 alt="AIvalanche"
-                width={120} height={34}
+                width={120}
+                height={34}
                 className="block h-auto max-h-[34px] w-auto object-contain dark:hidden"
               />
               <Image
                 src={FooterData.logoDark}
                 alt="AIvalanche"
-                width={120} height={34}
+                width={120}
+                height={34}
                 className="hidden h-auto max-h-[34px] w-auto object-contain dark:block"
               />
             </Link>
-            <p className="text-paragraph-light dark:text-white/70 text-sm leading-relaxed max-w-sm">
+            <p className="max-w-sm text-sm leading-relaxed text-paragraph-light dark:text-white/70">
               {t.footer.description}
             </p>
-            <div className="flex gap-3 mt-5">
+            <div className="mt-5 flex gap-3">
               {FooterData.socialLinks.map((social) => (
-                <a key={social.id} href={social.link}
-                  className="w-10 h-10 rounded-full border border-borderColor dark:border-borderColor-dark flex items-center justify-center text-paragraph-light dark:text-white/70 hover:bg-primary hover:text-white hover:border-primary transition-colors">
+                <a
+                  key={social.id}
+                  href={social.link}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-borderColor text-paragraph-light transition-colors hover:border-primary hover:bg-primary hover:text-white dark:border-borderColor-dark dark:text-white/70">
                   {social.name}
                 </a>
               ))}
@@ -54,13 +59,15 @@ const Footer = ({ locale = 'de' }) => {
 
           {/* Navigation */}
           <div className="md:col-span-3 md:col-start-7">
-            <h4 className="text-paragraph dark:text-white font-semibold text-sm mb-4 uppercase tracking-wider">
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-paragraph dark:text-white">
               {t.footer.navigation}
             </h4>
             <ul className="space-y-2.5">
               {navLinks.map((link, i) => (
                 <li key={i}>
-                  <a href={link.href} className="text-paragraph-light dark:text-white/70 hover:text-primary text-sm transition-colors">
+                  <a
+                    href={link.href}
+                    className="text-sm text-paragraph-light transition-colors hover:text-primary dark:text-white/70">
                     {link.label}
                   </a>
                 </li>
@@ -70,19 +77,23 @@ const Footer = ({ locale = 'de' }) => {
 
           {/* Legal */}
           <div className="md:col-span-2">
-            <h4 className="text-paragraph dark:text-white font-semibold text-sm mb-4 uppercase tracking-wider">
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-paragraph dark:text-white">
               {t.footer.legal}
             </h4>
             <ul className="space-y-2.5">
               {legalLinks.map((link, i) => (
                 <li key={i}>
-                  <Link href={link.href} className="text-paragraph-light dark:text-white/70 hover:text-primary text-sm transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-sm text-paragraph-light transition-colors hover:text-primary dark:text-white/70">
                     {link.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <a href={`mailto:${FooterData.email}`} className="text-paragraph-light dark:text-white/70 hover:text-primary text-sm transition-colors">
+                <a
+                  href={`mailto:${FooterData.email}`}
+                  className="text-sm text-paragraph-light transition-colors hover:text-primary dark:text-white/70">
                   {t.footer.contact}
                 </a>
               </li>
@@ -91,10 +102,8 @@ const Footer = ({ locale = 'de' }) => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-borderColor dark:border-borderColor-dark">
-          <p className="text-paragraph-light dark:text-white/50 text-xs text-center">
-            {t.footer.copyright}
-          </p>
+        <div className="border-t border-borderColor pt-8 dark:border-borderColor-dark">
+          <p className="text-center text-xs text-paragraph-light dark:text-white/50">{t.footer.copyright}</p>
         </div>
       </div>
     </footer>

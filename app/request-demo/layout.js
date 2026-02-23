@@ -1,14 +1,21 @@
 export const metadata = {
-  title: 'Request a Demo',
+  title: 'Demo anfragen | AIvalanche und OpenClaw fuer DACH-Teams',
   description:
-    'Request an AIvalanche demo to see how an enterprise AI agent can automate workflows across Slack, Teams, WhatsApp, and your internal tools.',
+    'Demo fuer AIvalanche anfragen: KI-Agenten mit OpenClaw-gestuetzter Ausfuehrung fuer Slack, Teams, WhatsApp und interne Tools im DACH-Raum.',
+  keywords: ['ki agent demo deutschland', 'openclaw demo', 'workflow automatisierung demo', 'dsgvo ki agent'],
   alternates: {
     canonical: '/request-demo',
+    languages: {
+      'de-DE': '/request-demo',
+      'de-AT': '/request-demo',
+      'de-CH': '/request-demo',
+      'en-US': '/request-demo?lang=en',
+    },
   },
   openGraph: {
-    title: 'Request a Demo | AIvalanche',
+    title: 'Demo anfragen | AIvalanche',
     description:
-      'Book a demo with AIvalanche to evaluate enterprise AI agent deployment and automation workflows for your team.',
+      'Buchen Sie eine Demo fuer AIvalanche und OpenClaw, um KI-Agent-Automatisierung fuer Ihr Team zu testen.',
     url: 'https://aivalanche.com/request-demo',
     type: 'website',
   },

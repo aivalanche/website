@@ -2,7 +2,7 @@ export const translations = {
   de: {
     nav: {
       features: 'Funktionen',
-      howItWorks: 'So funktioniert\'s',
+      howItWorks: "So funktioniert's",
       useCases: 'Anwendungsfälle',
       faq: 'FAQ',
       waitlist: 'Warteliste',
@@ -13,7 +13,7 @@ export const translations = {
       title: 'Vom Chat direkt',
       titleHighlight: 'zur Ausfuehrung.',
       subtitle:
-        'AIvalanche ist ein AI-Agent fuer Teams: Er nimmt Aufgaben in Slack, Teams oder WhatsApp entgegen, fuehrt sie ueber Ihre Tools aus und liefert klare Ergebnisse zurueck.',
+        'AIvalanche ist ein KI-Agent fuer Teams im DACH-Raum: Mit OpenClaw nimmt er Aufgaben in Slack, Teams oder WhatsApp entgegen, fuehrt sie ueber Ihre Tools aus und liefert klare Ergebnisse zurueck.',
       cta: 'Auf die Warteliste',
       ctaSecondary: 'Mehr erfahren',
       trustedBy: 'Fuer Teams mit echten Workflows',
@@ -22,26 +22,31 @@ export const translations = {
       badge: 'WARUM AIVALANCHE',
       title: 'Nicht nur Antworten.',
       titleHighlight: 'Ausführung mit System.',
-      subtitle: 'AIvalanche plant Arbeitsschritte, führt Aktionen in Ihren Tools aus und liefert nachvollziehbare Ergebnisse direkt in den Team-Chat.',
+      subtitle:
+        'AIvalanche plant Arbeitsschritte, fuehrt mit OpenClaw Aktionen in Ihren Tools aus und liefert nachvollziehbare Ergebnisse direkt in den Team-Chat.',
       items: [
         {
           title: 'Persistenter Agent',
-          description: 'Bleibt über Tage und Wochen aktiv, priorisiert Aufgaben selbstständig und hält Teams ohne Reminder auf dem Laufenden.',
+          description:
+            'Bleibt über Tage und Wochen aktiv, priorisiert Aufgaben selbstständig und hält Teams ohne Reminder auf dem Laufenden.',
           icon: 'brain',
         },
         {
           title: 'Proaktive Entscheidungslogik',
-          description: 'Erkennt Abweichungen früh, schlägt nächste Schritte vor und startet sichere Aktionen eigenständig.',
+          description:
+            'Erkennt Abweichungen früh, schlägt nächste Schritte vor und startet sichere Aktionen eigenständig.',
           icon: 'zap',
         },
         {
           title: '3.000+ Integrationen',
-          description: 'Verknüpft Chat, CRM, Ticketing, Code und Datenquellen zu durchgängigen Abläufen über Ihren gesamten Stack.',
+          description:
+            'Verknüpft Chat, CRM, Ticketing, Code und Datenquellen zu durchgängigen Abläufen über Ihren gesamten Stack.',
           icon: 'plug',
         },
         {
           title: 'Lebt in Ihrem Chat',
-          description: 'Startet im Chat, arbeitet im Hintergrund über Ihre Tools und liefert Ergebnisse im selben Thread zurück.',
+          description:
+            'Startet im Chat, arbeitet im Hintergrund über Ihre Tools und liefert Ergebnisse im selben Thread zurück.',
           icon: 'messageSquare',
         },
         {
@@ -66,22 +71,39 @@ export const translations = {
         {
           platform: 'Slack',
           messages: [
-            { role: 'user', name: 'Lisa M.', text: '@AIvalanche Kannst du bitte ein Linear-Ticket erstellen? Wir müssen die Landing Page mit mehr Pricing-Details aktualisieren.' },
-            { role: 'agent', text: 'Ich habe ein Linear-Ticket für das Growth-Team vorbereitet:\n\nTitel: Landing Page mit Pricing-Details aktualisieren\n\nBeschreibung:\n• Detaillierte Preisaufschlüsselung hinzufügen\n• Preisstufen und Feature-Vergleich\n• Pricing-Informationen sichtbarer machen' },
+            {
+              role: 'user',
+              name: 'Lisa M.',
+              text: '@AIvalanche Kannst du bitte ein Linear-Ticket erstellen? Wir müssen die Landing Page mit mehr Pricing-Details aktualisieren.',
+            },
+            {
+              role: 'agent',
+              text: 'Ich habe ein Linear-Ticket für das Growth-Team vorbereitet:\n\nTitel: Landing Page mit Pricing-Details aktualisieren\n\nBeschreibung:\n• Detaillierte Preisaufschlüsselung hinzufügen\n• Preisstufen und Feature-Vergleich\n• Pricing-Informationen sichtbarer machen',
+            },
           ],
         },
         {
           platform: 'Teams',
           messages: [
-            { role: 'user', name: 'Thomas K.', text: 'Was hat sich gestern an unserem Backend geändert? Bleib auf hohem Level.' },
-            { role: 'agent', text: 'Backend-Änderungen gestern — 8 Deployments\n\nPerformance & Speed\n• Refactoring der Snooze-Funktionalität\n• App-Performance verbessert\n\nKI & Automationen\n• BCC-Split-Feature implementiert\n• Automations-Prompts optimiert\n\nFrontend/UI\n• Neue Tooltip- und Checkbox-Komponenten\n• Landing Page Updates' },
+            {
+              role: 'user',
+              name: 'Thomas K.',
+              text: 'Was hat sich gestern an unserem Backend geändert? Bleib auf hohem Level.',
+            },
+            {
+              role: 'agent',
+              text: 'Backend-Änderungen gestern — 8 Deployments\n\nPerformance & Speed\n• Refactoring der Snooze-Funktionalität\n• App-Performance verbessert\n\nKI & Automationen\n• BCC-Split-Feature implementiert\n• Automations-Prompts optimiert\n\nFrontend/UI\n• Neue Tooltip- und Checkbox-Komponenten\n• Landing Page Updates',
+            },
           ],
         },
         {
           platform: 'WhatsApp',
           messages: [
             { role: 'user', name: 'Sarah B.', text: 'Stimmt etwas mit unseren Google Ads diese Woche nicht?' },
-            { role: 'agent', text: 'Euer Google Ads CPA ist diese Woche um 23% gestiegen. Ich habe die Kampagnen analysiert — die "Enterprise"-Anzeigengruppe underperformt.\n\nIch empfehle:\n1. Budget von Enterprise zu SMB verschieben\n2. Neue Ad-Varianten testen\n3. Negative Keywords aktualisieren\n\nSoll ich das direkt umsetzen?' },
+            {
+              role: 'agent',
+              text: 'Euer Google Ads CPA ist diese Woche um 23% gestiegen. Ich habe die Kampagnen analysiert — die "Enterprise"-Anzeigengruppe underperformt.\n\nIch empfehle:\n1. Budget von Enterprise zu SMB verschieben\n2. Neue Ad-Varianten testen\n3. Negative Keywords aktualisieren\n\nSoll ich das direkt umsetzen?',
+            },
           ],
         },
       ],
@@ -93,22 +115,31 @@ export const translations = {
       items: [
         {
           title: 'Marketing Ops',
-          description: 'Steuert Kampagnen-Daten, erstellt Content-Entwuerfe, erkennt Performance-Drifts und liefert Reporting ohne manuelle Schleifen.',
-          examples: ['Google Ads analysieren', 'Blog-Beiträge erstellen', 'Wettbewerber überwachen', 'Reports generieren'],
+          description:
+            'Steuert Kampagnen-Daten, erstellt Content-Entwuerfe, erkennt Performance-Drifts und liefert Reporting ohne manuelle Schleifen.',
+          examples: [
+            'Google Ads analysieren',
+            'Blog-Beiträge erstellen',
+            'Wettbewerber überwachen',
+            'Reports generieren',
+          ],
         },
         {
           title: 'Sales Ops',
-          description: 'Aktualisiert CRM-Daten, priorisiert Leads, bereitet Meetings vor und startet Follow-ups mit einheitlichem Kontext.',
+          description:
+            'Aktualisiert CRM-Daten, priorisiert Leads, bereitet Meetings vor und startet Follow-ups mit einheitlichem Kontext.',
           examples: ['CRM aktualisieren', 'Leads qualifizieren', 'Angebote erstellen', 'Follow-ups senden'],
         },
         {
           title: 'Engineering',
-          description: 'Verbindet Tickets, Repos und Deployments fuer operative Engineering-Workflows statt isolierter Chat-Antworten.',
+          description:
+            'Verbindet Tickets, Repos und Deployments fuer operative Engineering-Workflows statt isolierter Chat-Antworten.',
           examples: ['Jira-Tickets erstellen', 'Deployments überwachen', 'Docs aktualisieren', 'Code analysieren'],
         },
         {
           title: 'HR & Operations',
-          description: 'Fuehrt wiederkehrende interne Prozesse aus: Onboarding, Freigaben, Richtlinien-Kommunikation und Team-Koordination.',
+          description:
+            'Fuehrt wiederkehrende interne Prozesse aus: Onboarding, Freigaben, Richtlinien-Kommunikation und Team-Koordination.',
           examples: ['Onboarding starten', 'Urlaub verwalten', 'Policies erklären', 'Meetings planen'],
         },
       ],
@@ -120,6 +151,10 @@ export const translations = {
         {
           q: 'Was genau ist AIvalanche?',
           a: 'AIvalanche ist ein KI-Mitarbeiter, der in Slack, Microsoft Teams oder WhatsApp lebt. Es hat seinen eigenen Computer in der Cloud, auf dem es Code schreibt und ausführt, um Aufgaben zu erledigen. Es ist kein Chatbot — es ist ein Kollege, der echte Arbeit leistet.',
+        },
+        {
+          q: 'Was ist OpenClaw bei AIvalanche?',
+          a: 'OpenClaw ist die Integrationsschicht von AIvalanche. Sie verbindet Chat-Kanaele und Unternehmens-Tools, damit Aufgaben vom Prompt bis zur Ausfuehrung ohne Medienbruch laufen.',
         },
         {
           q: 'Wie unterscheidet sich AIvalanche von ChatGPT?',
@@ -171,7 +206,7 @@ export const translations = {
       badge: 'JETZT STARTEN',
       title: 'Bereit fuer einen Agenten, der wirklich ausfuehrt?',
       subtitle:
-        'Tragen Sie sich ein und wir zeigen Ihnen, wie AIvalanche Aufgaben in Ihrem Stack von Anfrage bis Ergebnis automatisiert.',
+        'Tragen Sie sich ein und wir zeigen Ihnen, wie AIvalanche mit OpenClaw Aufgaben in Ihrem Stack von Anfrage bis Ergebnis automatisiert.',
       placeholder: 'Ihre Geschäfts-E-Mail',
       cta: 'Auf die Warteliste',
       success: 'Erfolgreich eingetragen!',
@@ -179,7 +214,8 @@ export const translations = {
       privacyNote: 'Kein Spam. Jederzeit abbestellbar. Ihre Daten sind sicher.',
     },
     footer: {
-      description: 'Ein KI-Mitarbeiter, der in Ihrem Chat lebt. Automatisiert Aufgaben, verbindet Tools und erledigt echte Arbeit für Ihr Team.',
+      description:
+        'Ein KI-Mitarbeiter, der in Ihrem Chat lebt. Automatisiert Aufgaben, verbindet Tools und erledigt echte Arbeit für Ihr Team.',
       navigation: 'Navigation',
       legal: 'Rechtliches',
       privacy: 'Datenschutz',
@@ -203,7 +239,7 @@ export const translations = {
       title: 'From chat',
       titleHighlight: 'to execution.',
       subtitle:
-        'AIvalanche is an AI agent for teams: it receives requests in Slack, Teams, or WhatsApp, executes work across your tools, and returns clear outcomes.',
+        'AIvalanche is an AI agent for teams: powered by OpenClaw, it receives requests in Slack, Teams, or WhatsApp, executes work across your tools, and returns clear outcomes.',
       cta: 'Join the Waitlist',
       ctaSecondary: 'Learn more',
       trustedBy: 'Built for teams with real workflows',
@@ -212,11 +248,13 @@ export const translations = {
       badge: 'WHY AIVALANCHE',
       title: 'Not just answers.',
       titleHighlight: 'Execution with discipline.',
-      subtitle: 'AIvalanche plans task flows, executes actions inside your tools, and reports verifiable outcomes back to team chat.',
+      subtitle:
+        'AIvalanche plans task flows, executes actions inside your tools, and reports verifiable outcomes back to team chat.',
       items: [
         {
           title: 'Persistent Agent',
-          description: 'Stays active across days and weeks, prioritizes tasks autonomously, and keeps teams updated without reminders.',
+          description:
+            'Stays active across days and weeks, prioritizes tasks autonomously, and keeps teams updated without reminders.',
           icon: 'brain',
         },
         {
@@ -256,22 +294,35 @@ export const translations = {
         {
           platform: 'Slack',
           messages: [
-            { role: 'user', name: 'Lisa M.', text: '@AIvalanche Can you create a Linear ticket? We need to update the landing page with more pricing details.' },
-            { role: 'agent', text: 'I\'ve prepared a Linear ticket for the Growth team:\n\nTitle: Update landing page with pricing details\n\nDescription:\n• Add detailed pricing breakdown\n• Include pricing tiers and feature comparison\n• Make pricing information more visible' },
+            {
+              role: 'user',
+              name: 'Lisa M.',
+              text: '@AIvalanche Can you create a Linear ticket? We need to update the landing page with more pricing details.',
+            },
+            {
+              role: 'agent',
+              text: "I've prepared a Linear ticket for the Growth team:\n\nTitle: Update landing page with pricing details\n\nDescription:\n• Add detailed pricing breakdown\n• Include pricing tiers and feature comparison\n• Make pricing information more visible",
+            },
           ],
         },
         {
           platform: 'Teams',
           messages: [
             { role: 'user', name: 'Thomas K.', text: 'What changed in our backend yesterday? Keep it high level.' },
-            { role: 'agent', text: 'Backend changes yesterday — 8 deployments\n\nPerformance & Speed\n• Snooze functionality refactored\n• App performance improved\n\nAI & Automations\n• BCC split feature implemented\n• Automation prompts optimized\n\nFrontend/UI\n• New tooltip and checkbox components\n• Landing page updates' },
+            {
+              role: 'agent',
+              text: 'Backend changes yesterday — 8 deployments\n\nPerformance & Speed\n• Snooze functionality refactored\n• App performance improved\n\nAI & Automations\n• BCC split feature implemented\n• Automation prompts optimized\n\nFrontend/UI\n• New tooltip and checkbox components\n• Landing page updates',
+            },
           ],
         },
         {
           platform: 'WhatsApp',
           messages: [
             { role: 'user', name: 'Sarah B.', text: 'Anything off with our Google Ads this week?' },
-            { role: 'agent', text: 'Your Google Ads CPA jumped 23% this week. I\'ve analyzed the campaigns — the "Enterprise" ad group is underperforming.\n\nI recommend:\n1. Shift budget from Enterprise to SMB\n2. Test new ad variants\n3. Update negative keywords\n\nShall I implement this right away?' },
+            {
+              role: 'agent',
+              text: 'Your Google Ads CPA jumped 23% this week. I\'ve analyzed the campaigns — the "Enterprise" ad group is underperforming.\n\nI recommend:\n1. Shift budget from Enterprise to SMB\n2. Test new ad variants\n3. Update negative keywords\n\nShall I implement this right away?',
+            },
           ],
         },
       ],
@@ -283,22 +334,26 @@ export const translations = {
       items: [
         {
           title: 'Marketing Ops',
-          description: 'Manages campaign data, drafts content, detects performance drift, and ships reporting without manual loops.',
+          description:
+            'Manages campaign data, drafts content, detects performance drift, and ships reporting without manual loops.',
           examples: ['Analyze Google Ads', 'Create blog posts', 'Monitor competitors', 'Generate reports'],
         },
         {
           title: 'Sales Ops',
-          description: 'Updates CRM records, prioritizes leads, prepares meetings, and runs follow-ups with shared context.',
+          description:
+            'Updates CRM records, prioritizes leads, prepares meetings, and runs follow-ups with shared context.',
           examples: ['Update CRM', 'Qualify leads', 'Create proposals', 'Send follow-ups'],
         },
         {
           title: 'Engineering',
-          description: 'Connects tickets, repos, and deploys into operational engineering workflows rather than isolated chat replies.',
+          description:
+            'Connects tickets, repos, and deploys into operational engineering workflows rather than isolated chat replies.',
           examples: ['Create Jira tickets', 'Monitor deployments', 'Update docs', 'Analyze code'],
         },
         {
           title: 'HR & Operations',
-          description: 'Executes recurring internal processes including onboarding, approvals, policy support, and team coordination.',
+          description:
+            'Executes recurring internal processes including onboarding, approvals, policy support, and team coordination.',
           examples: ['Start onboarding', 'Manage PTO', 'Explain policies', 'Schedule meetings'],
         },
       ],
@@ -309,11 +364,11 @@ export const translations = {
       items: [
         {
           q: 'What exactly is AIvalanche?',
-          a: 'AIvalanche is an AI coworker that lives in Slack, Microsoft Teams, or WhatsApp. It has its own computer in the cloud where it writes and runs code to complete tasks. It\'s not a chatbot — it\'s a colleague that does real work.',
+          a: "AIvalanche is an AI coworker that lives in Slack, Microsoft Teams, or WhatsApp. It has its own computer in the cloud where it writes and runs code to complete tasks. It's not a chatbot — it's a colleague that does real work.",
         },
         {
           q: 'How is AIvalanche different from ChatGPT?',
-          a: 'Most AI tools generate text. AIvalanche executes. It has a persistent workspace, connects to your actual tools, and performs actions — sending emails, updating CRMs, building apps, generating reports. You don\'t copy-paste outputs. AIvalanche does the work end-to-end.',
+          a: "Most AI tools generate text. AIvalanche executes. It has a persistent workspace, connects to your actual tools, and performs actions — sending emails, updating CRMs, building apps, generating reports. You don't copy-paste outputs. AIvalanche does the work end-to-end.",
         },
         {
           q: 'What can AIvalanche actually do?',
@@ -321,15 +376,15 @@ export const translations = {
         },
         {
           q: 'What tools does AIvalanche connect to?',
-          a: 'Over 3,000 — including Salesforce, HubSpot, Linear, Notion, Jira, Stripe, GitHub, Google Drive, SAP, Slack, Microsoft Teams, and more. If your tool isn\'t supported, AIvalanche can build a custom integration.',
+          a: "Over 3,000 — including Salesforce, HubSpot, Linear, Notion, Jira, Stripe, GitHub, Google Drive, SAP, Slack, Microsoft Teams, and more. If your tool isn't supported, AIvalanche can build a custom integration.",
         },
         {
           q: 'Is my data secure?',
-          a: 'Yes. Each user gets an isolated compute environment. AIvalanche only accesses tools you explicitly connect. Data is encrypted in transit and at rest. We don\'t train on your data. Fully GDPR-compliant.',
+          a: "Yes. Each user gets an isolated compute environment. AIvalanche only accesses tools you explicitly connect. Data is encrypted in transit and at rest. We don't train on your data. Fully GDPR-compliant.",
         },
         {
           q: 'Does AIvalanche have access to all my messages?',
-          a: 'AIvalanche only sees channels it\'s invited to. You control where it reads and responds. It remembers context to be helpful, but you can remove it from any channel at any time.',
+          a: "AIvalanche only sees channels it's invited to. You control where it reads and responds. It remembers context to be helpful, but you can remove it from any channel at any time.",
         },
         {
           q: 'How does AIvalanche learn about my team?',
@@ -341,7 +396,7 @@ export const translations = {
         },
         {
           q: 'How long does setup take?',
-          a: 'Minutes. Install AIvalanche in Slack or Teams, connect the tools you want, and start working. AIvalanche handles onboarding itself — it\'ll introduce itself and ask what you need help with.',
+          a: "Minutes. Install AIvalanche in Slack or Teams, connect the tools you want, and start working. AIvalanche handles onboarding itself — it'll introduce itself and ask what you need help with.",
         },
         {
           q: 'Can multiple people use AIvalanche?',
@@ -349,11 +404,11 @@ export const translations = {
         },
         {
           q: 'Does AIvalanche work outside of Slack?',
-          a: 'Slack and Teams are AIvalanche\'s home, but its work extends everywhere — it connects to external tools, deploys apps to the web, and can send emails on your behalf. You interact via chat; AIvalanche works across your stack.',
+          a: "Slack and Teams are AIvalanche's home, but its work extends everywhere — it connects to external tools, deploys apps to the web, and can send emails on your behalf. You interact via chat; AIvalanche works across your stack.",
         },
         {
           q: 'How do I get on the waitlist?',
-          a: 'Enter your email address on this page and we\'ll reach out once a spot opens up. Companies in the DACH region are prioritized.',
+          a: "Enter your email address on this page and we'll reach out once a spot opens up. Companies in the DACH region are prioritized.",
         },
       ],
     },
@@ -365,11 +420,12 @@ export const translations = {
       placeholder: 'Your business email',
       cta: 'Join the Waitlist',
       success: 'Successfully signed up!',
-      successSub: 'We\'ll be in touch soon.',
+      successSub: "We'll be in touch soon.",
       privacyNote: 'No spam. Unsubscribe anytime. Your data is safe.',
     },
     footer: {
-      description: 'An AI coworker that lives in your chat. Automates tasks, connects tools, and does real work for your team.',
+      description:
+        'An AI coworker that lives in your chat. Automates tasks, connects tools, and does real work for your team.',
       navigation: 'Navigation',
       legal: 'Legal',
       privacy: 'Privacy Policy',
