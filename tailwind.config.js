@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
+  // Keep 'class' so dark: variants only activate via .dark class (which we never add).
+  // Removing this makes Tailwind default to 'media' which uses OS dark mode preference!
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
 
   theme: {
     screens: {
@@ -25,9 +27,9 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: '#B1E346',
-          100: '#F3F8E8',
-          200: '#C4F241',
+          DEFAULT: '#1DBF73',
+          100: '#E8F8F0',
+          200: '#15A863',
         },
         dark: {
           DEFAULT: '#131410',

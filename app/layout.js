@@ -173,8 +173,11 @@ export default function RootLayout({ children }) {
   }
 
   return (
-    <html lang="de">
+    <html lang="de" className="light" style={{ colorScheme: 'light' }} suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        {/* Clear leftover next-themes dark class from localStorage */}
+        <script dangerouslySetInnerHTML={{ __html: `try{localStorage.removeItem('theme');document.documentElement.classList.remove('dark');document.documentElement.classList.add('light')}catch(e){}` }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <meta name="format-detection" content="telephone=no" />
         <meta property="og:site_name" content={siteName} />
@@ -183,24 +186,13 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={cn(
-          'relative overflow-x-hidden bg-white text-base antialiased transition-colors duration-300 dark:bg-dark-300',
+          'relative overflow-x-hidden text-base antialiased',
           inter.variable,
-        )}>
-        {googleTagId && (
-          <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} strategy="afterInteractive" />
-            <Script id="google-tag" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${googleTagId}');
-              `}
-            </Script>
-          </>
+          jakartaSans.variable,
+          playfair.variable,
         )}
-        <Providers attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ThemeSwitcher />
+        style={{ backgroundColor: '#F4F0E8', color: '#121417' }}>
+        <Providers>
           <main className="flex-grow">{children}</main>
         </Providers>
       </body>

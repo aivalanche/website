@@ -1,11 +1,9 @@
 'use client'
-import FadeUpAnimation from '@/components/animations/FadeUpAnimation'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
-import NewsLetter from '@/components/shared/NewsLetter'
 import { useState } from 'react'
 
-const RequestDemo = () => {
+export default function RequestDemo() {
   const [status, setStatus] = useState('')
 
   const handleSubmit = async (e) => {
@@ -18,162 +16,87 @@ const RequestDemo = () => {
         companyName: e.target.companyname.value,
         contactNumber: e.target.contactno.value,
         email: e.target.email.value,
-        message: e.target.message.value
+        message: e.target.message.value,
       }
 
       const response = await fetch('/api/request-demo', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       })
 
       const data = await response.json()
 
       if (!response.ok) {
         setStatus('error')
-        console.error('Send failed:', data.details)
         return
       }
 
       if (data.details?.failed?.length > 0) {
         setStatus('partial')
-        console.log('Partial send:', data.details)
       } else {
         setStatus('success')
         e.target.reset()
       }
-    } catch (error) {
-      console.error('Error:', error)
+    } catch {
       setStatus('error')
     }
+  }
+
+  const inputStyle = {
+    border: '1px solid var(--wp-line, #D8D1C5)',
+    background: 'transparent',
+    color: 'var(--wp-text, #121417)',
   }
 
   return (
     <>
       <SecondaryNavbar />
-      <main>
-        <section className="relative overflow-hidden py-[200px] max-md:pt-25">
-          <div className="absolute left-1/2 top-0 -z-10 h-[550px] w-full -translate-x-1/2  bg-[url('/images/hero-gradient.png')] bg-cover bg-center bg-no-repeat opacity-70 md:hidden"></div>
-          <FadeUpAnimation className="container relative">
-            <div className="mx-auto mb-12 max-w-[475px] text-center">
-              <p className="section-tagline">Contact</p>
-              <h2>Request A Demo</h2>
+      <main className="max-w-[700px] mx-auto px-6 py-32">
+        <p className="text-[11px] tracking-[0.15em] uppercase opacity-30 mb-3">Contact</p>
+        <h1 className="text-3xl md:text-4xl font-bold mb-10">Request a Demo</h1>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="username" className="block text-sm font-medium mb-2">Your name</label>
+              <input type="text" name="username" id="username" required placeholder="Name"
+                className="w-full rounded-lg px-4 py-2.5 text-sm outline-none" style={inputStyle} />
             </div>
-            <div className="relative z-10 mx-auto max-w-[850px]">
-              <div className="absolute left-1/2 top-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2 max-md:hidden">
-                <div className="h-[442px] w-[442px] rounded-full bg-primary-200/20 blur-[145px]"></div>
-                <div className="-ml-[170px] h-[442px] w-[442px] rounded-full bg-primary-200/25 blur-[145px]"></div>
-                <div className="-ml-[170px] h-[442px] w-[442px] rounded-full bg-primary-200/20 blur-[145px]"></div>
-              </div>
-              <div className="rounded-medium bg-white p-2.5 shadow-nav dark:bg-dark-200">
-                <div className="rounded border border-dashed border-gray-100 bg-white p-12 dark:border-borderColor-dark dark:bg-dark-200 max-md:p-5">
-                  <form onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-12 max-md:gap-y-10 md:gap-8 md:gap-x-12">
-                      <div className="max-md:col-span-full md:col-span-6">
-                        <label
-                          htmlFor="username"
-                          className="mb-2 block font-jakarta_sans text-sm font-medium text-paragraph dark:text-white">
-                          Your name
-                        </label>
-                        <input
-                          type="text"
-                          name="username"
-                          id="username"
-                          required
-                          placeholder="Name"
-                          className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary"
-                        />
-                      </div>
-                      <div className="max-md:col-span-full md:col-span-6">
-                        <label
-                          htmlFor="companyname"
-                          className="mb-2 block font-jakarta_sans text-sm font-medium text-paragraph dark:text-white">
-                          Company name
-                        </label>
-                        <input
-                          type="text"
-                          name="companyname"
-                          id="companyname"
-                          required
-                          placeholder="Company Name"
-                          className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary"
-                        />
-                      </div>
-                      <div className="max-md:col-span-full md:col-span-6">
-                        <label
-                          htmlFor="contactno"
-                          className="mb-2 block font-jakarta_sans text-sm font-medium text-paragraph dark:text-white">
-                          Contact No.
-                        </label>
-                        <input
-                          type="tel"
-                          name="contactno"
-                          id="contactno"
-                          required
-                          placeholder="Contact Number"
-                          className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary"
-                        />
-                      </div>
-                      <div className="max-md:col-span-full md:col-span-6">
-                        <label
-                          htmlFor="email"
-                          className="mb-2 block font-jakarta_sans text-sm font-medium text-paragraph dark:text-white">
-                          Your Email
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          required
-                          placeholder="Email"
-                          className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:focus:border-primary"
-                        />
-                      </div>
-                      <div className="col-span-full">
-                        <label
-                          htmlFor="message"
-                          className="mb-2 block font-jakarta_sans text-sm font-medium text-paragraph dark:text-white">
-                          Message
-                        </label>
-                        <textarea
-                          name="message"
-                          id="message"
-                          required
-                          rows="10"
-                          className="block w-full resize-none rounded border border-borderColor bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:focus:border-primary">
-                        </textarea>
-                      </div>
-                      <div className="col-span-full mx-auto text-center">
-                        <button
-                          type="submit"
-                          className="btn"
-                          disabled={status === 'sending'}>
-                          {status === 'sending' ? 'Sending...' : 'Request Now'}
-                        </button>
-                        {status === 'success' && (
-                          <p className="mt-4 text-green-600">Demo request sent successfully!</p>
-                        )}
-                        {status === 'partial' && (
-                          <p className="mt-4 text-yellow-600">Request sent with some delivery issues. We'll get back to you soon.</p>
-                        )}
-                        {status === 'error' && (
-                          <p className="mt-4 text-red-600">Failed to send request. Please try again.</p>
-                        )}
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
+            <div>
+              <label htmlFor="companyname" className="block text-sm font-medium mb-2">Company name</label>
+              <input type="text" name="companyname" id="companyname" required placeholder="Company"
+                className="w-full rounded-lg px-4 py-2.5 text-sm outline-none" style={inputStyle} />
             </div>
-          </FadeUpAnimation>
-        </section>
-        <NewsLetter />
+            <div>
+              <label htmlFor="contactno" className="block text-sm font-medium mb-2">Contact No.</label>
+              <input type="tel" name="contactno" id="contactno" required placeholder="Phone"
+                className="w-full rounded-lg px-4 py-2.5 text-sm outline-none" style={inputStyle} />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email</label>
+              <input type="email" name="email" id="email" required placeholder="Email"
+                className="w-full rounded-lg px-4 py-2.5 text-sm outline-none" style={inputStyle} />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+            <textarea name="message" id="message" required rows="6"
+              className="w-full rounded-lg px-4 py-2.5 text-sm outline-none resize-none" style={inputStyle} />
+          </div>
+          <div className="text-center">
+            <button type="submit" disabled={status === 'sending'}
+              className="px-7 py-3 rounded-full font-semibold text-sm transition-colors"
+              style={{ background: 'var(--wp-accent, #1DBF73)', color: 'var(--wp-bg, #F4F0E8)' }}>
+              {status === 'sending' ? 'Sending...' : 'Request Now'}
+            </button>
+            {status === 'success' && <p className="mt-4 text-sm" style={{ color: 'var(--wp-accent)' }}>Demo request sent!</p>}
+            {status === 'partial' && <p className="mt-4 text-sm text-yellow-600">Sent with some delivery issues.</p>}
+            {status === 'error' && <p className="mt-4 text-sm text-red-600">Failed. Please try again.</p>}
+          </div>
+        </form>
       </main>
       <Footer />
     </>
   )
 }
-
-export default RequestDemo

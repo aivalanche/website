@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Warm Paper design tokens ─── */
+:root {
+  --wp-bg: #F4F0E8;
+  --wp-bg-alt: #EDE8DD;
+  --wp-text: #121417;
+  --wp-text-soft: rgba(18,20,23,0.55);
+  --wp-text-muted: rgba(18,20,23,0.3);
+  --wp-line: #D8D1C5;
+  --wp-surface: rgba(18,20,23,0.03);
+  --wp-accent: #1DBF73;
+  --wp-nav-bg: rgba(244,240,232,0.9);
+  --wp-selection: rgba(29,191,115,0.15);
+}
+
 /* Custom Video Player - Hide Fullscreen Button */
 .custom-video-player::-webkit-media-controls-fullscreen-button {
     display: none !important;
