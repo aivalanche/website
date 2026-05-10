@@ -1,113 +1,76 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { FooterData } from '@/data/footer'
-import { translations } from '@/utils/translations'
 
-const Footer = ({ locale = 'de' }) => {
-  const t = translations[locale]
-
-  const navLinks = [
-    { label: t.nav.features, href: '#features' },
-    { label: t.nav.howItWorks, href: '#how-it-works' },
-    { label: locale === 'de' ? 'Integrationen' : 'Integrations', href: '#integrations' },
-    { label: t.nav.faq, href: '#faq' },
-  ]
-
-  const legalLinks = [
-    { label: t.footer.privacy, href: '/privacy' },
-    { label: t.footer.terms, href: '/terms' },
-    { label: t.footer.imprint, href: '/impressum' },
-    { label: 'Sitemap', href: '/sitemap' },
-  ]
-
+export default function Footer() {
   return (
-    <footer className="relative border-t border-borderColor bg-white pb-8 pt-16 dark:border-borderColor-dark dark:bg-dark-300">
+    <footer>
       <div className="container">
-        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-12">
-          {/* Brand */}
-          <div className="md:col-span-5">
-            <Link href="/" className="mb-5 inline-block">
-              <Image
-                src={FooterData.logo}
-                alt="AIvalanche"
-                width={120}
-                height={34}
-                className="block h-auto max-h-[34px] w-auto object-contain dark:hidden"
-              />
-              <Image
-                src={FooterData.logoDark}
-                alt="AIvalanche"
-                width={120}
-                height={34}
-                className="hidden h-auto max-h-[34px] w-auto object-contain dark:block"
-              />
-            </Link>
-            <p className="max-w-sm text-sm leading-relaxed text-paragraph-light dark:text-white/70">
-              {t.footer.description}
-            </p>
-            <div className="mt-5 flex gap-3">
-              {FooterData.socialLinks.map((social) => (
-                <a
-                  key={social.id}
-                  href={social.link}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-borderColor text-paragraph-light transition-colors hover:border-primary hover:bg-primary hover:text-white dark:border-borderColor-dark dark:text-white/70">
-                  {social.name}
-                </a>
-              ))}
+        <div className="row">
+          <div className="col big">
+            <div className="logo">
+              Labflow<span style={{ fontSize: 14, color: 'var(--ink-2)', verticalAlign: 'super' }}>®</span>
+            </div>
+            <div style={{ maxWidth: '38ch', lineHeight: 1.6 }}>
+              Agentic control plane for electronic test &amp; measurement. Built in Cambridge, MA &amp; Eindhoven.
+              Hardware-aware, human-supervised.
+            </div>
+            <div style={{ marginTop: 14 }}>
+              <span className="pill orange upp">BETA · v4.2.1</span> &nbsp;{' '}
+              <span className="pill upp outline">SOC-2 IN PROGRESS</span>
             </div>
           </div>
-
-          {/* Navigation */}
-          <div className="md:col-span-3 md:col-start-7">
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-paragraph dark:text-white">
-              {t.footer.navigation}
-            </h4>
-            <ul className="space-y-2.5">
-              {navLinks.map((link, i) => (
-                <li key={i}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-paragraph-light transition-colors hover:text-primary dark:text-white/70">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="col">
+            <h5>Product</h5>
+            <Link href="/product">Console</Link>
+            <Link href="/agents">Agents</Link>
+            <Link href="/instruments">Instruments</Link>
+            <Link href="/protocols">Protocols</Link>
+            <Link href="/pricing">Pricing</Link>
           </div>
-
-          {/* Legal */}
-          <div className="md:col-span-2">
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-paragraph dark:text-white">
-              {t.footer.legal}
-            </h4>
-            <ul className="space-y-2.5">
-              {legalLinks.map((link, i) => (
-                <li key={i}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-paragraph-light transition-colors hover:text-primary dark:text-white/70">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <a
-                  href={`mailto:${FooterData.email}`}
-                  className="text-sm text-paragraph-light transition-colors hover:text-primary dark:text-white/70">
-                  {t.footer.contact}
-                </a>
-              </li>
-            </ul>
+          <div className="col">
+            <h5>Drivers</h5>
+            <Link href="/instruments">Keithley</Link>
+            <Link href="/instruments">Keysight</Link>
+            <Link href="/instruments">Tektronix</Link>
+            <Link href="/instruments">Rigol</Link>
+            <Link href="/instruments">All 42 →</Link>
+          </div>
+          <div className="col">
+            <h5>Resources</h5>
+            <Link href="/docs">Docs</Link>
+            <Link href="/changelog">Changelog</Link>
+            <Link href="/openclaw">OpenClaw</Link>
+            <Link href="/sitemap">Sitemap</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+          <div className="col">
+            <h5>Company</h5>
+            <Link href="/contact">About</Link>
+            <Link href="/contact">Careers · 4</Link>
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
+            <Link href="/impressum">Impressum</Link>
           </div>
         </div>
-
-        {/* Bottom bar */}
-        <div className="border-t border-borderColor pt-8 dark:border-borderColor-dark">
-          <p className="text-center text-xs text-paragraph-light dark:text-white/50">{t.footer.copyright}</p>
+        <div className="ftr-row upp">
+          <span>© 2026 LABFLOW SYSTEMS</span>
+          <span>·</span>
+          <span>ARCHIVE REF · LF-WEB-2026-Q2</span>
+          <span style={{ flex: 1 }} />
+          <span>
+            <span
+              style={{
+                display: 'inline-block',
+                width: 8,
+                height: 8,
+                background: 'var(--orange)',
+                marginRight: 8,
+                verticalAlign: 'middle',
+              }}
+            />
+            SYSTEMS NOMINAL · ALL BAYS ONLINE
+          </span>
         </div>
       </div>
     </footer>
   )
 }
-
-export default Footer
