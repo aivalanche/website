@@ -1,11 +1,63 @@
 import Link from 'next/link'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import { pageMetadata, breadcrumbSchema, SITE_URL } from '../seo'
 
-export const metadata = {
-  title: 'Pricing — Labflow',
+export const metadata = pageMetadata({
+  title: 'Pricing — Free for one bench, scale by bench · Labflow',
   description:
-    'Labflow pricing — Bench (free in beta), Lab and Enterprise. Bring your own instruments, only pay for the agent runtime your bench actually uses.',
+    'Labflow pricing. Bench is free during public beta (single bench, all 42 drivers). Lab is $640 per bench / month, billed annually, with SSO and org-wide policy. Enterprise is custom — self-hosted, air-gapped, on-device agent.',
+  path: '/pricing',
+  keywords: [
+    'Labflow pricing',
+    'AI lab automation pricing',
+    'instrument control software pricing',
+    'self-hosted lab automation',
+    'air-gapped lab AI',
+  ],
+})
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Pricing', path: '/pricing' },
+])
+
+const pricingOffers = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Labflow',
+  description: 'AI agent for electronic test and measurement.',
+  brand: { '@type': 'Brand', name: 'Labflow' },
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Bench',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/pricing`,
+      description: 'Free during public beta. One bench, up to 6 instruments, all 42 drivers, signed reports.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Lab',
+      price: '640',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/pricing`,
+      description:
+        'Per bench / month, billed annually. Unlimited benches, SSO + SCIM, org-wide safety policy, audit log, OpenTelemetry export, priority support.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Enterprise',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/contact`,
+      description:
+        'Custom. Self-hosted or VPC-isolated, on-device agent for air-gapped labs, custom driver SLAs, 24×7 support.',
+    },
+  ],
 }
 
 const tiers = [
@@ -110,6 +162,8 @@ const faq = [
 export default function PricingPage() {
   return (
     <div className="lf-root">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingOffers) }} />
       <SecondaryNavbar />
 
       <section className="lf-page-hero">

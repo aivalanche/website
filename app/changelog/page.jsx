@@ -1,12 +1,20 @@
 import Link from 'next/link'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import { pageMetadata, breadcrumbSchema } from '../seo'
 
-export const metadata = {
-  title: 'Changelog — Labflow',
+export const metadata = pageMetadata({
+  title: 'Changelog — Releases, drivers, agent upgrades · Labflow',
   description:
-    'Labflow changelog — what shipped, when, and why. Drivers added, agent upgrades, safety improvements, console refinements.',
-}
+    'Labflow release notes. New instrument drivers, FLOW agent upgrades, console refinements and safety policy improvements — versioned by SemVer and shipped on Tuesdays.',
+  path: '/changelog',
+  keywords: ['Labflow changelog', 'Labflow releases', 'instrument driver releases', 'lab automation updates'],
+})
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Changelog', path: '/changelog' },
+])
 
 const releases = [
   {
@@ -109,6 +117,7 @@ const tagMeta = {
 export default function ChangelogPage() {
   return (
     <div className="lf-root">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <SecondaryNavbar />
 
       <section className="lf-page-hero">

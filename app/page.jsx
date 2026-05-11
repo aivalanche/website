@@ -1,10 +1,36 @@
 import Link from 'next/link'
 import WaitlistEmailForm from '@/components/labflow/WaitlistEmailForm'
+import { faqSchema } from './faq-schema'
+import { productSchema } from './product-schema'
+
+const homeTitle = 'Labflow — The AI agent that talks to your lab instruments'
+const homeDescription =
+  'Talk to your benchtop. Labflow is the AI agent for electronic test & measurement — drive oscilloscopes, source-measure units (Keithley, Keysight), function generators, power supplies, DMMs and DAQs with natural language. SCPI and VISA underneath, human-in-the-loop safety on top, signed reports out the other side.'
 
 export const metadata = {
-  title: 'Labflow — AI-controlled lab instruments',
-  description:
-    'Labflow is the agentic control plane for electronic test & measurement. Drive SMUs, scopes, function generators, DAQs and supplies from one agent — wired by tools, governed by humans.',
+  title: homeTitle,
+  description: homeDescription,
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: homeTitle,
+    description: homeDescription,
+    url: 'https://aivalanche.com/',
+    type: 'website',
+    images: [
+      {
+        url: '/images/labflow-control-diagram-generated.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Labflow agent driving SMUs, scopes, function generators and supplies from one console',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: homeTitle,
+    description: homeDescription,
+    images: ['/images/labflow-control-diagram-generated.webp'],
+  },
 }
 
 const navItems = [
@@ -143,9 +169,11 @@ function SectionHead({ num, label, title, right }) {
 export default function HomePage() {
   return (
     <div className="lf-root">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       {/* Top utility bar */}
       <div className="utility">
-        <div className="container row mono upp">
+        <div className="row mono upp container">
           <span>
             <span className="sq" />
             LABFLOW / SYSTEMS ONLINE
@@ -296,9 +324,7 @@ export default function HomePage() {
       <div className="dash-wrap">
         <div className="container">
           <div className="section-head">
-            <div className="label col-2 upp">
-              {orangeSq}02 / CONSOLE
-            </div>
+            <div className="label col-2 upp">{orangeSq}02 / CONSOLE</div>
             <h2 className="title col-7">
               One bench. One agent. <br />
               One window of glass.
@@ -753,9 +779,7 @@ export default function HomePage() {
       <section className="inst">
         <div className="container">
           <div className="section-head" style={{ paddingTop: 36 }}>
-            <div className="label col-2 upp">
-              {orangeSq}04 / INSTRUMENTS
-            </div>
+            <div className="label col-2 upp">{orangeSq}04 / INSTRUMENTS</div>
             <h2 className="title col-7">A common surface for the whole bench.</h2>
             <div className="right col-3 upp">
               42 DRIVERS · 11 VENDORS
@@ -868,7 +892,11 @@ export default function HomePage() {
               <h4>Multimeters</h4>
               <div className="sub">6½-digit · TRMS</div>
               <div className="read">
-                —<span className="u" style={{ fontSize: 11 }}> idle</span>
+                —
+                <span className="u" style={{ fontSize: 11 }}>
+                  {' '}
+                  idle
+                </span>
               </div>
               <svg className="mini" viewBox="0 0 200 32" preserveAspectRatio="none">
                 <line x1="0" y1="20" x2="200" y2="20" stroke="var(--ink-3)" strokeWidth="1" strokeDasharray="3 4" />
@@ -886,7 +914,11 @@ export default function HomePage() {
               <h4>DAQ &amp; Loggers</h4>
               <div className="sub">32 AI · 2MS/s</div>
               <div className="read">
-                —<span className="u" style={{ fontSize: 11 }}> idle</span>
+                —
+                <span className="u" style={{ fontSize: 11 }}>
+                  {' '}
+                  idle
+                </span>
               </div>
               <svg className="mini" viewBox="0 0 200 32" preserveAspectRatio="none">
                 <polyline
@@ -982,13 +1014,27 @@ export default function HomePage() {
                   </div>
                   <svg className="heat" viewBox="0 0 320 120" preserveAspectRatio="none">
                     <g fontFamily="JetBrains Mono" fontSize="7" fill="#7a7a76">
-                      <text x="0" y="10">VGS↓ / VDS→</text>
-                      <text x="60" y="10">0.5</text>
-                      <text x="100" y="10">1.0</text>
-                      <text x="140" y="10">1.5</text>
-                      <text x="180" y="10">2.0</text>
-                      <text x="220" y="10">2.5</text>
-                      <text x="260" y="10">3.0</text>
+                      <text x="0" y="10">
+                        VGS↓ / VDS→
+                      </text>
+                      <text x="60" y="10">
+                        0.5
+                      </text>
+                      <text x="100" y="10">
+                        1.0
+                      </text>
+                      <text x="140" y="10">
+                        1.5
+                      </text>
+                      <text x="180" y="10">
+                        2.0
+                      </text>
+                      <text x="220" y="10">
+                        2.5
+                      </text>
+                      <text x="260" y="10">
+                        3.0
+                      </text>
                     </g>
                     <g>
                       <g>
@@ -1033,11 +1079,21 @@ export default function HomePage() {
                       </g>
                     </g>
                     <g fontFamily="JetBrains Mono" fontSize="7" fill="#7a7a76">
-                      <text x="38" y="32">3.2</text>
-                      <text x="38" y="48">2.4</text>
-                      <text x="38" y="64">1.6</text>
-                      <text x="38" y="80">0.8</text>
-                      <text x="38" y="96">0.0</text>
+                      <text x="38" y="32">
+                        3.2
+                      </text>
+                      <text x="38" y="48">
+                        2.4
+                      </text>
+                      <text x="38" y="64">
+                        1.6
+                      </text>
+                      <text x="38" y="80">
+                        0.8
+                      </text>
+                      <text x="38" y="96">
+                        0.0
+                      </text>
                     </g>
                   </svg>
                   <div className="seq">
@@ -1190,15 +1246,33 @@ export default function HomePage() {
                             outlier · pt 137
                           </text>
                           <g fontFamily="JetBrains Mono" fontSize="8" fill="#5a5a58">
-                            <text x="4" y="10">Id(mA)</text>
-                            <text x="4" y="60">8</text>
-                            <text x="4" y="90">4</text>
-                            <text x="4" y="118">0</text>
-                            <text x="30" y="128">0</text>
-                            <text x="120" y="128">1.0</text>
-                            <text x="200" y="128">2.0</text>
-                            <text x="290" y="128">3.0</text>
-                            <text x="280" y="128">VGS(V)</text>
+                            <text x="4" y="10">
+                              Id(mA)
+                            </text>
+                            <text x="4" y="60">
+                              8
+                            </text>
+                            <text x="4" y="90">
+                              4
+                            </text>
+                            <text x="4" y="118">
+                              0
+                            </text>
+                            <text x="30" y="128">
+                              0
+                            </text>
+                            <text x="120" y="128">
+                              1.0
+                            </text>
+                            <text x="200" y="128">
+                              2.0
+                            </text>
+                            <text x="290" y="128">
+                              3.0
+                            </text>
+                            <text x="280" y="128">
+                              VGS(V)
+                            </text>
                           </g>
                         </svg>
                       </div>
@@ -1208,16 +1282,18 @@ export default function HomePage() {
                           FLOW · WRITTEN SUMMARY
                         </div>
                         <p>
-                          The device exhibits a clean transfer characteristic with <span className="hl">Vth = 1.42 V</span>{' '}
-                          and a subthreshold slope of <span className="hl">78 mV/dec</span>. Drain current saturates
-                          near 11.8 mA, consistent with the 100 mA compliance band.
+                          The device exhibits a clean transfer characteristic with{' '}
+                          <span className="hl">Vth = 1.42 V</span> and a subthreshold slope of{' '}
+                          <span className="hl">78 mV/dec</span>. Drain current saturates near 11.8 mA, consistent with
+                          the 100 mA compliance band.
                         </p>
                         <p>
                           One outlier was observed at point 137 (Id deviated 0.31 mA from the local fit). Re-run of that
                           step matched the curve; the original sample is preserved in raw data.
                         </p>
                         <p style={{ color: 'var(--ink-2)', fontSize: 11 }}>
-                          Recommendation: tighten settling time to 75 ms above VGS = 2.0 V; current 50 ms shows mild lag.
+                          Recommendation: tighten settling time to 75 ms above VGS = 2.0 V; current 50 ms shows mild
+                          lag.
                         </p>
                       </div>
                     </div>
@@ -1356,7 +1432,7 @@ export default function HomePage() {
               </div>
               <div style={{ marginTop: 14 }}>
                 <span className="pill orange upp">BETA · v4.2.1</span> &nbsp;{' '}
-                <span className="pill outline upp">SOC-2 IN PROGRESS</span>
+                <span className="pill upp outline">SOC-2 IN PROGRESS</span>
               </div>
             </div>
             <div className="col">
@@ -1396,9 +1472,7 @@ export default function HomePage() {
             <span>·</span>
             <span>ARCHIVE REF · LF-WEB-2026-Q2</span>
             <span style={{ flex: 1 }} />
-            <span>
-              {orangeSq}SYSTEMS NOMINAL · ALL BAYS ONLINE
-            </span>
+            <span>{orangeSq}SYSTEMS NOMINAL · ALL BAYS ONLINE</span>
           </div>
         </div>
       </footer>

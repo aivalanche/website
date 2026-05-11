@@ -1,12 +1,29 @@
 import Link from 'next/link'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import { pageMetadata, breadcrumbSchema } from '../seo'
 
-export const metadata = {
-  title: 'Docs — Labflow',
+export const metadata = pageMetadata({
+  title: 'Docs — Quickstart, SCPI cookbook, driver matrix · Labflow',
   description:
-    'Labflow documentation — quickstart, install, SCPI cookbook, protocol DSL, driver matrix, API reference. Everything we wish we had three labs ago.',
-}
+    'Labflow documentation for engineers. Five-minute quickstart, SCPI recipes for Keithley 2400 / Tektronix MSO64 / Rigol DG1022Z / R&S NGE100 / NI USB-6363, the protocol DSL, Python SDK, CLI reference, REST API, webhooks, OpenTelemetry.',
+  path: '/docs',
+  keywords: [
+    'Labflow docs',
+    'SCPI cookbook',
+    'PyVISA recipes',
+    'Keithley 2400 Python',
+    'Tektronix MSO64 automation',
+    'Rigol DG1022Z SCPI',
+    'NI USB-6363 streaming',
+    'lab automation API',
+  ],
+})
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Docs', path: '/docs' },
+])
 
 const quickStart = [
   { n: '01', h: 'Install the CLI', code: 'curl -fsSL https://labflow.io/install | sh' },
@@ -105,6 +122,7 @@ const sections = [
 export default function DocsPage() {
   return (
     <div className="lf-root">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <SecondaryNavbar />
 
       <section className="lf-page-hero">

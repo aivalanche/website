@@ -1,59 +1,53 @@
-export const productSchemas = [
+export const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Labflow',
+  applicationCategory: 'EngineeringApplication',
+  applicationSubCategory: 'Laboratory instrument automation',
+  operatingSystem: 'Linux, macOS, Windows',
+  description:
+    'Labflow is the AI agent for electronic test and measurement. Drive oscilloscopes, source-measure units, function generators, power supplies, DMMs and DAQs from one agent — natural language in, SCPI out, signed reports back.',
+  url: 'https://aivalanche.com',
+  brand: { '@type': 'Brand', name: 'Labflow' },
+  offers: [
     {
-        "@context": "https://schema.org/",
-        "@type": "SoftwareApplication",
-        "name": "LabFlow",
-        "applicationCategory": "EngineeringApplication",
-        "operatingSystem": "All",
-        "offers": {
-            "@type": "Offer",
-            "price": "Contact for pricing",
-            "priceCurrency": "USD"
-        },
-        "description": "AI-Assisted Lab Engineer for laboratory workflow automation. LabFlow unifies instrumentation control, Python/LabVIEW scripting, and high-resolution dashboards into a single desktop experience.",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "24"
-        },
-        "featureList": "Unified control interface, Real-time data acquisition, AI-powered experiment optimization, Native Python and LabVIEW integration"
+      '@type': 'Offer',
+      name: 'Bench',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: 'https://aivalanche.com/pricing',
+      description: 'Free during public beta — single bench, up to 6 instruments, all 42 drivers, signed reports.',
     },
     {
-        "@context": "https://schema.org/",
-        "@type": "SoftwareApplication",
-        "name": "OpticFlow",
-        "applicationCategory": "CADApplication",
-        "operatingSystem": "All",
-        "offers": {
-            "@type": "Offer",
-            "price": "Contact for pricing",
-            "priceCurrency": "USD"
-        },
-        "description": "Accelerated Optical System Design platform. OpticFlow automates optomechanical workflows, eliminating weeks of back-and-forth between optical and mechanical design.",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "31"
-        },
-        "featureList": "Drag & Drop optical component placement, Auto-generated 3D mechanical structures, Real-time updates to CAD models, Direct export to Zemax OpticStudio"
+      '@type': 'Offer',
+      name: 'Lab',
+      price: '640',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: 'https://aivalanche.com/pricing',
+      description:
+        'Per bench / month, billed annually. Unlimited benches and instruments, SSO/SCIM, org-wide policy, audit log, OpenTelemetry export.',
     },
     {
-        "@context": "https://schema.org/",
-        "@type": "SoftwareApplication",
-        "name": "Sfera",
-        "applicationCategory": "EngineeringApplication",
-        "operatingSystem": "All",
-        "offers": {
-            "@type": "Offer",
-            "price": "Contact for pricing",
-            "priceCurrency": "USD"
-        },
-        "description": "Parametric Models Optimizer for BSIM4 and semiconductor design. Sfera uses advanced Bayesian optimization and evolutionary algorithms to dramatically accelerate model fitting for CMOS processes.",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.7",
-            "ratingCount": "19"
-        },
-        "featureList": "Automated model extraction, Parallel multi-corner optimization, Statistical validation, Direct SPICE model generation"
-    }
-]; 
+      '@type': 'Offer',
+      name: 'Enterprise',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: 'https://aivalanche.com/contact',
+      description: 'Custom — self-hosted or air-gapped, on-device agent, custom driver SLA, 24×7 support.',
+    },
+  ],
+  featureList: [
+    'Natural-language protocols compiled to SCPI / VISA / IVI',
+    'Drivers for 42 instruments across 11 vendors (Keithley, Keysight, Tektronix, Rigol, R&S, Siglent, Fluke, NI, B&K Precision, Chroma, Anritsu)',
+    'Auto-discovery on GPIB, USBTMC, LAN (LXI / VXI-11 / HiSLIP) and serial',
+    'Multi-instrument choreography across SMU, scope, function generator, PSU, DMM and DAQ',
+    'Human-in-the-loop safety with hardware-enforced compliance ceilings and dual-sign approvals',
+    'Live waveform reasoning with plain-English anomaly flagging',
+    'Signed, reproducible session manifests with byte-identical replay',
+    'Publication-ready reports in PDF, HTML, Markdown and LaTeX',
+  ],
+  keywords:
+    'AI agent for lab instruments, AI for oscilloscope, AI for Keithley SMU, AI for function generator, natural language SCPI, LLM lab automation, agentic lab automation, electronics lab automation, PyVISA AI agent, SCPI automation, test and measurement automation, Labflow',
+}

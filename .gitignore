@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local mockups / dropped screenshots
+/Labflow.html
+/*.png
+/build_output.txt
+

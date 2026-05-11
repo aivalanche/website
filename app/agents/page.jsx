@@ -1,12 +1,27 @@
 import Link from 'next/link'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import { pageMetadata, breadcrumbSchema } from '../seo'
 
-export const metadata = {
-  title: 'Agents — Labflow',
+export const metadata = pageMetadata({
+  title: 'Agents — Meet FLOW, the AI agent for your bench · Labflow',
   description:
-    'FLOW is the Labflow agent. It plans the sweep, validates the policy, drives the instruments, watches the waveform, and writes the report — with human approval on every dangerous step.',
-}
+    'FLOW is the Labflow lab agent. It plans the sweep, validates the safety policy, drives the instruments, watches the waveform, flags anomalies, and writes the lab report — with human signatures on every dangerous step. Tool-calling architecture; SCPI / VISA / IVI underneath.',
+  path: '/agents',
+  keywords: [
+    'AI agent for oscilloscope',
+    'AI agent for SMU',
+    'AI agent for lab bench',
+    'tool-calling lab agent',
+    'agentic lab automation',
+    'Labflow FLOW agent',
+  ],
+})
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Agents', path: '/agents' },
+])
 
 const agentLoop = [
   {
@@ -93,6 +108,7 @@ const models = [
 export default function AgentsPage() {
   return (
     <div className="lf-root">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <SecondaryNavbar />
 
       <section className="lf-page-hero">

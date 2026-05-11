@@ -7,11 +7,12 @@ import '@/scss/theme.scss'
 
 const siteUrl = 'https://aivalanche.com'
 const siteName = 'Labflow'
-const defaultTitle = 'Labflow — Agentic control plane for electronic test & measurement'
+const defaultTitle = 'Labflow — The AI agent that talks to your lab instruments'
 const defaultDescription =
-  'Labflow is the agentic control plane for electronic test & measurement. Drive SMUs, scopes, function generators, DAQs and supplies from one agent — wired by tools, governed by humans.'
-const defaultOgImage = '/images/home-8-img/ai-hero.png'
+  'Labflow is the AI agent for electronic test & measurement. Drive oscilloscopes, source-measure units (Keithley, Keysight), function generators, power supplies, DMMs and DAQs with natural language — SCPI and VISA underneath, human-in-the-loop safety on top, signed reports out the other side.'
+const defaultOgImage = '/images/labflow-control-diagram-generated.webp'
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+
 const archivo = Archivo({
   weight: ['400', '500', '600', '700', '800', '900'],
   style: ['normal'],
@@ -30,32 +31,38 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   title: {
     default: defaultTitle,
-    template: '%s | AIvalanche',
+    template: '%s · Labflow',
   },
   description: defaultDescription,
   keywords: [
+    'AI agent for lab instruments',
+    'AI for oscilloscope',
+    'AI for Keithley SMU',
+    'AI for function generator',
+    'natural language SCPI',
+    'LLM lab automation',
+    'agentic lab automation',
     'electronics lab automation',
-    'AI lab instruments',
-    'oscilloscope automation',
-    'pulse generator automation',
-    'Keithley SMU automation',
-    'SCPI automation',
     'PyVISA AI agent',
-    'lab report generation',
-    'instrument control GUI',
-    'Codex lab automation',
-    'Claude lab automation',
+    'SCPI automation',
+    'VISA automation',
+    'test and measurement automation',
+    'Keithley 2400 automation',
+    'Tektronix MSO64 automation',
+    'Keysight oscilloscope automation',
+    'Rigol DG1022Z automation',
+    'instrument control software',
+    'lab report automation',
+    'SMU automation',
+    'DAQ automation',
+    'power supply automation',
     'Labflow',
-    'aivalanche',
   ],
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
     languages: {
-      'de-DE': '/',
-      'de-AT': '/',
-      'de-CH': '/',
-      'en-US': '/?lang=en',
+      'en-US': '/',
       'x-default': '/',
     },
   },
@@ -76,7 +83,7 @@ export const metadata = {
         url: defaultOgImage,
         width: 1200,
         height: 630,
-        alt: 'AIvalanche AI agent platform preview',
+        alt: 'Labflow — agentic control plane wiring lab instruments to one AI agent',
       },
     ],
   },
@@ -98,12 +105,9 @@ export const metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: '/images/favicons/favicon.ico' },
-      { url: '/images/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/images/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [{ url: '/images/favicons/apple-icon-180x180.png', sizes: '180x180', type: 'image/png' }],
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   manifest: '/site.webmanifest',
   verification: googleSiteVerification ? { google: googleSiteVerification } : undefined,
@@ -112,12 +116,15 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  colorScheme: 'light dark',
+  colorScheme: 'light',
   themeColor: '#ff4d12',
 }
 
 export default function RootLayout({ children }) {
   const organizationId = `${siteUrl}/#organization`
+  const websiteId = `${siteUrl}/#website`
+  const softwareId = `${siteUrl}/#software`
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -135,59 +142,84 @@ export default function RootLayout({ children }) {
             '@type': 'ContactPoint',
             contactType: 'sales',
             email: 'support@aivalanche.de',
-            availableLanguage: ['en-US', 'de-DE'],
+            availableLanguage: ['en-US'],
           },
         ],
-        knowsAbout: ['AI lab automation', 'Electronics test instrumentation', 'SCPI', 'PyVISA', 'Codex', 'Claude'],
+        knowsAbout: [
+          'AI agent for electronic test and measurement',
+          'Oscilloscope automation',
+          'Source-measure unit automation',
+          'Function generator automation',
+          'Power supply automation',
+          'Digital multimeter automation',
+          'Data acquisition automation',
+          'SCPI',
+          'VISA',
+          'IVI',
+          'PyVISA',
+          'GPIB',
+          'USBTMC',
+          'LXI',
+          'Keithley',
+          'Keysight',
+          'Tektronix',
+          'Rigol',
+          'Rohde & Schwarz',
+          'Siglent',
+          'Fluke',
+          'National Instruments',
+        ],
       },
       {
         '@type': 'WebSite',
-        '@id': `${siteUrl}/#website`,
+        '@id': websiteId,
         url: siteUrl,
         name: siteName,
         description: defaultDescription,
         publisher: {
           '@id': organizationId,
         },
-        inLanguage: ['en-US', 'de-DE'],
-      },
-      {
-        '@type': 'WebPage',
-        '@id': `${siteUrl}/#webpage`,
-        url: siteUrl,
-        name: defaultTitle,
-        description: defaultDescription,
         inLanguage: 'en-US',
-        isPartOf: {
-          '@id': `${siteUrl}/#website`,
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: `${siteUrl}/docs?q={search_term_string}`,
+          },
+          'query-input': 'required name=search_term_string',
         },
-        about: ['AI lab automation', 'Electronics lab instruments', 'Labflow'],
       },
       {
         '@type': 'SoftwareApplication',
-        '@id': `${siteUrl}/#software`,
+        '@id': softwareId,
         name: siteName,
         applicationCategory: 'EngineeringApplication',
-        operatingSystem: 'Web, Python, PyVISA, SCPI, vendor APIs',
+        applicationSubCategory: 'Laboratory automation',
+        operatingSystem: 'Linux, macOS, Windows',
+        url: siteUrl,
         description: defaultDescription,
-        provider: {
-          '@id': organizationId,
-        },
-        availableLanguage: ['en-US', 'de-DE'],
-        keywords: 'AI lab automation, electronics lab instruments, SCPI, PyVISA, Codex, Claude, Labflow',
+        provider: { '@id': organizationId },
+        publisher: { '@id': organizationId },
+        inLanguage: 'en-US',
+        keywords:
+          'AI agent for lab instruments, natural-language SCPI, oscilloscope automation, Keithley SMU automation, function generator automation, PSU automation, DMM automation, DAQ automation, PyVISA AI, agentic lab automation, electronics test and measurement, Labflow',
         offers: {
           '@type': 'Offer',
           price: '0',
-          priceCurrency: 'EUR',
-          availability: 'https://schema.org/PreOrder',
-          description: 'Free early access waitlist',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          description: 'Free for a single bench while in beta',
+          url: `${siteUrl}/pricing`,
         },
         featureList: [
-          'AI control for oscilloscopes, pulse generators, Keithley SMUs, and analyzers',
-          'Codex and Claude powered script generation',
-          'SCPI, PyVISA, serial, TCP, and vendor API connectors',
-          'Automated reports, plots, and generated GUIs',
-          'Traceable instrument commands and measurement audit trails',
+          'Natural-language protocols compiled to SCPI / VISA / IVI',
+          'Drivers for 42 instruments across 11 vendors (Keithley, Keysight, Tektronix, Rigol, R&S, Siglent, Fluke, NI, B&K Precision, Chroma, Anritsu)',
+          'Multi-instrument choreography across SMU, scope, function generator, PSU, DMM and DAQ',
+          'Auto-discovery on GPIB, USBTMC, LAN (LXI / VXI-11 / HiSLIP) and serial',
+          'Human-in-the-loop safety with dual-sign approvals and hardware auto-shutdown',
+          'Live waveform reasoning — anomalies flagged in plain English with the matching trace segment',
+          'Signed, reproducible session manifests with byte-identical replay',
+          'Publication-ready reports in PDF, HTML, Markdown and LaTeX',
         ],
       },
     ],

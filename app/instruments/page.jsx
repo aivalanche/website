@@ -1,12 +1,37 @@
 import Link from 'next/link'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import { pageMetadata, breadcrumbSchema, SITE_URL } from '../seo'
 
-export const metadata = {
-  title: 'Instruments — Labflow',
+export const metadata = pageMetadata({
+  title: 'Instruments — 42 drivers, 11 vendors, every transport · Labflow',
   description:
-    'Labflow ships drivers for 42 instruments across 11 vendors — Keithley, Keysight, Tektronix, Rigol, R&S, Siglent, Fluke, NI and more. GPIB, USBTMC, LAN and serial.',
-}
+    'Labflow drives oscilloscopes, source-measure units, function generators, power supplies, DMMs, DAQs, electronic loads and spectrum analyzers from Keithley, Keysight, Tektronix, Rigol, R&S, Siglent, Fluke, NI, B&K Precision, Chroma and Anritsu. GPIB, USBTMC, LAN (LXI / VXI-11 / HiSLIP) and RS-232/485 — auto-discovered.',
+  path: '/instruments',
+  keywords: [
+    'Keithley 2400 automation',
+    'Keithley 2450 automation',
+    'Tektronix MSO64 automation',
+    'Keysight DSOX1204G automation',
+    'Rigol DG1022Z automation',
+    'Siglent SDG2042X automation',
+    'R&S NGE103B automation',
+    'Fluke 8846A automation',
+    'NI USB-6363 streaming',
+    'HP 34401A SCPI',
+    'oscilloscope automation',
+    'source-measure unit automation',
+    'function generator automation',
+    'power supply automation',
+    'DAQ automation',
+    'electronic load automation',
+  ],
+})
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Instruments', path: '/instruments' },
+])
 
 const categories = [
   {
@@ -100,9 +125,34 @@ const transports = [
   },
 ]
 
+const instrumentItemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Lab instruments supported by Labflow',
+  description:
+    'Source-measure units, oscilloscopes, function generators, power supplies, digital multimeters, DAQs, electronic loads and network/spectrum analyzers — driven from a single AI agent.',
+  numberOfItems: categories.reduce((sum, c) => sum + c.drivers.length, 0),
+  itemListElement: categories.flatMap((c, ci) =>
+    c.drivers.map((d, di) => ({
+      '@type': 'ListItem',
+      position: ci * 100 + di + 1,
+      item: {
+        '@type': 'Product',
+        name: d,
+        category: c.h,
+        description: `${c.h} — ${c.sub}. Driven natively by Labflow over SCPI / VISA.`,
+        brand: { '@type': 'Brand', name: d.split(' ')[0] },
+        url: `${SITE_URL}/instruments`,
+      },
+    })),
+  ),
+}
+
 export default function InstrumentsPage() {
   return (
     <div className="lf-root">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(instrumentItemList) }} />
       <SecondaryNavbar />
 
       <section className="lf-page-hero">

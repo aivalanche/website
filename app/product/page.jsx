@@ -1,12 +1,27 @@
 import Link from 'next/link'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import { pageMetadata, breadcrumbSchema } from '../seo'
 
-export const metadata = {
-  title: 'Product — Labflow',
+export const metadata = pageMetadata({
+  title: 'Product — The AI agent for your lab bench · Labflow',
   description:
-    'Labflow is one agentic console for the whole bench. Natural-language protocols, SCPI/VISA under the hood, human-in-the-loop safety, signed reports.',
-}
+    'Labflow is one console for the whole bench. Natural-language protocols compiled to SCPI, multi-instrument choreography across SMU, scope, function generator and supply, human-in-the-loop safety, and signed reports.',
+  path: '/product',
+  keywords: [
+    'AI lab control plane',
+    'agentic test and measurement',
+    'natural language SCPI',
+    'instrument console',
+    'AI bench automation',
+    'Labflow product',
+  ],
+})
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Product', path: '/product' },
+])
 
 const pillars = [
   {
@@ -86,6 +101,7 @@ const compareRows = [
 export default function ProductPage() {
   return (
     <div className="lf-root">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <SecondaryNavbar />
 
       <section className="lf-page-hero">

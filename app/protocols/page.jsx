@@ -1,12 +1,29 @@
 import Link from 'next/link'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import { pageMetadata, breadcrumbSchema } from '../seo'
 
-export const metadata = {
-  title: 'Protocols — Labflow',
+export const metadata = pageMetadata({
+  title: 'Protocols — Natural language to SCPI · Labflow',
   description:
-    'Labflow compiles natural-language protocols into typed instrument graphs — SCPI, VISA, safety clamps, replayable manifests. Author once, replay forever.',
-}
+    'Author lab protocols in plain English. Labflow compiles them into typed instrument graphs (SCPI / VISA / IVI), validates against your bench safety policy, runs the bench, and signs a manifest you can replay byte-for-byte three years later.',
+  path: '/protocols',
+  keywords: [
+    'natural language SCPI',
+    'protocol DSL',
+    'SCPI compiler',
+    'lab protocol automation',
+    'reproducible measurement',
+    'signed lab manifest',
+    'transfer curve protocol',
+    'PSRR sweep protocol',
+  ],
+})
+
+const breadcrumb = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Protocols', path: '/protocols' },
+])
 
 const stages = [
   {
@@ -81,6 +98,7 @@ const safety = [
 export default function ProtocolsPage() {
   return (
     <div className="lf-root">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <SecondaryNavbar />
 
       <section className="lf-page-hero">
