@@ -4,9 +4,9 @@ import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import { pageMetadata, breadcrumbSchema, SITE_URL } from '../seo'
 
 export const metadata = pageMetadata({
-  title: 'Pricing — Free for one bench, scale by bench · Labflow',
+  title: 'Pricing — One-week free trial, then scale by bench · Labflow',
   description:
-    'Labflow pricing. Bench is free during public beta (single bench, all 42 drivers). Lab is $640 per bench / month, billed annually, with SSO and org-wide policy. Enterprise is custom — self-hosted, air-gapped, on-device agent.',
+    'Labflow pricing. A one-week guided trial is free on a single bench. Lab is $640 per bench / month, billed annually, with SSO and org-wide policy. Enterprise is custom — self-hosted, air-gapped, on-device agent.',
   path: '/pricing',
   keywords: [
     'Labflow pricing',
@@ -31,12 +31,18 @@ const pricingOffers = {
   offers: [
     {
       '@type': 'Offer',
-      name: 'Bench',
+      name: 'Trial',
       price: '0',
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}/pricing`,
-      description: 'Free during public beta. One bench, up to 6 instruments, all 42 drivers, signed reports.',
+      url: `${SITE_URL}/request-demo`,
+      description:
+        'One-week free guided trial on a single bench, up to 6 instruments. Engineer-led onboarding included. No card required.',
+      eligibleDuration: {
+        '@type': 'QuantitativeValue',
+        value: 7,
+        unitCode: 'DAY',
+      },
     },
     {
       '@type': 'Offer',
@@ -63,19 +69,20 @@ const pricingOffers = {
 const tiers = [
   {
     n: '01',
-    name: 'Bench',
-    price: 'Free',
-    sub: 'while we&apos;re in beta',
-    blurb: 'For a single bench. Everything you need to author, run and report on real instruments.',
+    name: 'Trial',
+    price: '1 week',
+    sub: 'free · no card required',
+    blurb:
+      'A one-week guided evaluation on a single bench. A Labflow engineer pairs with you to validate it on real instruments before you commit.',
     items: [
       '1 bench, up to 6 instruments',
       '1 operator seat',
       'All 42 drivers, all transports',
       'Natural-language protocols',
       'Signed reports — PDF / HTML / MD',
-      'Community support',
+      'Engineer-led onboarding',
     ],
-    cta: 'Start free',
+    cta: 'Start trial',
     href: '/request-demo',
     accent: false,
   },
@@ -143,7 +150,7 @@ const faq = [
   },
   {
     q: 'Is the agent runtime metered?',
-    a: 'On the Bench tier it&apos;s capped at 1,000 agent-minutes per month. On Lab and Enterprise it&apos;s unmetered.',
+    a: 'During the trial week it&apos;s capped at 500 agent-minutes — more than enough to characterize a few devices. On Lab and Enterprise it&apos;s unmetered.',
   },
   {
     q: 'Can I bring my own model?',
@@ -154,8 +161,8 @@ const faq = [
     a: 'It stays in your control plane. We don&apos;t train on customer data, and on Enterprise the inference can be fully on-device.',
   },
   {
-    q: 'Is there a free trial of Lab / Enterprise?',
-    a: 'Yes — 14 days, with a hands-on walkthrough from a real engineer. Book a slot from the demo page.',
+    q: 'How does the free trial work?',
+    a: 'One week, free, on a single bench. A Labflow engineer pairs with you for the kick-off session and stays on call for the rest of the week. No credit card up front. If it doesn&apos;t earn its keep, you walk away — otherwise we convert to Lab or Enterprise.',
   },
 ]
 
@@ -171,7 +178,7 @@ export default function PricingPage() {
           <div className="meta-row">
             <div className="cell">SECTION · LF-PRICE</div>
             <div className="cell">BILLING · USD / EUR</div>
-            <div className="cell">BETA · FREE BENCH</div>
+            <div className="cell">TRIAL · 1 WEEK · FREE</div>
             <div className="cell" style={{ justifyContent: 'flex-end' }}>
               SOC-2 · IN PROGRESS
             </div>
@@ -179,8 +186,8 @@ export default function PricingPage() {
           <div className="lf-eyebrow">06 / PRICING</div>
           <h1 className="lf-h1">Pay for the bench, not the byte.</h1>
           <p className="lf-lede">
-            Bring your own instruments. Free while we&apos;re in beta for a single bench. Scale up to org-wide policy,
-            SSO and self-hosting when you need them — not before.
+            Bring your own instruments. A one-week guided trial is free; scale up to org-wide policy, SSO and
+            self-hosting when you need them — not before.
           </p>
         </div>
       </section>
@@ -317,7 +324,7 @@ export default function PricingPage() {
               }}>
               <div style={{ padding: '14px 18px' }}>Capability</div>
               <div style={{ padding: '14px 18px', borderLeft: '1px solid var(--line)', textAlign: 'center' }}>
-                Bench
+                Trial
               </div>
               <div
                 style={{

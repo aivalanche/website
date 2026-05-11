@@ -1405,8 +1405,8 @@ export default function HomePage() {
           </h2>
           <div className="row">
             <p>
-              Free for a single bench while we&apos;re in beta. Bring your own instruments — we&apos;ll auto-discover
-              anything on GPIB, USBTMC, or your subnet, and you can start dictating sweeps in under five minutes.
+              One-week guided trial, free, on a single bench. Bring your own instruments — we&apos;ll auto-discover
+              anything on GPIB, USBTMC, or your subnet, and a Labflow engineer pairs with you on the first sweep.
             </p>
             <div className="actions">
               <WaitlistEmailForm />

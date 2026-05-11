@@ -55,7 +55,7 @@ export const faqSchema = {
       name: 'How much does Labflow cost?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A single bench is free during the public beta — auto-discovery, all 42 drivers, signed reports included. Multi-bench teams pay per bench (Lab tier, $640/bench/month) and get SSO, org-wide policy, audit log and OpenTelemetry export. Enterprise tier is custom, supports self-hosted and air-gapped deployment, and includes on-device inference.',
+        text: 'A one-week guided trial is free on a single bench — engineer-led onboarding, all 42 drivers, signed reports included, no credit card required. After the trial, teams move to Lab ($640 per bench / month, billed annually) which adds SSO, org-wide policy, audit log and OpenTelemetry export. Enterprise is custom: self-hosted or air-gapped, on-device inference, custom driver SLAs.',
       },
     },
     {

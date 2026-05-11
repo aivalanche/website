@@ -53,7 +53,7 @@ export const seoRoutes = [
   {
     path: '/pricing',
     title: 'Pricing',
-    description: 'Labflow pricing — Bench (free in beta), Lab and Enterprise tiers.',
+    description: 'Labflow pricing — one-week free trial, then Lab ($640 / bench / month) or Enterprise (custom).',
     changeFrequency: 'monthly',
     priority: 0.8,
   },

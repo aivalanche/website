@@ -232,10 +232,10 @@ export default function ProductPage() {
         <div className="container">
           <div className="lf-grid-2">
             <div className="lf-card-orange lf-card">
-              <h3>Get on the bench in beta.</h3>
+              <h3>Try it on your bench.</h3>
               <p>
-                Free for a single bench while we&apos;re in beta. Bring your own instruments — we&apos;ll auto-discover
-                anything on GPIB, USBTMC or your subnet.
+                One-week guided trial, free, on a single bench. Bring your own instruments — we&apos;ll auto-discover
+                anything on GPIB, USBTMC or your subnet and an engineer pairs with you on the first sweep.
               </p>
               <div style={{ marginTop: 18 }}>
                 <Link className="btn" href="/request-demo" style={{ borderColor: '#fff', color: '#fff' }}>

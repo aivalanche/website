@@ -208,8 +208,13 @@ export default function RootLayout({ children }) {
           price: '0',
           priceCurrency: 'USD',
           availability: 'https://schema.org/InStock',
-          description: 'Free for a single bench while in beta',
-          url: `${siteUrl}/pricing`,
+          description: 'One-week free guided trial on a single bench. Engineer-led onboarding included.',
+          url: `${siteUrl}/request-demo`,
+          eligibleDuration: {
+            '@type': 'QuantitativeValue',
+            value: 7,
+            unitCode: 'DAY',
+          },
         },
         featureList: [
           'Natural-language protocols compiled to SCPI / VISA / IVI',

@@ -291,8 +291,8 @@ export default function InstrumentsPage() {
             </div>
             <div>
               <div>
-                <h3>Open a bench session.</h3>
-                <p>Free for a single bench while we&apos;re in beta. Auto-discovery on GPIB, USBTMC and your subnet.</p>
+                <h3>Try it on your bench.</h3>
+                <p>One-week guided trial, free, on a single bench. Auto-discovery on GPIB, USBTMC and your subnet.</p>
               </div>
               <Link href="/request-demo">Request demo →</Link>
             </div>

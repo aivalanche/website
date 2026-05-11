@@ -12,12 +12,18 @@ export const productSchema = {
   offers: [
     {
       '@type': 'Offer',
-      name: 'Bench',
+      name: 'Trial',
       price: '0',
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
-      url: 'https://aivalanche.com/pricing',
-      description: 'Free during public beta — single bench, up to 6 instruments, all 42 drivers, signed reports.',
+      url: 'https://aivalanche.com/request-demo',
+      description:
+        'One-week free guided trial. Single bench, up to 6 instruments, all 42 drivers, engineer-led onboarding. No card required.',
+      eligibleDuration: {
+        '@type': 'QuantitativeValue',
+        value: 7,
+        unitCode: 'DAY',
+      },
     },
     {
       '@type': 'Offer',
