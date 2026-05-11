@@ -43,116 +43,117 @@ export default function RequestDemo() {
     }
   }
 
-  const inputStyle = {
-    border: '1px solid var(--wp-line, #D8D1C5)',
-    background: 'transparent',
-    color: 'var(--wp-text, #121417)',
-  }
-
   return (
-    <>
+    <div className="lf-root">
       <SecondaryNavbar />
-      <main className="mx-auto max-w-[700px] px-6 py-32">
-        <p className="mb-3 text-[11px] uppercase tracking-[0.15em] opacity-30">Demo</p>
-        <h1 className="mb-4 text-3xl font-bold md:text-4xl">Demo anfragen</h1>
-        <p className="mb-10 text-[16px] leading-relaxed opacity-55">
-          Sehen Sie live, wie AIvalanche mit OpenClaw Aufgaben aus Chat-Nachrichten in echte Ausfuehrung ueberfuehrt.
-          Wir zeigen einen praxisnahen Ablauf fuer Ihr Team.
-        </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div>
-              <label htmlFor="username" className="mb-2 block text-sm font-medium">
-                Ihr Name
-              </label>
-              <input
-                type="text"
-                name="username"
-                id="username"
-                required
-                placeholder="Name"
-                className="w-full rounded-lg px-4 py-2.5 text-sm outline-none"
-                style={inputStyle}
-              />
-            </div>
-            <div>
-              <label htmlFor="companyname" className="mb-2 block text-sm font-medium">
-                Unternehmen
-              </label>
-              <input
-                type="text"
-                name="companyname"
-                id="companyname"
-                required
-                placeholder="Firma"
-                className="w-full rounded-lg px-4 py-2.5 text-sm outline-none"
-                style={inputStyle}
-              />
-            </div>
-            <div>
-              <label htmlFor="contactno" className="mb-2 block text-sm font-medium">
-                Telefon
-              </label>
-              <input
-                type="tel"
-                name="contactno"
-                id="contactno"
-                required
-                placeholder="Telefonnummer"
-                className="w-full rounded-lg px-4 py-2.5 text-sm outline-none"
-                style={inputStyle}
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="mb-2 block text-sm font-medium">
-                Geschaefts-E-Mail
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                placeholder="E-Mail"
-                className="w-full rounded-lg px-4 py-2.5 text-sm outline-none"
-                style={inputStyle}
-              />
+      <section className="lf-page-hero">
+        <div className="container">
+          <div className="meta-row">
+            <div className="cell">DEMO · LF-DEMO</div>
+            <div className="cell">SLOT · 20 MIN</div>
+            <div className="cell" />
+            <div className="cell" style={{ justifyContent: 'flex-end' }}>
+              REPLY · WITHIN 1 BIZ-DAY
             </div>
           </div>
-          <div>
-            <label htmlFor="message" className="mb-2 block text-sm font-medium">
-              Nachricht
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              required
-              rows="6"
-              className="w-full resize-none rounded-lg px-4 py-2.5 text-sm outline-none"
-              style={inputStyle}
-            />
-          </div>
-          <div className="text-center">
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className="rounded-full px-7 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'var(--wp-accent, #1DBF73)', color: 'var(--wp-bg, #F4F0E8)' }}>
-              {status === 'sending' ? 'Wird gesendet...' : 'Demo anfragen'}
-            </button>
-            {status === 'success' && (
-              <p className="mt-4 text-sm" style={{ color: 'var(--wp-accent)' }}>
-                Anfrage erfolgreich gesendet.
-              </p>
-            )}
-            {status === 'partial' && (
-              <p className="mt-4 text-sm text-yellow-600">Gesendet, aber mit teilweise fehlgeschlagener Zustellung.</p>
-            )}
-            {status === 'error' && <p className="mt-4 text-sm text-red-600">Fehlgeschlagen. Bitte erneut versuchen.</p>}
-          </div>
-        </form>
-      </main>
+          <div className="lf-eyebrow">07 / REQUEST A DEMO</div>
+          <h1 className="lf-h1 medium">Get the agent on your bench.</h1>
+          <p className="lf-lede">
+            Tell us what you run. We&apos;ll show you Labflow driving your instruments — Keithley, Keysight, Tektronix,
+            Rigol, Siglent, Fluke, NI — and write the report at the end. No card, no fluff.
+          </p>
+        </div>
+      </section>
+
+      <section className="lf-page">
+        <div className="container" style={{ maxWidth: 820 }}>
+          <form onSubmit={handleSubmit} className="lf-form">
+            <div className="lf-form-row">
+              <div className="lf-field">
+                <label htmlFor="username">Operator name</label>
+                <input
+                  className="lf-input"
+                  type="text"
+                  name="username"
+                  id="username"
+                  required
+                  placeholder="Marina Hernandez"
+                />
+              </div>
+              <div className="lf-field">
+                <label htmlFor="companyname">Lab / company</label>
+                <input
+                  className="lf-input"
+                  type="text"
+                  name="companyname"
+                  id="companyname"
+                  required
+                  placeholder="NanoVolt Labs"
+                />
+              </div>
+            </div>
+
+            <div className="lf-form-row">
+              <div className="lf-field">
+                <label htmlFor="contactno">Phone</label>
+                <input
+                  className="lf-input"
+                  type="tel"
+                  name="contactno"
+                  id="contactno"
+                  required
+                  placeholder="+1 415 555 0102"
+                />
+              </div>
+              <div className="lf-field">
+                <label htmlFor="email">Business email</label>
+                <input
+                  className="lf-input"
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  placeholder="m.hernandez@nanovolt.io"
+                />
+              </div>
+            </div>
+
+            <div className="lf-field">
+              <label htmlFor="message">What&apos;s on your bench?</label>
+              <textarea
+                className="lf-textarea"
+                name="message"
+                id="message"
+                required
+                rows="6"
+                placeholder="e.g. Keithley 2400 + Tektronix MSO64 + Rigol DG1022 — characterising a custom MOSFET. Looking to automate transfer curves and PSRR sweeps."
+              />
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginTop: 8 }}>
+              <button type="submit" disabled={status === 'sending'} className="lf-submit">
+                {status === 'sending' ? 'Sending…' : 'Request demo'} <span className="arr">→</span>
+              </button>
+              {status === 'success' && (
+                <span className="lf-form-msg ok">✓ Request received — we&apos;ll be in touch within a business day.</span>
+              )}
+              {status === 'partial' && (
+                <span className="lf-form-msg warn">Sent — partial delivery. The team will follow up manually.</span>
+              )}
+              {status === 'error' && (
+                <span className="lf-form-msg err">Couldn&apos;t submit. Try again or email hello@aivalanche.com.</span>
+              )}
+            </div>
+
+            <p className="mono upp" style={{ fontSize: 10, color: 'var(--ink-2)', letterSpacing: '.12em', marginTop: 8 }}>
+              NO CARD · FREE WHILE IN BETA · WORKS ON GPIB · USBTMC · LAN · SERIAL
+            </p>
+          </form>
+        </div>
+      </section>
+
       <Footer />
-    </>
+    </div>
   )
 }

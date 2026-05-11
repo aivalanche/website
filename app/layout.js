@@ -1,22 +1,30 @@
 import { cn } from '@/utils/cn'
 import Providers from '@/utils/providers'
-import { Inter } from 'next/font/google'
+import { Archivo, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import './labflow.css'
 import '@/scss/theme.scss'
 
 const siteUrl = 'https://aivalanche.com'
-const siteName = 'AIvalanche'
-const defaultTitle = 'AIvalanche | KI-Agent fuer Unternehmen in Deutschland'
+const siteName = 'Labflow'
+const defaultTitle = 'Labflow — Agentic control plane for electronic test & measurement'
 const defaultDescription =
-  'AIvalanche ist ein KI-Agent fuer Unternehmen in Deutschland, Oesterreich und der Schweiz. OpenClaw-gestuetzte Workflows verbinden Slack, Microsoft Teams, WhatsApp und 3.000+ Tools fuer echte Ausfuehrung statt nur Antworten.'
+  'Labflow is the agentic control plane for electronic test & measurement. Drive SMUs, scopes, function generators, DAQs and supplies from one agent — wired by tools, governed by humans.'
 const defaultOgImage = '/images/home-8-img/ai-hero.png'
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-const inter = Inter({
-  weight: ['200', '300', '400', '500', '600', '700', '800'],
+const archivo = Archivo({
+  weight: ['400', '500', '600', '700', '800', '900'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-archivo',
+})
+const jetbrainsMono = JetBrains_Mono({
+  weight: ['400', '500', '600', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
 })
 
 export const metadata = {
@@ -26,23 +34,18 @@ export const metadata = {
   },
   description: defaultDescription,
   keywords: [
-    'ki agent deutschland',
-    'ki agent unternehmen',
-    'ki workflow automatisierung',
-    'dsgvo ki agent',
-    'ai agent deutschland',
-    'enterprise ai automation',
-    'workflow automation software',
-    'slack ai agent',
-    'microsoft teams ai agent',
-    'whatsapp ai automation',
-    'openclaw',
-    'openclaw integration',
-    'openclaw deutschland',
-    'openclaw ki agent',
-    'business process automation',
-    'ai operations platform',
-    'ki automatisierung',
+    'electronics lab automation',
+    'AI lab instruments',
+    'oscilloscope automation',
+    'pulse generator automation',
+    'Keithley SMU automation',
+    'SCPI automation',
+    'PyVISA AI agent',
+    'lab report generation',
+    'instrument control GUI',
+    'Codex lab automation',
+    'Claude lab automation',
+    'Labflow',
     'aivalanche',
   ],
   metadataBase: new URL(siteUrl),
@@ -60,11 +63,10 @@ export const metadata = {
   authors: [{ name: siteName, url: siteUrl }],
   creator: siteName,
   publisher: siteName,
-  category: 'Business software',
+  category: 'Engineering software',
   openGraph: {
     type: 'website',
-    locale: 'de_DE',
-    alternateLocale: ['de_AT', 'de_CH', 'en_US'],
+    locale: 'en_US',
     url: siteUrl,
     siteName,
     title: defaultTitle,
@@ -111,7 +113,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   colorScheme: 'light dark',
-  themeColor: '#B1E346',
+  themeColor: '#ff4d12',
 }
 
 export default function RootLayout({ children }) {
@@ -133,15 +135,10 @@ export default function RootLayout({ children }) {
             '@type': 'ContactPoint',
             contactType: 'sales',
             email: 'support@aivalanche.de',
-            availableLanguage: ['de-DE', 'de-AT', 'de-CH', 'en-US'],
+            availableLanguage: ['en-US', 'de-DE'],
           },
         ],
-        areaServed: [
-          { '@type': 'Country', name: 'Germany' },
-          { '@type': 'Country', name: 'Austria' },
-          { '@type': 'Country', name: 'Switzerland' },
-        ],
-        knowsAbout: ['KI-Agenten', 'Workflow-Automatisierung', 'OpenClaw'],
+        knowsAbout: ['AI lab automation', 'Electronics test instrumentation', 'SCPI', 'PyVISA', 'Codex', 'Claude'],
       },
       {
         '@type': 'WebSite',
@@ -152,7 +149,7 @@ export default function RootLayout({ children }) {
         publisher: {
           '@id': organizationId,
         },
-        inLanguage: ['de-DE', 'de-AT', 'de-CH', 'en-US'],
+        inLanguage: ['en-US', 'de-DE'],
       },
       {
         '@type': 'WebPage',
@@ -160,24 +157,24 @@ export default function RootLayout({ children }) {
         url: siteUrl,
         name: defaultTitle,
         description: defaultDescription,
-        inLanguage: 'de-DE',
+        inLanguage: 'en-US',
         isPartOf: {
           '@id': `${siteUrl}/#website`,
         },
-        about: ['KI-Agent fuer Unternehmen', 'OpenClaw', 'DSGVO-konforme Automatisierung'],
+        about: ['AI lab automation', 'Electronics lab instruments', 'Labflow'],
       },
       {
         '@type': 'SoftwareApplication',
         '@id': `${siteUrl}/#software`,
         name: siteName,
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web, Slack, Microsoft Teams, WhatsApp',
+        applicationCategory: 'EngineeringApplication',
+        operatingSystem: 'Web, Python, PyVISA, SCPI, vendor APIs',
         description: defaultDescription,
         provider: {
           '@id': organizationId,
         },
-        availableLanguage: ['de-DE', 'de-AT', 'de-CH', 'en-US'],
-        keywords: 'KI Agent, OpenClaw, DSGVO, Workflow Automatisierung, Deutschland',
+        availableLanguage: ['en-US', 'de-DE'],
+        keywords: 'AI lab automation, electronics lab instruments, SCPI, PyVISA, Codex, Claude, Labflow',
         offers: {
           '@type': 'Offer',
           price: '0',
@@ -186,19 +183,18 @@ export default function RootLayout({ children }) {
           description: 'Free early access waitlist',
         },
         featureList: [
-          'Persistent AI agent for enterprise teams',
-          '3,000+ tool integrations',
-          'Slack, Teams, and WhatsApp deployment',
-          'Proactive workflow automation',
-          'Dedicated cloud workspace for execution',
-          'GDPR-compliant operation',
+          'AI control for oscilloscopes, pulse generators, Keithley SMUs, and analyzers',
+          'Codex and Claude powered script generation',
+          'SCPI, PyVISA, serial, TCP, and vendor API connectors',
+          'Automated reports, plots, and generated GUIs',
+          'Traceable instrument commands and measurement audit trails',
         ],
       },
     ],
   }
 
   return (
-    <html lang="de" className="light" style={{ colorScheme: 'light' }} suppressHydrationWarning>
+    <html lang="en" className="light" style={{ colorScheme: 'light' }} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         {/* Clear leftover next-themes dark class from localStorage */}
@@ -214,8 +210,12 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content={siteName} />
       </head>
       <body
-        className={cn('relative overflow-x-hidden text-base antialiased', inter.variable)}
-        style={{ backgroundColor: '#F4F0E8', color: '#121417' }}>
+        className={cn('relative overflow-x-hidden text-base antialiased', archivo.variable, jetbrainsMono.variable)}
+        style={{
+          backgroundColor: '#ececea',
+          color: '#0c0c0c',
+          fontFamily: 'var(--font-archivo), system-ui, -apple-system, Segoe UI, sans-serif',
+        }}>
         <Providers>
           <main className="flex-grow">{children}</main>
         </Providers>
