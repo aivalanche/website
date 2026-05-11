@@ -267,7 +267,7 @@ export default function HomePage() {
                 className="sq"
                 style={{ background: 'var(--orange)', width: 8, height: 8, display: 'inline-block' }}
               />
-              <span className="slashes">//// AGENT-DRIVEN INSTRUMENTATION</span>
+              <span className="slashes">{'//// AGENT-DRIVEN INSTRUMENTATION'}</span>
             </div>
             <div className="cell col-4">
               <span className="chev">&gt;&gt;&gt;&gt;&gt;</span>
