@@ -4,19 +4,19 @@ import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import { pageMetadata, breadcrumbSchema } from '../seo'
 
 export const metadata = pageMetadata({
-  title: 'Docs — Quickstart, SCPI cookbook, driver matrix · Labflow',
+  title: 'Docs — How Labflow lands in your lab · Labflow',
   description:
-    'Labflow documentation for engineers. Five-minute quickstart, SCPI recipes for Keithley 2400 / Tektronix MSO64 / Rigol DG1022Z / R&S NGE100 / NI USB-6363, the protocol DSL, Python SDK, CLI reference, REST API, webhooks, OpenTelemetry.',
+    'How Labflow is deployed in an enterprise lab. Bench audit, pilot bench, safety policy, operator training, org rollout. Deployment modes (managed cloud, VPC, self-hosted, air-gapped), security & compliance (SOC-2, SSO, SCIM, audit log), and the protocol DSL / SCPI cookbook / SDK your team gets after rollout.',
   path: '/docs',
   keywords: [
-    'Labflow docs',
+    'Labflow deployment',
+    'enterprise lab automation',
+    'air-gapped lab AI',
+    'self-hosted lab automation',
+    'lab SSO',
     'SCPI cookbook',
-    'PyVISA recipes',
-    'Keithley 2400 Python',
-    'Tektronix MSO64 automation',
-    'Rigol DG1022Z SCPI',
-    'NI USB-6363 streaming',
-    'lab automation API',
+    'lab automation rollout',
+    'GxP lab software',
   ],
 })
 
@@ -26,94 +26,145 @@ const breadcrumb = breadcrumbSchema([
 ])
 
 const quickStart = [
-  { n: '01', h: 'Install the CLI', code: 'curl -fsSL https://labflow.io/install | sh' },
-  { n: '02', h: 'Discover the bench', code: 'lf discover --gpib --usbtmc --lan' },
-  { n: '03', h: 'Open the console', code: 'lf console --bench bay-04' },
-  { n: '04', h: 'Brief the agent', code: '> sweep VGS 0..3.2 V on K2400.CH1, capture Id' },
+  {
+    n: '01',
+    h: 'Book a 20-minute call',
+    p: 'Tell us what bench you run. We confirm transports (GPIB / USBTMC / LAN / Serial) and the instruments we already have drivers for.',
+  },
+  {
+    n: '02',
+    h: 'We provision your workspace',
+    p: 'A Labflow engineer prepares a sandbox tuned to your instruments. No agent code runs on your bench until you say so.',
+  },
+  {
+    n: '03',
+    h: 'We pair on your bench',
+    p: 'Screen-share with a Labflow engineer. We connect to one instrument, validate the safety policy, and dictate a sweep together.',
+  },
+  {
+    n: '04',
+    h: 'You walk away with a signed report',
+    p: 'A reproducible session manifest, a PDF lab notebook, and a path to rolling Labflow out to the rest of the bay.',
+  },
 ]
 
 const sections = [
   {
-    eyebrow: 'GUIDES',
-    title: 'Getting started',
+    eyebrow: 'DEPLOYMENT',
+    title: 'How Labflow lands in your lab',
     rows: [
-      { h: 'Quickstart', p: 'Install, discover, run your first protocol in under 5 minutes.', tag: '5 min' },
       {
-        h: 'Install on Linux / macOS / Windows',
-        p: 'CLI install, optional NI-VISA bridge, GPIB adapters.',
-        tag: 'setup',
+        h: 'Bench audit',
+        p: 'A Labflow engineer maps your instruments, transports and adapters, and flags anything we need to validate before pilot.',
+        tag: 'week 1',
       },
       {
-        h: 'Connect your first instrument',
-        p: 'GPIB address negotiation, USBTMC auto-mount, LAN mDNS discovery.',
-        tag: 'setup',
+        h: 'Pilot bench',
+        p: 'We deploy Labflow on one bench, paired with one operator. Limited scope, full audit trail.',
+        tag: 'week 1',
       },
       {
-        h: 'Write your bench policy',
-        p: 'Per-channel ceilings, operator-confirm gates, auto-shutdown predicates.',
+        h: 'Safety policy',
+        p: 'Per-channel ceilings, operator-confirm gates and auto-shutdown predicates — authored with you, signed off by your safety officer.',
         tag: 'safety',
       },
       {
-        h: 'Author your first protocol',
-        p: 'Brief, compile, validate, run. End-to-end example with a Keithley 2400.',
-        tag: '15 min',
+        h: 'Operator training',
+        p: 'A 60-minute walkthrough plus a recorded pair on a real run. New operators are productive the same day.',
+        tag: 'training',
+      },
+      {
+        h: 'Org rollout',
+        p: 'Bay-by-bay rollout with SSO, org-wide safety policy and audit-log integration. Driven by our solutions engineer.',
+        tag: 'week 2-4',
       },
     ],
   },
   {
-    eyebrow: 'REFERENCE',
-    title: 'Protocol DSL',
+    eyebrow: 'DEPLOYMENT MODES',
+    title: 'Where Labflow can run',
     rows: [
-      { h: 'sweep()', p: 'Linear and log sweeps, per-point dwell, abort predicates.', tag: 'dsl' },
-      { h: 'capture()', p: 'Acquisition primitives for scopes, SMUs, DAQs. Returns waveform + timebase.', tag: 'dsl' },
-      { h: 'measure()', p: 'Vpp, RMS, frequency, duty, rise/fall, overshoot, jitter.', tag: 'dsl' },
-      { h: 'abort()', p: 'Run-time predicates that halt the bench cleanly.', tag: 'dsl' },
-      { h: 'manifest{}', p: 'How protocols are hashed, signed and replayed.', tag: 'dsl' },
+      {
+        h: 'Managed cloud',
+        p: 'We host the control plane; a thin agent talks to your bench over your network. Fastest path to pilot.',
+        tag: 'cloud',
+      },
+      {
+        h: 'VPC-isolated',
+        p: 'Control plane inside your VPC, no traffic leaves your network perimeter. mTLS end to end.',
+        tag: 'vpc',
+      },
+      {
+        h: 'Self-hosted',
+        p: 'Full control plane on hardware you operate. Kubernetes or single-node, your choice.',
+        tag: 'on-prem',
+      },
+      {
+        h: 'Air-gapped',
+        p: 'No outbound network. On-device agent (flow-s) handles tool-calling locally. Common in defense and regulated labs.',
+        tag: 'air-gap',
+      },
     ],
   },
   {
-    eyebrow: 'COOKBOOK',
-    title: 'SCPI recipes',
+    eyebrow: 'WHAT YOUR TEAM GETS',
+    title: 'After rollout',
     rows: [
       {
-        h: 'Keithley 2400 transfer curves',
-        p: '4-quadrant source-V/measure-I sweeps with compliance handling.',
-        tag: 'SMU',
+        h: 'Protocol DSL',
+        p: 'A typed language for the bench — sweeps, captures, measurements, aborts and signed manifests. Authored in plain English with the agent.',
+        tag: 'dsl',
       },
       {
-        h: 'Tektronix MSO64 edge triggers',
-        p: 'Edge, pulse, runt, window — and how to recover from a missed trigger.',
-        tag: 'scope',
+        h: 'SCPI cookbook',
+        p: 'Per-instrument recipes covering the common bench routines (transfer curves, PSRR sweeps, step responses, burn-ins).',
+        tag: 'cookbook',
       },
-      {
-        h: 'Rigol DG1022Z arbitrary waveforms',
-        p: 'Uploading arb sequences and pairing to a scope trigger.',
-        tag: 'fg',
-      },
-      {
-        h: 'R&S NGE100 multi-rail sequencing',
-        p: 'Ordered rail-up with inter-rail delays and current monitoring.',
-        tag: 'psu',
-      },
-      { h: 'NI USB-6363 streamed acquisition', p: 'Backpressure-safe streaming into a session buffer.', tag: 'daq' },
-    ],
-  },
-  {
-    eyebrow: 'API',
-    title: 'Programmatic interface',
-    rows: [
       {
         h: 'Python SDK',
-        p: 'pip install labflow — typed client, async-native, plays well with notebooks.',
+        p: 'Typed client for notebooks and integration scripts. Plays nicely with PyVISA-based workflows you already have.',
         tag: 'sdk',
       },
-      { h: 'CLI reference', p: 'lf discover, lf run, lf replay, lf report — the full command surface.', tag: 'cli' },
-      { h: 'REST API', p: 'Drive sessions over HTTP with mTLS. OpenAPI 3.1 spec ships in-product.', tag: 'rest' },
-      { h: 'Webhooks', p: 'Subscribe to session events — armed, paused, completed, failed.', tag: 'events' },
       {
-        h: 'OpenTelemetry',
-        p: 'Traces, metrics and logs piped to your collector. Hardware events included.',
-        tag: 'obs',
+        h: 'REST + webhooks',
+        p: 'Drive sessions and subscribe to events from your LIMS, MES or ticketing system. OpenAPI 3.1 spec ships in-product.',
+        tag: 'integrations',
+      },
+      {
+        h: 'OpenTelemetry export',
+        p: 'Traces, metrics and logs piped to your collector — with the hardware events attached.',
+        tag: 'observability',
+      },
+    ],
+  },
+  {
+    eyebrow: 'SECURITY & COMPLIANCE',
+    title: 'What your security team will ask',
+    rows: [
+      {
+        h: 'SOC-2 Type II',
+        p: 'In progress. Audit collateral and bridge letter available under NDA on request.',
+        tag: 'audit',
+      },
+      {
+        h: 'SSO & SCIM',
+        p: 'SAML 2.0 and OIDC for SSO, SCIM 2.0 for provisioning. Lab and Enterprise tiers.',
+        tag: 'identity',
+      },
+      {
+        h: 'Audit log',
+        p: 'Every SCPI line, every approval, every retry — timestamped and exportable.',
+        tag: 'audit',
+      },
+      {
+        h: 'Data residency',
+        p: 'EU and US regions available. Customer data never leaves the chosen region.',
+        tag: 'residency',
+      },
+      {
+        h: '21 CFR Part 11 / GxP',
+        p: 'Reach out — we have customers in regulated environments and can share our validation collateral.',
+        tag: 'regulated',
       },
     ],
   },
@@ -136,11 +187,20 @@ export default function DocsPage() {
             </div>
           </div>
           <div className="lf-eyebrow">05 / DOCS</div>
-          <h1 className="lf-h1">The bench manual you wish you&apos;d had.</h1>
+          <h1 className="lf-h1">How Labflow lands in your lab.</h1>
           <p className="lf-lede">
-            Quickstarts, the SCPI cookbook, the protocol DSL, and a reference for every driver Labflow ships. Authored
-            by humans who actually plug instruments in.
+            Labflow is an enterprise rollout, not a download. This page walks through how the deployment actually works
+            — from the first call to a signed report on your bench — and the reference your team gets once you&apos;re
+            live. The fastest path to evaluating it is to call us.
           </p>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 6 }}>
+            <Link className="btn solid" href="/request-demo">
+              Book a discovery call <span className="arr">→</span>
+            </Link>
+            <Link className="btn" href="/contact">
+              Talk to engineering
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -148,6 +208,10 @@ export default function DocsPage() {
         <div className="container">
           <div className="lf-eyebrow">QUICKSTART</div>
           <h2 className="lf-h2">Five minutes to first sweep.</h2>
+          <p className="lf-lede" style={{ maxWidth: '60ch' }}>
+            Labflow is a guided enterprise rollout, not a curl-pipe-to-shell. A real engineer pairs with you on the
+            first sweep — from booking the call to a signed report is under a week.
+          </p>
 
           <div
             style={{
@@ -155,20 +219,20 @@ export default function DocsPage() {
               border: '1px solid var(--ink)',
               background: 'var(--panel-2)',
               color: '#e8e8e4',
-              fontFamily: 'var(--font-jetbrains-mono)',
             }}>
             {quickStart.map((q, i) => (
               <div
                 key={q.n}
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: '80px 1fr 1.4fr',
+                  gridTemplateColumns: '80px 1fr 1.6fr',
                   borderTop: i === 0 ? '0' : '1px solid #2a2a28',
-                  alignItems: 'center',
+                  alignItems: 'stretch',
                 }}>
                 <div
+                  className="mono"
                   style={{
-                    padding: '18px 18px',
+                    padding: '20px 18px',
                     color: 'var(--orange)',
                     fontSize: 12,
                     letterSpacing: '.14em',
@@ -176,15 +240,38 @@ export default function DocsPage() {
                   }}>
                   {q.n}
                 </div>
-                <div style={{ padding: '18px 18px', borderRight: '1px solid #2a2a28', color: '#fff', fontWeight: 600 }}>
+                <div
+                  style={{
+                    padding: '20px 18px',
+                    borderRight: '1px solid #2a2a28',
+                    color: '#fff',
+                    fontWeight: 700,
+                    fontSize: 16,
+                    letterSpacing: '-.005em',
+                    textTransform: 'uppercase',
+                  }}>
                   {q.h}
                 </div>
-                <div style={{ padding: '18px 18px', color: '#cfcfca', fontSize: 13 }}>
-                  <span style={{ color: 'var(--orange)' }}>$ </span>
-                  {q.code}
+                <div
+                  style={{
+                    padding: '20px 22px',
+                    color: '#cfcfca',
+                    fontSize: 13.5,
+                    lineHeight: 1.6,
+                  }}>
+                  {q.p}
                 </div>
               </div>
             ))}
+          </div>
+
+          <div style={{ marginTop: 20, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            <Link className="btn solid" href="/request-demo">
+              Book the call <span className="arr">→</span>
+            </Link>
+            <Link className="btn" href="/contact">
+              Talk to engineering
+            </Link>
           </div>
         </div>
       </section>
@@ -220,7 +307,7 @@ export default function DocsPage() {
                       }}>
                       {r.tag}
                     </span>
-                    <Link href="/docs">Open →</Link>
+                    <Link href="/contact">Ask us →</Link>
                   </div>
                 </div>
               ))}
@@ -234,28 +321,36 @@ export default function DocsPage() {
           <div className="lf-grid-3">
             <div className="lf-card">
               <h3>Driver matrix</h3>
-              <p>42 drivers across 11 vendors. Filter by transport, conformance, and capability.</p>
+              <p>42 drivers across 11 vendors. We confirm which of yours are covered on the discovery call.</p>
               <div style={{ marginTop: 18 }}>
                 <Link className="btn" href="/instruments">
-                  Open matrix
+                  See drivers
                 </Link>
               </div>
             </div>
             <div className="lf-card">
               <h3>Protocol library</h3>
-              <p>Pre-flight protocols you can fork — transfer curves, PSRR sweeps, burn-ins, step responses.</p>
+              <p>
+                Battle-tested protocols Labflow ships with — transfer curves, PSRR sweeps, step responses, burn-ins.
+              </p>
               <div style={{ marginTop: 18 }}>
                 <Link className="btn" href="/protocols">
-                  Open library
+                  See protocols
                 </Link>
               </div>
             </div>
             <div className="lf-card-orange lf-card">
-              <h3>Stuck?</h3>
-              <p>The fastest way to learn Labflow is to watch it run on your bench. We&apos;ll pair for 20 minutes.</p>
-              <div style={{ marginTop: 18 }}>
+              <h3>Ready to evaluate?</h3>
+              <p>
+                Labflow is an enterprise rollout. The fastest way to test it on your bench is to call us — we&apos;ll
+                pair on a real instrument inside a week.
+              </p>
+              <div style={{ marginTop: 18, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 <Link className="btn" href="/request-demo" style={{ borderColor: '#fff', color: '#fff' }}>
-                  Book a session <span className="arr">→</span>
+                  Book the call <span className="arr">→</span>
+                </Link>
+                <Link className="btn" href="/contact" style={{ borderColor: '#fff', color: '#fff' }}>
+                  Email us
                 </Link>
               </div>
             </div>
