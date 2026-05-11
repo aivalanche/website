@@ -250,7 +250,7 @@ export default function HomePage() {
               <span className="barcode" />
               <span className="reg">®</span>
               <div style={{ marginTop: 14 }} className="mono upp">
-                U.S.A. · BUILT FOR THE BENCH
+                USA / EU · BUILT FOR THE BENCH
               </div>
             </div>
           </div>
