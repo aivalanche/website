@@ -1,9 +1,25 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { convex } from '@/lib/convex'
+import { api } from '@/convex/_generated/api'
 
 export async function POST(request) {
   try {
     const { name, companyName, contactNumber, email, message } = await request.json()
+
+    // Persist the lead in Convex (non-fatal if it fails).
+    try {
+      const client = convex()
+      await client.mutation(api.demoRequests.add, {
+        name: String(name || ''),
+        companyName: String(companyName || ''),
+        contactNumber: String(contactNumber || ''),
+        email: String(email || ''),
+        message: String(message || ''),
+      })
+    } catch (e) {
+      console.error('[demo] Convex write failed:', e?.message)
+    }
 
     const recipients = ['edonderguti@aivalanche.de', 'gazmendalia@gmail.com']
 

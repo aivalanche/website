@@ -41,3 +41,6 @@ next-env.d.ts
 /build_output.txt
 
 /.screens/
+
+# Convex local state (not the generated stubs we commit, just the runtime cache)
+.convex/

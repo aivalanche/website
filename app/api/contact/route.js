@@ -1,6 +1,8 @@
 // app/api/contact/route.js
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { convex } from '@/lib/convex'
+import { api } from '@/convex/_generated/api'
 
 // Email validation helper
 function isValidEmail(email) {
@@ -43,6 +45,18 @@ export async function POST(request) {
     // Validate user's email
     if (!isValidEmail(email)) {
       return NextResponse.json({ error: 'Invalid email address provided' }, { status: 400 })
+    }
+
+    // Persist to Convex (non-fatal).
+    try {
+      const client = convex()
+      await client.mutation(api.contact.add, {
+        name: String(name),
+        email: String(email),
+        message: String(message),
+      })
+    } catch (e) {
+      console.error('[contact] Convex write failed:', e?.message)
     }
 
     // Debug environment variables

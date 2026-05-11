@@ -19,6 +19,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@phosphor-icons/react": "^2.1.10",
     "clsx": "^2.1.0",
+    "convex": "^1.38.0",
     "framer-motion": "^11.0.20",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.5",

@@ -1,6 +1,7 @@
 import { cn } from '@/utils/cn'
 import Providers from '@/utils/providers'
 import { Archivo, JetBrains_Mono } from 'next/font/google'
+import Tracker from '@/components/labflow/Tracker'
 import './globals.css'
 import './labflow.css'
 import '@/scss/theme.scss'
@@ -264,6 +265,7 @@ export default function RootLayout({ children }) {
           fontFamily: 'var(--font-archivo), system-ui, -apple-system, Segoe UI, sans-serif',
         }}>
         <Providers>
+          <Tracker />
           <main className="flex-grow">{children}</main>
         </Providers>
       </body>
