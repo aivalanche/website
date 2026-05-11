@@ -197,7 +197,7 @@ export default function PricingPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
               gap: 0,
               borderTop: '1px solid var(--line)',
               borderLeft: '1px solid var(--line)',
@@ -310,11 +310,19 @@ export default function PricingPage() {
           <div className="lf-eyebrow">FEATURE MATRIX</div>
           <h2 className="lf-h2">What ships in each tier.</h2>
 
-          <div style={{ marginTop: 24, border: '1px solid var(--line)', background: 'var(--bg)' }}>
+          <div
+            style={{
+              marginTop: 24,
+              border: '1px solid var(--line)',
+              background: 'var(--bg)',
+              overflowX: 'auto',
+              WebkitOverflowScrolling: 'touch',
+            }}>
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: '2fr 1fr 1fr 1fr',
+                minWidth: 560,
                 borderBottom: '1px solid var(--line)',
                 fontFamily: 'var(--font-jetbrains-mono)',
                 fontSize: 10,
@@ -345,6 +353,7 @@ export default function PricingPage() {
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '2fr 1fr 1fr 1fr',
+                  minWidth: 560,
                   borderBottom: '1px solid var(--line)',
                   fontSize: 13.5,
                 }}>

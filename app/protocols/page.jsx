@@ -129,6 +129,7 @@ export default function ProtocolsPage() {
             {stages.map((s) => (
               <div
                 key={s.n}
+                data-mobile-stack="true"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '120px 1fr 1.3fr',

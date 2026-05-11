@@ -170,6 +170,7 @@ export default function AgentsPage() {
             {tools.map((t, i) => (
               <div
                 key={t.name}
+                data-mobile-stack="true"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '280px 1fr',

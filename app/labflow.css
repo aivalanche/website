@@ -108,11 +108,12 @@
 .lf-root .hero .meta-row { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; font-size: 11px; margin-bottom: 46px; }
 .lf-root .hero .meta-row .cell { display: flex; align-items: center; gap: 8px; }
 .lf-root .hero .meta-row .cell .sq { width: 8px; height: 8px; background: var(--orange); display: inline-block; }
-.lf-root .hero h1 { font-family: var(--font-archivo); font-weight: 800; font-size: 184px; line-height: .86; letter-spacing: -0.035em; margin: 0; text-transform: uppercase; }
+.lf-root .hero h1 { font-family: var(--font-archivo); font-weight: 800; font-size: clamp(56px, 12.5vw, 184px); line-height: .86; letter-spacing: -0.035em; margin: 0; text-transform: uppercase; min-width: 0; overflow-wrap: break-word; }
 .lf-root .hero h1 .stack { display: block; }
 .lf-root .hero .h1-row { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: end; }
-.lf-root .hero .r-tag { font-size: 18px; color: var(--ink-2); font-family: var(--font-archivo); font-weight: 500; line-height: 1.2; }
-.lf-root .hero .r-tag .big { font-size: 34px; color: var(--ink); font-weight: 700; display: block; letter-spacing: -0.01em; margin-bottom: 6px; text-transform: uppercase; }
+.lf-root .hero .h1-row > * { min-width: 0; }
+.lf-root .hero .r-tag { font-size: 18px; color: var(--ink-2); font-family: var(--font-archivo); font-weight: 500; line-height: 1.2; min-width: 0; }
+.lf-root .hero .r-tag .big { font-size: clamp(20px, 2.2vw, 34px); color: var(--ink); font-weight: 700; display: block; letter-spacing: -0.01em; margin-bottom: 6px; text-transform: uppercase; overflow-wrap: break-word; }
 .lf-root .barcode { display: inline-block; height: 38px; background: repeating-linear-gradient(to right, #c8c8c4 0 2px, transparent 2px 4px, #c8c8c4 4px 5px, transparent 5px 9px, #c8c8c4 9px 12px, transparent 12px 14px); width: 170px; vertical-align: middle; margin-right: 14px; }
 .lf-root .reg { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 2px solid #c8c8c4; color: #c8c8c4; border-radius: 50%; font-family: var(--font-archivo); font-weight: 600; font-size: 22px; vertical-align: middle; }
 
@@ -246,8 +247,8 @@
 
 /* ===== Instruments grid ===== */
 .lf-root .inst { padding: 80px 0; border-top: 1px solid var(--line); background: var(--bg-2); }
-.lf-root .inst .igrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-top: 24px; }
-.lf-root .ic { background: var(--bg); border: 1px solid var(--line); padding: 18px 14px 14px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+.lf-root .inst .igrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-top: 24px; }
+.lf-root .ic { background: var(--bg); border: 1px solid var(--line); padding: 18px 14px 14px; min-height: 170px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
 .lf-root .ic .top { display: flex; justify-content: space-between; align-items: flex-start; font-family: var(--font-jetbrains-mono); font-size: 10px; color: var(--ink-2); }
 .lf-root .ic .top .led { width: 7px; height: 7px; background: var(--good); border-radius: 50%; display: inline-block; margin-right: 6px; }
 .lf-root .ic .top .led.idle { background: var(--ink-3); }
@@ -537,39 +538,135 @@
 .lf-root .col-7 { grid-column: span 7; }
 .lf-root .col-8 { grid-column: span 8; }
 
+/* Baseline: every grid item gets min-width: 0 so intrinsic content width never blows the column. */
+.lf-root .lf-grid-2 > *,
+.lf-root .lf-grid-3 > *,
+.lf-root .lf-row-list > *,
+.lf-root .section-head > *,
+.lf-root .meta-row > *,
+.lf-root .third-row > *,
+.lf-root .bottom-row > *,
+.lf-root footer .row > *,
+.lf-root .cgrid > * { min-width: 0; }
+
+/* Defensive: keep every brutalist box from breaking the viewport. */
+.lf-root img,
+.lf-root svg,
+.lf-root pre,
+.lf-root code,
+.lf-root table { max-width: 100%; }
+.lf-root .lf-card,
+.lf-root .cap,
+.lf-root .ic,
+.lf-root .panel,
+.lf-root .kpi { overflow-wrap: anywhere; word-break: break-word; }
+
 @media (max-width: 1100px) {
   .lf-root .container { padding: 0 24px; }
-  .lf-root .hero h1 { font-size: 120px; }
   .lf-root .dash .dgrid { grid-template-columns: 1fr; }
   .lf-root .cap { grid-column: span 6; }
   .lf-root .cap:nth-child(3n) { border-right: 1px solid var(--line); }
-  .lf-root .inst .igrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 860px) {
+  /* Utility bar gets dense on tablets — collapse to the essentials. */
+  .lf-root .utility .row { font-size: 10px; gap: 12px; height: auto; padding: 6px 0; flex-wrap: wrap; }
+  .lf-root .utility .row > span:nth-child(n+4) { display: none; }
+  /* Dashboard KPI strip from 4 → 2 columns to keep tags readable. */
+  .lf-root .dash .center .row1 { grid-template-columns: repeat(2, 1fr); }
+  /* Section-head right column tucks under the title. */
+  .lf-root .section-head { grid-template-columns: 1fr; gap: 16px; }
+  .lf-root .section-head > * { grid-column: 1 / -1; text-align: left; }
+  /* Capabilities pair up. */
+  .lf-root .cap { grid-column: span 6; }
 }
 
 @media (max-width: 720px) {
   .lf-root .container { padding: 0 16px; }
-  .lf-root nav.top { gap: 16px; height: auto; padding: 16px 0; flex-wrap: wrap; }
+
+  /* Utility bar: keep first item + version chip only. */
+  .lf-root .utility .row { gap: 8px; font-size: 10px; padding: 6px 0; }
+  .lf-root .utility .row > span:nth-child(n+2):not(:last-child) { display: none; }
+  .lf-root .utility .row .grow { display: none; }
+
+  /* Nav: stack brand + CTA on phone; hide the inline menu (links are reachable from footer). */
+  .lf-root nav.top { gap: 12px; height: auto; padding: 14px 0; flex-wrap: wrap; align-items: center; }
   .lf-root nav.top ul { display: none; }
+  .lf-root nav.top .brand { font-size: 20px; gap: 10px; }
+  .lf-root nav.top .brand .mark { width: 26px; height: 28px; }
+  .lf-root nav.top .nav-cta { width: 100%; gap: 6px; }
+  .lf-root nav.top .nav-cta .btn { flex: 1; justify-content: center; height: 40px; font-size: 12px; padding: 0 10px; }
+
+  /* Hero */
   .lf-root .hero { padding: 24px 0 12px; }
-  .lf-root .hero h1 { font-size: 72px; }
-  .lf-root .hero .h1-row { grid-template-columns: 1fr; gap: 24px; }
+  .lf-root .hero .h1-row { grid-template-columns: 1fr; gap: 18px; }
   .lf-root .hero .meta-row,
   .lf-root .hero .third-row,
-  .lf-root .hero .bottom-row { grid-template-columns: 1fr; }
-  .lf-root .section-head { grid-template-columns: 1fr; padding: 48px 0 24px; }
-  .lf-root .section-head .label,
-  .lf-root .section-head .title,
-  .lf-root .section-head .right { grid-column: span 1; text-align: left; }
-  .lf-root .section-head .title { font-size: 38px; }
-  .lf-root .cap { grid-column: span 12; border-right: 0 !important; }
-  .lf-root .inst .igrid { grid-template-columns: repeat(2, 1fr); }
+  .lf-root .hero .bottom-row { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+  .lf-root .hero .bottom-row .cell { justify-content: flex-start !important; }
+  .lf-root .body-mono .stars { display: none; }
+  .lf-root .barcode { width: 100px; height: 30px; }
+  .lf-root .reg { width: 36px; height: 36px; font-size: 18px; }
+
+  /* Capabilities one-up. */
+  .lf-root .cap { grid-column: span 12; border-right: 0 !important; min-height: 0; }
+
+  /* Workflow stripes stack vertically. */
   .lf-root .work .stripes { grid-template-columns: 1fr; }
   .lf-root .work .stripes .step { border-right: 0; border-bottom: 1px solid var(--line); }
-  .lf-root .reports .stage { grid-template-columns: 1fr; }
+  .lf-root .work .stripes .step .n { margin-bottom: 24px; }
+
+  /* Reports stage stack. */
+  .lf-root .reports .stage { grid-template-columns: 1fr; gap: 24px; }
   .lf-root .preview { height: 540px; }
-  .lf-root .cta-sec h2 { font-size: 72px; }
+  .lf-root .reports .feat { grid-template-columns: 1fr; }
+  .lf-root .reports .feat div:nth-child(2n) { padding-left: 0; border-left: 0; }
+  .lf-root .reports .lede { font-size: 28px; }
+  .lf-root .reports .copy { font-size: 12px; }
+
+  /* CTA section */
+  .lf-root .cta-sec { padding: 64px 0; }
+  .lf-root .cta-sec h2 { font-size: clamp(48px, 14vw, 84px); }
   .lf-root .cta-sec .row { grid-template-columns: 1fr; }
-  .lf-root .cta-sec .row .actions { align-items: flex-start; }
+  .lf-root .cta-sec .row .actions { align-items: stretch; width: 100%; }
+  .lf-root .cta-sec .ghost { font-size: 120px; bottom: -10px; left: 16px; }
+
+  /* Footer */
   .lf-root footer .col,
   .lf-root footer .col.big { grid-column: span 12; }
+  .lf-root footer .ftr-row { flex-wrap: wrap; }
+
+  /* Page-shell primitives */
+  .lf-root .lf-page { padding: 56px 0 64px; }
+  .lf-root .lf-page-hero { padding: 36px 0 24px; }
+  .lf-root .lf-page-hero .meta-row { grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; font-size: 10px; }
+  .lf-root .lf-grid-2,
+  .lf-root .lf-grid-3 { grid-template-columns: 1fr; }
+  .lf-root .lf-row-list > * { flex-wrap: wrap; gap: 12px; }
+  .lf-root .lf-h1 { font-size: clamp(40px, 11vw, 56px); }
+  .lf-root .lf-h1.medium { font-size: clamp(34px, 9vw, 44px); }
+  .lf-root .lf-h2 { font-size: clamp(26px, 7vw, 34px); }
+  .lf-root .lf-lede { font-size: 16px; }
+
+  /* Section-head fallback on home: same as the .lf-* primitives. */
+  .lf-root .section-head { padding: 48px 0 24px; }
+  .lf-root .section-head .title { font-size: clamp(34px, 9vw, 48px); }
+
+  /* Dashboard: the dgrid already collapses at 1100px; tighten inner content here. */
+  .lf-root .dash .center { padding: 14px; gap: 14px; }
+  .lf-root .dash .center .row1 { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .lf-root .kpi { padding: 12px; }
+  .lf-root .kpi .v { font-size: 22px; }
+  .lf-root .kpi .tag { position: static; display: block; margin-bottom: 4px; text-align: left; }
+  .lf-root .scope { padding: 10px 12px; }
+  .lf-root .scope .head { flex-wrap: wrap; gap: 8px; }
+  .lf-root .scope .head .chip { font-size: 9px; padding: 1px 6px; }
+  .lf-root .scope svg { height: 160px; }
+  .lf-root .twin { grid-template-columns: 1fr; }
+  .lf-root .dash .titlebar { flex-wrap: wrap; padding: 8px 12px; height: auto; gap: 8px; font-size: 10px; }
+  .lf-root .dash .titlebar .path { flex: 1 1 100%; }
+  .lf-root .dash .statusbar { flex-wrap: wrap; padding: 6px 12px; height: auto; gap: 10px; }
+
+  /* Inline pricing & matrix tables ride on inline grid-template-columns; widen the helper class. */
+  .lf-root [data-mobile-stack="true"] { grid-template-columns: 1fr !important; }
 }

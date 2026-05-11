@@ -222,7 +222,7 @@ export default function InstrumentsPage() {
             style={{
               marginTop: 24,
               display: 'grid',
-              gridTemplateColumns: 'repeat(6, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
               gap: 0,
               borderTop: '1px solid var(--line)',
               borderLeft: '1px solid var(--line)',

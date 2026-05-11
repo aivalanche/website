@@ -223,6 +223,7 @@ export default function DocsPage() {
             {quickStart.map((q, i) => (
               <div
                 key={q.n}
+                data-mobile-stack="true"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '80px 1fr 1.6fr',

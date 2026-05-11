@@ -189,6 +189,7 @@ export default function ProductPage() {
 
           <div style={{ marginTop: 24, border: '1px solid var(--line)', background: 'var(--bg)' }}>
             <div
+              data-mobile-stack="true"
               style={{
                 display: 'grid',
                 gridTemplateColumns: '1.1fr 1.2fr 1.4fr',
@@ -208,6 +209,7 @@ export default function ProductPage() {
             {compareRows.map(([k, before, after]) => (
               <div
                 key={k}
+                data-mobile-stack="true"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1.1fr 1.2fr 1.4fr',

@@ -147,6 +147,7 @@ export default function ChangelogPage() {
               return (
                 <article
                   key={r.v}
+                  data-mobile-stack="true"
                   style={{
                     display: 'grid',
                     gridTemplateColumns: '220px 1fr',
