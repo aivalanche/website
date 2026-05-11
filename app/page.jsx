@@ -195,7 +195,7 @@ export default function HomePage() {
       <div className="container">
         <nav className="top">
           <div className="brand">
-            <div className="mark" />
+            <img className="mark" src="/images/logo_svg_black.svg" alt="Labflow" width="32" height="35" />
             LABFLOW
             <span style={{ fontSize: 14, color: 'var(--ink-2)', fontWeight: 500, marginLeft: -6 }}>®</span>
           </div>
@@ -239,7 +239,7 @@ export default function HomePage() {
           <div className="h1-row">
             <h1>
               <span className="stack">Talk to your</span>
-              <span className="stack">benchtop.</span>
+              <span className="stack">instruments.</span>
             </h1>
             <div className="r-tag">
               <span className="big">

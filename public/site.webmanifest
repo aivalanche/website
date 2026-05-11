@@ -1,23 +1,35 @@
 {
-  "name": "AIvalanche",
-  "short_name": "AIvalanche",
-  "description": "KI-Agent fuer Unternehmen im DACH-Raum mit OpenClaw-gestuetzter Workflow-Automatisierung in Slack, Teams und WhatsApp.",
+  "name": "Labflow",
+  "short_name": "Labflow",
+  "description": "The AI agent that talks to your lab instruments.",
   "icons": [
     {
-      "src": "/images/favicons/android-icon-192x192.png",
+      "src": "/icons/labflow-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/images/favicons/ms-icon-310x310.png",
-      "sizes": "310x310",
+      "src": "/icons/labflow-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/labflow-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/labflow-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
   ],
-  "theme_color": "#B1E346",
-  "background_color": "#FFFFFF",
+  "theme_color": "#ff4d12",
+  "background_color": "#ececea",
   "display": "standalone",
   "start_url": "/"
 }

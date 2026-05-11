@@ -105,9 +105,16 @@ export const metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icons/labflow-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icons/labflow-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/labflow-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/labflow-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/images/logo_svg_black.svg', type: 'image/svg+xml' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   manifest: '/site.webmanifest',
   verification: googleSiteVerification ? { google: googleSiteVerification } : undefined,
@@ -135,7 +142,10 @@ export default function RootLayout({ children }) {
         url: siteUrl,
         logo: {
           '@type': 'ImageObject',
-          url: `${siteUrl}/images/logo_svg_black.svg`,
+          url: `${siteUrl}/icons/labflow-512.png`,
+          width: 512,
+          height: 512,
+          caption: 'Labflow logo',
         },
         contactPoint: [
           {

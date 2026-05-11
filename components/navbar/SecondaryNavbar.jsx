@@ -36,7 +36,7 @@ export default function SecondaryNavbar() {
       <div className="container">
         <nav className="top">
           <Link href="/" className="brand">
-            <div className="mark" />
+            <img className="mark" src="/images/logo_svg_black.svg" alt="Labflow" width="32" height="35" />
             LABFLOW
             <span style={{ fontSize: 14, color: 'var(--ink-2)', fontWeight: 500, marginLeft: -6 }}>®</span>
           </Link>

@@ -82,11 +82,7 @@
 /* ===== Nav ===== */
 .lf-root nav.top { display: flex; align-items: center; gap: 40px; height: 80px; border-bottom: 1px solid var(--line); }
 .lf-root nav.top .brand { display: flex; align-items: center; gap: 14px; font-weight: 800; font-size: 24px; letter-spacing: -0.01em; }
-.lf-root nav.top .brand .mark { width: 30px; height: 30px; background: var(--ink); position: relative; }
-.lf-root nav.top .brand .mark::before,
-.lf-root nav.top .brand .mark::after { content: ""; position: absolute; background: var(--orange); }
-.lf-root nav.top .brand .mark::before { left: 6px; right: 6px; top: 13px; height: 4px; }
-.lf-root nav.top .brand .mark::after { top: 6px; bottom: 6px; left: 13px; width: 4px; }
+.lf-root nav.top .brand .mark { width: 32px; height: 35px; display: block; flex-shrink: 0; object-fit: contain; }
 .lf-root nav.top ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; font-size: 13px; }
 .lf-root nav.top ul li { position: relative; }
 .lf-root nav.top ul li.has::after { content: "↓"; font-size: 10px; margin-left: 6px; color: var(--ink-2); }
