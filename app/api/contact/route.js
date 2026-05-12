@@ -87,21 +87,18 @@ export async function POST(request) {
     // Recipients
     const recipients = ['edonderguti@aivalanche.de', 'gazmendalia@gmail.com']
 
-    // Create transporter with better error handling
+    // Create transporter — credentials come from env so we don't ship them in source.
     let transporter
     try {
       transporter = nodemailer.createTransport({
-        host: `email-smtp.eu-west-1.amazonaws.com`,
+        host: process.env.SMTP_HOST || 'email-smtp.us-east-1.amazonaws.com',
         port: parseInt(process.env.SMTP_PORT || '465'),
-        secure: process.env.SMTP_PORT === '465' || !process.env.SMTP_PORT, // true for 465, false for other ports
+        secure: (process.env.SMTP_PORT || '465') === '465',
         auth: {
-          user: `AKIAQEXMU5TZHWZSP4VW`,
-          pass: `BOSB4OTy0t7tpCnxUJazydSTN/dWg95LKDVRJjOzvKyp`,
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
         },
-        tls: {
-          rejectUnauthorized: false,
-        },
-        // Add debug logging
+        tls: { rejectUnauthorized: false },
         logger: process.env.NODE_ENV === 'development',
         debug: process.env.NODE_ENV === 'development',
       })

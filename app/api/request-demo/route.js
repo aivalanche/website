@@ -23,16 +23,15 @@ export async function POST(request) {
 
     const recipients = ['edonderguti@aivalanche.de', 'gazmendalia@gmail.com']
 
-    // Updated transporter configuration
+    // SES SMTP. SMTP_USER is an IAM access key id — never use it as a From.
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST, // e.g., 'smtp.gmail.com' for Gmail
-      port: 465,
+      host: process.env.SMTP_HOST || 'email-smtp.us-east-1.amazonaws.com',
+      port: parseInt(process.env.SMTP_PORT || '465'),
       secure: true,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
-      // Remove the tls configuration unless specifically needed
     })
 
     // Verify the connection before sending
@@ -43,6 +42,16 @@ export async function POST(request) {
 
     console.log('Attempting to send demo request emails...')
 
+    // FROM must be a verified SES identity. SMTP_FROM_EMAIL holds that;
+    // SMTP_USER is the IAM access-key id and is NOT a valid email.
+    const fromAddress = process.env.SMTP_FROM_EMAIL
+    if (!fromAddress) {
+      return NextResponse.json(
+        { error: 'SMTP_FROM_EMAIL not configured — set a verified SES identity.' },
+        { status: 500 },
+      )
+    }
+
     const results = {
       successful: [],
       failed: [],
@@ -52,7 +61,7 @@ export async function POST(request) {
       recipients.map(async (recipient) => {
         try {
           const info = await transporter.sendMail({
-            from: process.env.SMTP_USER, // Fixed: Use a valid email address without the display name format
+            from: fromAddress,
             to: recipient,
             subject: `aivalanche: New Demo Request from ${name} at ${companyName}`,
             text: `
