@@ -209,7 +209,7 @@ export default function HomePage() {
           <div style={{ flex: 1 }} />
           <div className="nav-cta">
             <Link className="btn" href="/request-demo">
-              Sign in
+              Early access · we&apos;ll call you
             </Link>
             <Link className="btn solid" href="/request-demo">
               Open console <span className="arr">→</span>
@@ -1427,7 +1427,8 @@ export default function HomePage() {
                 Labflow<span style={{ fontSize: 14, color: 'var(--ink-2)', verticalAlign: 'super' }}>®</span>
               </div>
               <div style={{ maxWidth: '38ch', lineHeight: 1.6 }}>
-                Agentic control plane for electronic test &amp; measurement. Built in Cambridge, MA &amp; Eindhoven.
+                Agentic control plane for electronic test &amp; measurement. Built in Munich, Germany &amp; on the
+                way to you.
                 Hardware-aware, human-supervised.
               </div>
               <div style={{ marginTop: 14 }}>

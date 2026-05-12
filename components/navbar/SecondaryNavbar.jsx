@@ -50,7 +50,7 @@ export default function SecondaryNavbar() {
           <div style={{ flex: 1 }} />
           <div className="nav-cta">
             <Link className="btn" href="/request-demo">
-              Sign in
+              Early access · we&apos;ll call you
             </Link>
             <Link className="btn solid" href="/request-demo">
               Open console <span className="arr">→</span>
