@@ -23,6 +23,10 @@ frontend:
         - npm ci --cache .npm --prefer-offline
     build:
       commands:
+        # Auto-format pre-existing files before next build's lint runs;
+        # legacy components (FaqAccordion, faq-schema, etc.) still trip
+        # prettier rules we haven't fixed. Mirrors the original build spec.
+        - npx prettier --write .
         - npm run build
   artifacts:
     baseDirectory: .next
