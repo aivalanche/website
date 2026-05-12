@@ -16,5 +16,17 @@
     "locale": "de",
     "timestamp": "2026-02-16T01:17:01.154Z",
     "source": "landing-page"
+  },
+  {
+    "email": "smoketest@labflow.test",
+    "locale": "en",
+    "timestamp": "2026-05-10T20:12:23.382Z",
+    "source": "landing-page"
+  },
+  {
+    "email": "edonderguti@gmail.com",
+    "locale": "en",
+    "timestamp": "2026-05-10T21:19:40.398Z",
+    "source": "landing-page"
   }
 ]

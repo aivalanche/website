@@ -1,4 +1,4 @@
-import { mutation, query } from './_generated/server'
+import { mutation, query, QueryCtx, MutationCtx } from './_generated/server'
 import { v } from 'convex/values'
 
 export const add = mutation({
@@ -39,7 +39,7 @@ export const count = query({
   },
 })
 
-async function countAll(ctx: { db: { query: (t: string) => { collect: () => Promise<unknown[]> } } }) {
+async function countAll(ctx: QueryCtx | MutationCtx) {
   const rows = await ctx.db.query('waitlist').collect()
   return rows.length
 }

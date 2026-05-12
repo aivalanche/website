@@ -10,7 +10,7 @@ export default function Footer() {
               Labflow<span style={{ fontSize: 14, color: 'var(--ink-2)', verticalAlign: 'super' }}>®</span>
             </div>
             <div style={{ maxWidth: '38ch', lineHeight: 1.6 }}>
-              Agentic control plane for electronic test &amp; measurement. Built in Cambridge, MA &amp; Eindhoven.
+              Agentic control plane for electronic test &amp; measurement. Built in Munich, Germany &amp; on the way to you.
               Hardware-aware, human-supervised.
             </div>
             <div style={{ marginTop: 14 }}>
