@@ -602,8 +602,15 @@
   .lf-root .hero .h1-row { grid-template-columns: 1fr; gap: 18px; }
   .lf-root .hero .meta-row,
   .lf-root .hero .third-row,
-  .lf-root .hero .bottom-row { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+  .lf-root .hero .bottom-row { grid-template-columns: 1fr; gap: 14px; margin-top: 24px; }
+  /* Children carry inline `gridColumn: span N` from the 12-col layout —
+     force every hero-row child to take the whole row on mobile, otherwise
+     CSS Grid spins up implicit columns and squashes them side-by-side. */
+  .lf-root .hero .meta-row > *,
+  .lf-root .hero .third-row > *,
+  .lf-root .hero .bottom-row > * { grid-column: 1 / -1 !important; }
   .lf-root .hero .bottom-row .cell { justify-content: flex-start !important; }
+  .lf-root .body-mono { max-width: 100%; }
   .lf-root .body-mono .stars { display: none; }
   .lf-root .barcode { width: 100px; height: 30px; }
   .lf-root .reg { width: 36px; height: 36px; font-size: 18px; }
